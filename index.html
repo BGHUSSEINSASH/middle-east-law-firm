@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">شركة الشرق الأوسط للمحاماة والاستشارات القانونية</title>
+<meta name="description" data-i18n-content="meta.description" content="شركة الشرق الأوسط للمحاماة - خبرة تتجاوز 15 عاماً في القانون العراقي والاستشارات القانونية">
+<meta name="keywords" data-i18n-content="meta.keywords" content="محاماة, قانون عراقي, استشارات قانونية, محامي بغداد">
+<meta name="theme-color" content="#0a1628">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css?v=25">
+<noscript><style>.reveal-up,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}.loader{display:none!important}</style></noscript>
+</head>
+<body>
+<script>
+// Force clear old service worker caches
+if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n!=='me-law-v25')caches.delete(n)})});}
+</script>
+
+<!-- ===== LOADER ===== -->
+<div id="loader" class="loader">
+  <div class="loader__content">
+    <div class="loader__icon"><img src="logo.svg" alt="logo" style="width:64px;height:64px;border-radius:12px"></div>
+    <div class="loader__bar"><div class="loader__progress"></div></div>
+    <p class="loader__text" data-i18n="loader.title">شركة الشرق الأوسط للمحاماة</p>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="header" class="header">
+  <div class="container header__inner">
+    <a href="#" class="logo">
+      <img src="logo.svg" alt="شركة الشرق الأوسط للمحاماة" class="logo__img">
+      <div class="logo__text">
+        <strong data-i18n="nav.brand">الشرق الأوسط</strong>
+        <small data-i18n="nav.brandSub">للمحاماة والاستشارات</small>
+      </div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#hero" class="nav__link active" data-i18n="nav.home">الرئيسية</a>
+      <a href="#about" class="nav__link" data-i18n="nav.about">من نحن</a>
+      <a href="#services" class="nav__link" data-i18n="nav.services">خدماتنا</a>
+      <a href="#laws" class="nav__link" data-i18n="nav.laws">القوانين العراقية</a>
+      <a href="#assistant" class="nav__link" data-i18n="nav.assistant">المساعد القانوني</a>
+      <a href="#team" class="nav__link" data-i18n="nav.team">فريقنا</a>
+      <a href="#pricing" class="nav__link" data-i18n="nav.pricing">الباقات</a>
+      <a href="#app" class="nav__link" data-i18n="nav.app">التطبيق</a>
+      <a href="#contact" class="nav__link" data-i18n="nav.contact">تواصل معنا</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i> <span id="currentLang">AR</span></button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button data-lang="ar">العربية</button>
+          <button data-lang="en">English</button>
+          <button data-lang="ku">کوردی</button>
+          <button data-lang="tr">Türkçe</button>
+          <button data-lang="fa">فارسی</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="de">Deutsch</button>
+          <button data-lang="es">Español</button>
+          <button data-lang="ru">Русский</button>
+          <button data-lang="zh">中文</button>
+        </div>
+      </div>
+      <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
+      <a href="#contact" class="btn btn--primary btn--sm header-cta" data-i18n="nav.cta">استشارة مجانية</a>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero">
+  <canvas id="heroCanvas" class="hero__canvas"></canvas>
+  <div class="hero__overlay"></div>
+  <div class="container hero__content">
+    <div class="hero__badge"><i class="fas fa-award"></i> <span data-i18n="hero.badge">الشركة الأولى في العراق</span></div>
+    <h1 class="hero__title"><span data-i18n="hero.titleLine1">العدالة تبدأ</span> <span class="hero__title-gradient" data-i18n="hero.titleLine2">من هنا</span></h1>
+    <p class="hero__sub" data-i18n="hero.subtitle">خبرة تتجاوز 15 عاماً في القانون العراقي - نقدم لكم أفضل الحلول القانونية مع مساعد ذكي يجيب على جميع استفساراتكم</p>
+    <div class="hero__btns">
+      <a href="#assistant" class="btn btn--gold"><i class="fas fa-robot"></i> <span data-i18n="hero.askAI">اسأل المساعد القانوني</span></a>
+      <a href="#contact" class="btn btn--outline"><i class="fas fa-phone"></i> <span data-i18n="hero.consult">استشارة مجانية</span></a>
+      <a href="#app" class="btn btn--glass"><i class="fas fa-mobile-alt"></i> <span data-i18n="hero.getApp">حمّل التطبيق</span></a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero-stat"><span class="hero-stat__num" data-count="500">0</span><span>+</span><p data-i18n="stats.cases">قضية ناجحة</p></div>
+      <div class="hero-stat"><span class="hero-stat__num" data-count="95">0</span><span>%</span><p data-i18n="stats.success">نسبة النجاح</p></div>
+      <div class="hero-stat"><span class="hero-stat__num" data-count="15">0</span><span>+</span><p data-i18n="stats.years">سنة خبرة</p></div>
+      <div class="hero-stat"><span class="hero-stat__num" data-count="1000">0</span><span>+</span><p data-i18n="stats.clients">عميل راضٍ</p></div>
+    </div>
+  </div>
+  <div class="hero__scroll"><i class="fas fa-chevron-down"></i></div>
+</section>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about__content reveal-right">
+        <span class="section__tag" data-i18n="about.tag">من نحن</span>
+        <h2 class="section__title" data-i18n="about.title">شركة الشرق الأوسط للمحاماة</h2>
+        <p data-i18n="about.p1">تأسست شركة الشرق الأوسط للمحاماة والاستشارات القانونية عام 2009 في قلب العاصمة بغداد، لتكون واحدة من أبرز الشركات القانونية في العراق.</p>
+        <p data-i18n="about.p2">نحن نجمع بين الخبرة العميقة في القانون العراقي والتقنيات الحديثة، بما في ذلك مساعدنا القانوني الذكي الذي يتيح لكم الحصول على إجابات فورية عن أي استفسار قانوني.</p>
+        <div class="about__features">
+          <div class="about-feat"><i class="fas fa-check-circle"></i><span data-i18n="about.f1">فريق من أمهر المحامين العراقيين</span></div>
+          <div class="about-feat"><i class="fas fa-check-circle"></i><span data-i18n="about.f2">مساعد قانوني ذكي يعمل على مدار الساعة</span></div>
+          <div class="about-feat"><i class="fas fa-check-circle"></i><span data-i18n="about.f3">قاعدة بيانات شاملة للقوانين العراقية</span></div>
+          <div class="about-feat"><i class="fas fa-check-circle"></i><span data-i18n="about.f4">تطبيق ذكي لأجهزة الأندرويد والآيفون</span></div>
+        </div>
+        <a href="#services" class="btn btn--primary" data-i18n="about.cta">اكتشف خدماتنا</a>
+      </div>
+      <div class="about__visual reveal-left">
+        <div class="about__card glass">
+          <div class="about__card-icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>+15</h3>
+          <p data-i18n="about.cardYears">سنة من الخبرة القانونية</p>
+        </div>
+        <div class="about__card glass">
+          <div class="about__card-icon"><i class="fas fa-trophy"></i></div>
+          <h3>+500</h3>
+          <p data-i18n="about.cardCases">قضية تم الفوز بها</p>
+        </div>
+        <div class="about__card glass">
+          <div class="about__card-icon"><i class="fas fa-users"></i></div>
+          <h3>+1000</h3>
+          <p data-i18n="about.cardClients">عميل يثق بنا</p>
+        </div>
+        <div class="about__card glass">
+          <div class="about__card-icon"><i class="fas fa-robot"></i></div>
+          <h3>24/7</h3>
+          <p data-i18n="about.cardAI">مساعد قانوني ذكي</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section section--alt">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="services.tag">خدماتنا القانونية</span>
+      <h2 class="section__title" data-i18n="services.title">حلول قانونية شاملة</h2>
+      <p class="section__sub" data-i18n="services.subtitle">نقدم مجموعة واسعة من الخدمات القانونية المتخصصة</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass reveal-up" style="--d:0ms">
+        <div class="service-card__icon"><i class="fas fa-building"></i></div>
+        <h3 data-i18n="services.s1.title">القضايا العقارية</h3>
+        <p data-i18n="services.s1.desc">حل النزاعات العقارية وتسجيل الممتلكات ومراجعة العقود بخبرة واسعة.</p>
+        <a href="#assistant" class="service-card__link" data-i18n="services.ask">اسأل عن هذا القانون <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card glass reveal-up" style="--d:100ms">
+        <div class="service-card__icon"><i class="fas fa-briefcase"></i></div>
+        <h3 data-i18n="services.s2.title">القضايا التجارية</h3>
+        <p data-i18n="services.s2.desc">تأسيس الشركات والعقود التجارية وحل النزاعات بين الشركاء.</p>
+        <a href="#assistant" class="service-card__link" data-i18n="services.ask">اسأل عن هذا القانون <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card glass reveal-up" style="--d:200ms">
+        <div class="service-card__icon"><i class="fas fa-heart"></i></div>
+        <h3 data-i18n="services.s3.title">قانون الأسرة</h3>
+        <p data-i18n="services.s3.desc">قضايا الطلاق والحضانة والنفقة والميراث بسرية تامة.</p>
+        <a href="#assistant" class="service-card__link" data-i18n="services.ask">اسأل عن هذا القانون <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card glass reveal-up" style="--d:300ms">
+        <div class="service-card__icon"><i class="fas fa-gavel"></i></div>
+        <h3 data-i18n="services.s4.title">القضايا الجنائية</h3>
+        <p data-i18n="services.s4.desc">الدفاع في القضايا الجنائية بجميع درجات التقاضي.</p>
+        <a href="#assistant" class="service-card__link" data-i18n="services.ask">اسأل عن هذا القانون <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card glass reveal-up" style="--d:400ms">
+        <div class="service-card__icon"><i class="fas fa-file-contract"></i></div>
+        <h3 data-i18n="services.s5.title">القضايا المدنية</h3>
+        <p data-i18n="services.s5.desc">التقاضي المدني في جميع مراحله أمام المحاكم العراقية.</p>
+        <a href="#assistant" class="service-card__link" data-i18n="services.ask">اسأل عن هذا القانون <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card glass reveal-up" style="--d:500ms">
+        <div class="service-card__icon"><i class="fas fa-comments"></i></div>
+        <h3 data-i18n="services.s6.title">الاستشارات القانونية</h3>
+        <p data-i18n="services.s6.desc">استشارات قانونية متخصصة للأفراد والشركات في جميع المجالات.</p>
+        <a href="#assistant" class="service-card__link" data-i18n="services.ask">اسأل عن هذا القانون <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== IRAQI LAWS LIBRARY ===== -->
+<section id="laws" class="section">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="laws.tag">القوانين العراقية</span>
+      <h2 class="section__title" data-i18n="laws.title">المكتبة القانونية العراقية الشاملة</h2>
+      <p class="section__sub" data-i18n="laws.subtitle">أكبر مكتبة قانونية عراقية رقمية - جميع القوانين والتشريعات النافذة في مكان واحد</p>
+    </div>
+
+    <!-- Library Stats -->
+    <div class="library-stats reveal-up">
+      <div class="library-stat glass">
+        <div class="library-stat__icon"><i class="fas fa-book"></i></div>
+        <div class="library-stat__num" id="lawsCount">50+</div>
+        <div class="library-stat__label" data-i18n="laws.statsLaws">قانون عراقي</div>
+      </div>
+      <div class="library-stat glass">
+        <div class="library-stat__icon"><i class="fas fa-file-alt"></i></div>
+        <div class="library-stat__num">350+</div>
+        <div class="library-stat__label" data-i18n="laws.statsArticles">مادة قانونية</div>
+      </div>
+      <div class="library-stat glass">
+        <div class="library-stat__icon"><i class="fas fa-th-large"></i></div>
+        <div class="library-stat__num">10</div>
+        <div class="library-stat__label" data-i18n="laws.statsCategories">تصنيف قانوني</div>
+      </div>
+      <div class="library-stat glass">
+        <div class="library-stat__icon"><i class="fas fa-robot"></i></div>
+        <div class="library-stat__num">24/7</div>
+        <div class="library-stat__label" data-i18n="laws.statsAssistant">مساعد قانوني ذكي</div>
+      </div>
+    </div>
+
+    <!-- Library Categories -->
+    <div class="library-categories reveal-up">
+      <div class="library-cat glass" data-cat="constitutional">
+        <i class="fas fa-landmark"></i>
+        <h4 data-i18n="laws.constitutional">الدستور</h4>
+        <span class="library-cat__count" data-cat-count="constitutional"></span>
+      </div>
+      <div class="library-cat glass" data-cat="civil">
+        <i class="fas fa-file-alt"></i>
+        <h4 data-i18n="laws.civil">القانون المدني</h4>
+        <span class="library-cat__count" data-cat-count="civil"></span>
+      </div>
+      <div class="library-cat glass" data-cat="criminal">
+        <i class="fas fa-gavel"></i>
+        <h4 data-i18n="laws.criminal">القانون الجنائي</h4>
+        <span class="library-cat__count" data-cat-count="criminal"></span>
+      </div>
+      <div class="library-cat glass" data-cat="family">
+        <i class="fas fa-heart"></i>
+        <h4 data-i18n="laws.family">الأحوال الشخصية</h4>
+        <span class="library-cat__count" data-cat-count="family"></span>
+      </div>
+      <div class="library-cat glass" data-cat="commercial">
+        <i class="fas fa-briefcase"></i>
+        <h4 data-i18n="laws.commercial">القانون التجاري</h4>
+        <span class="library-cat__count" data-cat-count="commercial"></span>
+      </div>
+      <div class="library-cat glass" data-cat="labor">
+        <i class="fas fa-hard-hat"></i>
+        <h4 data-i18n="laws.labor">قانون العمل</h4>
+        <span class="library-cat__count" data-cat-count="labor"></span>
+      </div>
+      <div class="library-cat glass" data-cat="property">
+        <i class="fas fa-home"></i>
+        <h4 data-i18n="laws.property">القانون العقاري</h4>
+        <span class="library-cat__count" data-cat-count="property"></span>
+      </div>
+      <div class="library-cat glass" data-cat="administrative">
+        <i class="fas fa-building"></i>
+        <h4 data-i18n="laws.administrative">القانون الإداري</h4>
+        <span class="library-cat__count" data-cat-count="administrative"></span>
+      </div>
+      <div class="library-cat glass" data-cat="financial">
+        <i class="fas fa-coins"></i>
+        <h4 data-i18n="laws.financial">القانون المالي</h4>
+        <span class="library-cat__count" data-cat-count="financial"></span>
+      </div>
+      <div class="library-cat glass" data-cat="procedural">
+        <i class="fas fa-balance-scale"></i>
+        <h4 data-i18n="laws.procedural">الإجراءات القانونية</h4>
+        <span class="library-cat__count" data-cat-count="procedural"></span>
+      </div>
+    </div>
+
+    <!-- CTA to AI Assistant -->
+    <div class="library-cta reveal-up">
+      <div class="library-cta__box glass">
+        <div class="library-cta__icon"><i class="fas fa-robot"></i></div>
+        <h3 data-i18n="laws.ctaTitle">اسأل المساعد القانوني الذكي</h3>
+        <p data-i18n="laws.ctaDesc">اكتب سؤالك للمساعد الذكي وسيقوم بإيصالك لأي قانون عراقي بكافة تفاصيله ومواده. يمكنك السؤال عن أي موضوع قانوني وسيجد لك الإجابة فوراً.</p>
+        <div class="library-cta__examples">
+          <span class="library-cta__tag" data-q="اعرض لي قانون العقوبات">قانون العقوبات</span>
+          <span class="library-cta__tag" data-q="ما هي حقوقي في الطلاق؟">حقوق الطلاق</span>
+          <span class="library-cta__tag" data-q="اعرض لي قانون العمل">قانون العمل</span>
+          <span class="library-cta__tag" data-q="ما هي إجراءات تسجيل شركة؟">تسجيل شركة</span>
+          <span class="library-cta__tag" data-q="اعرض لي الدستور العراقي">الدستور العراقي</span>
+          <span class="library-cta__tag" data-q="ما هي حقوق العامل؟">حقوق العامل</span>
+        </div>
+        <a href="#assistant" class="btn btn--primary btn--lg" data-i18n="laws.ctaBtn">انتقل للمساعد القانوني <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI LEGAL ASSISTANT ===== -->
+<section id="assistant" class="section section--alt">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="ai.tag">المساعد القانوني الذكي</span>
+      <h2 class="section__title" data-i18n="ai.title">مساعدك القانوني يعمل على مدار الساعة</h2>
+      <p class="section__sub" data-i18n="ai.subtitle">اسأل أي سؤال عن القوانين العراقية بأي لغة - المساعد الذكي جاهز للإجابة</p>
+    </div>
+    <div class="assistant-container reveal-up">
+      <div class="assistant-features">
+        <div class="asst-feat glass">
+          <div class="asst-feat__icon"><i class="fas fa-microphone"></i></div>
+          <h4 data-i18n="ai.f1.title">مساعد صوتي</h4>
+          <p data-i18n="ai.f1.desc">تحدث بصوتك واحصل على إجابة فورية بلغتك المفضلة</p>
+        </div>
+        <div class="asst-feat glass">
+          <div class="asst-feat__icon"><i class="fas fa-language"></i></div>
+          <h4 data-i18n="ai.f2.title">متعدد اللغات</h4>
+          <p data-i18n="ai.f2.desc">يدعم العربية والإنجليزية والكردية والتركية والفارسية والفرنسية</p>
+        </div>
+        <div class="asst-feat glass">
+          <div class="asst-feat__icon"><i class="fas fa-book-open"></i></div>
+          <h4 data-i18n="ai.f3.title">قاعدة بيانات شاملة</h4>
+          <p data-i18n="ai.f3.desc">يغطي جميع القوانين العراقية والتشريعات النافذة</p>
+        </div>
+        <div class="asst-feat glass">
+          <div class="asst-feat__icon"><i class="fas fa-clock"></i></div>
+          <h4 data-i18n="ai.f4.title">متاح 24/7</h4>
+          <p data-i18n="ai.f4.desc">احصل على مساعدة قانونية في أي وقت</p>
+        </div>
+      </div>
+      <div class="chat-box glass" id="chatBox">
+        <button class="chat-fullscreen-close" id="chatFullscreenClose" title="إغلاق الشاشة الكاملة"><i class="fas fa-times"></i></button>
+        <div class="chat-header">
+          <div class="chat-header__info">
+            <div class="chat-avatar"><i class="fas fa-robot"></i><span class="chat-avatar__pulse"></span></div>
+            <div>
+              <h4 data-i18n="ai.chatName">المساعد القانوني</h4>
+              <div class="chat-header__meta">
+                <span class="chat-status" data-i18n="ai.online">متصل الآن</span>
+                <span class="chat-badge"><i class="fas fa-shield-alt"></i> AI</span>
+              </div>
+            </div>
+          </div>
+          <div class="chat-header__actions">
+            <button class="chat-action" id="chatSearch" title="بحث"><i class="fas fa-search"></i></button>
+            <button class="chat-action" id="chatFontSize" title="حجم الخط"><i class="fas fa-text-height"></i></button>
+            <button class="chat-action" id="chatExport" title="تصدير المحادثة"><i class="fas fa-download"></i></button>
+            <button class="chat-action" id="chatVoiceToggle" title="تفعيل الصوت"><i class="fas fa-volume-up"></i></button>
+            <button class="chat-action" id="chatFullscreen" title="ملء الشاشة"><i class="fas fa-expand"></i></button>
+            <button class="chat-action" id="chatClear" title="مسح المحادثة"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+        <div class="chat-searchbar" id="chatSearchBar" style="display:none">
+          <i class="fas fa-search"></i>
+          <input type="text" id="chatSearchInput" placeholder="ابحث في المحادثة...">
+          <span id="chatSearchCount"></span>
+          <button id="chatSearchClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg chat-msg--bot">
+            <div class="chat-msg__avatar"><i class="fas fa-robot"></i></div>
+            <div class="chat-msg__bubble">
+              <p data-i18n="ai.welcome">مرحباً! أنا المساعد القانوني لشركة الشرق الأوسط. يمكنني مساعدتك في أي سؤال عن القوانين العراقية. اكتب سؤالك أو تحدث بصوتك! 🎯</p>
+            </div>
+          </div>
+        </div>
+        <button class="chat-scroll-btn" id="chatScrollBtn" style="display:none"><i class="fas fa-chevron-down"></i></button>
+        <div class="chat-suggestions" id="chatSuggestions"></div>
+        <div class="chat-input">
+          <button class="chat-input__voice" id="voiceBtn" title="بحث صوتي"><i class="fas fa-microphone"></i></button>
+          <div class="chat-input__wrap">
+            <input type="text" id="chatInput" placeholder="اكتب سؤالك القانوني هنا..." data-i18n-placeholder="ai.inputPlaceholder" maxlength="500">
+            <span class="chat-input__counter" id="chatCharCount">0/500</span>
+          </div>
+          <button class="chat-input__send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="voice-indicator" id="voiceIndicator" style="display:none">
+          <div class="voice-wave"><span></span><span></span><span></span><span></span><span></span></div>
+          <p data-i18n="ai.listening">جاري الاستماع... تحدث الآن</p>
+          <p class="voice-hint" style="font-size:.7rem;color:var(--text-muted);margin-top:4px" data-i18n="ai.voiceHint">قل "مساعدة صوتية" لعرض الأوامر</p>
+          <button class="voice-stop" id="voiceStop"><i class="fas fa-stop"></i> إيقاف</button>
+        </div>
+        <div class="chat-footer">
+          <span id="chatStats"></span>
+          <span class="chat-footer__brand"><i class="fas fa-gavel"></i> Middle East Law Firm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== TEAM ===== -->
+<section id="team" class="section">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="team.tag">فريقنا المتميز</span>
+      <h2 class="section__title" data-i18n="team.title">نخبة من المحامين الخبراء</h2>
+      <p class="section__sub" data-i18n="team.subtitle">فريق من أمهر المحامين ذوي الخبرة الواسعة في مختلف فروع القانون</p>
+    </div>
+    <div class="team-grid">
+      <!-- المدير الأول: سجاد العرس -->
+      <div class="team-card glass reveal-up" style="--d:0ms">
+        <div class="team-card__photo"><div class="team-avatar"><i class="fas fa-user-tie"></i></div></div>
+        <h3>أ. سجاد العرس</h3>
+        <p class="team-role">المدير العام - شريك مؤسس</p>
+        <p class="team-desc">مدير شركة الشرق الأوسط للمحاماة والاستشارات القانونية. خبرة تتجاوز 10 سنوات في مختلف فروع القانون العراقي. عضو نقابة المحامين العراقيين.</p>
+        <div class="team-card__social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <!-- المدير الثاني: أحمد العبيدي -->
+      <div class="team-card glass reveal-up" style="--d:100ms">
+        <div class="team-card__photo"><div class="team-avatar"><i class="fas fa-user-tie"></i></div></div>
+        <h3>أ. أحمد العبيدي</h3>
+        <p class="team-role">المدير العام - شريك مؤسس</p>
+        <p class="team-desc">شريك مؤسس في شركة الشرق الأوسط للمحاماة والاستشارات القانونية. خبرة 10 سنوات في القضايا القانونية المتنوعة. عضو نقابة المحامين العراقيين.</p>
+        <div class="team-card__social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="section section--alt">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="testi.tag">آراء العملاء</span>
+      <h2 class="section__title" data-i18n="testi.title">ماذا يقول عملاؤنا</h2>
+    </div>
+    <div class="testi-grid reveal-up">
+      <div class="testi-card glass">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p data-i18n="testi.t1.text">تجربة ممتازة مع شركة الشرق الأوسط. استفدت كثيراً من المساعد القانوني الذكي والفريق المتميز.</p>
+        <div class="testi-author"><div class="testi-av"><i class="fas fa-user"></i></div><div><h4 data-i18n="testi.t1.name">أحمد محمد</h4><small data-i18n="testi.t1.role">رجل أعمال - بغداد</small></div></div>
+      </div>
+      <div class="testi-card glass">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p data-i18n="testi.t2.text">المساعد الصوتي ميزة رائعة! تمكنت من الحصول على إجابات سريعة عن حقوقي القانونية في أي وقت.</p>
+        <div class="testi-author"><div class="testi-av"><i class="fas fa-user"></i></div><div><h4 data-i18n="testi.t2.name">فاطمة العلي</h4><small data-i18n="testi.t2.role">مهندسة - أربيل</small></div></div>
+      </div>
+      <div class="testi-card glass">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p data-i18n="testi.t3.text">أفضل شركة محاماة تعاملت معها. التطبيق سهل الاستخدام والفريق محترف جداً.</p>
+        <div class="testi-author"><div class="testi-av"><i class="fas fa-user"></i></div><div><h4 data-i18n="testi.t3.name">كريم حسن</h4><small data-i18n="testi.t3.role">تاجر - البصرة</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== SUBSCRIPTION PACKAGES ===== -->
+<section id="pricing" class="section section--alt">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="pricing.tag">باقات الاشتراك</span>
+      <h2 class="section__title" data-i18n="pricing.title">اختر الباقة المناسبة لك</h2>
+      <p class="section__sub" data-i18n="pricing.subtitle">باقات استشارية شاملة تناسب الأفراد والشركات - استشارات داخل الموقع وخارجه</p>
+    </div>
+    <!-- Pricing Toggle -->
+    <div class="pricing-toggle reveal-up">
+      <span class="pricing-toggle__label pricing-toggle__label--active" data-i18n="pricing.monthly">شهري</span>
+      <button class="pricing-toggle__switch" id="pricingToggle" aria-label="Toggle billing">
+        <span class="pricing-toggle__knob"></span>
+      </button>
+      <span class="pricing-toggle__label" data-i18n="pricing.yearly">سنوي</span>
+      <span class="pricing-toggle__save" data-i18n="pricing.save">وفّر 20%</span>
+    </div>
+    <div class="pricing-grid">
+      <!-- Basic -->
+      <div class="pricing-card glass reveal-up" style="--d:0ms" data-tier="basic">
+        <div class="pricing-card__ribbon"></div>
+        <div class="pricing-card__icon"><i class="fas fa-briefcase"></i></div>
+        <div class="pricing-card__header">
+          <span class="pricing-card__badge" data-i18n="pricing.basic.badge">أساسي</span>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount" data-monthly="500,000" data-yearly="5,000,000">500,000</span>
+            <div class="pricing-card__meta">
+              <span class="pricing-card__currency" data-i18n="pricing.currency">د.ع</span>
+              <span class="pricing-card__period" data-i18n="pricing.period">/ شهرياً</span>
+            </div>
+          </div>
+          <p class="pricing-card__desc" data-i18n="pricing.basic.desc">للأفراد الذين يحتاجون استشارات قانونية بسيطة</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.basic.f1">3 استشارات شهرية عبر الموقع</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.basic.f2">الوصول للمساعد القانوني الذكي</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.basic.f3">تصفح القوانين العراقية كاملة</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.basic.f4">دعم عبر البريد الإلكتروني</span></li>
+          <li class="disabled"><div class="pricing-feat__icon pricing-feat__icon--no"><i class="fas fa-times"></i></div><span data-i18n="pricing.basic.f5">استشارات هاتفية</span></li>
+          <li class="disabled"><div class="pricing-feat__icon pricing-feat__icon--no"><i class="fas fa-times"></i></div><span data-i18n="pricing.basic.f6">زيارات مكتبية</span></li>
+        </ul>
+        <button class="btn btn--outline btn--full pricing-btn" data-plan="basic" data-i18n="pricing.subscribe">اشترك الآن</button>
+      </div>
+      <!-- Professional -->
+      <div class="pricing-card pricing-card--featured glass reveal-up" style="--d:100ms" data-tier="pro">
+        <div class="pricing-card__ribbon pricing-card__ribbon--gold"></div>
+        <div class="pricing-card__popular" data-i18n="pricing.popular">الأكثر طلباً</div>
+        <div class="pricing-card__glow"></div>
+        <div class="pricing-card__icon pricing-card__icon--pro"><i class="fas fa-gem"></i></div>
+        <div class="pricing-card__header">
+          <span class="pricing-card__badge pricing-card__badge--pro" data-i18n="pricing.pro.badge">احترافي</span>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount" data-monthly="1,000,000" data-yearly="10,000,000">1,000,000</span>
+            <div class="pricing-card__meta">
+              <span class="pricing-card__currency" data-i18n="pricing.currency">د.ع</span>
+              <span class="pricing-card__period" data-i18n="pricing.period">/ شهرياً</span>
+            </div>
+          </div>
+          <p class="pricing-card__desc" data-i18n="pricing.pro.desc">للأفراد والشركات الصغيرة - استشارات شاملة</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.pro.f1">10 استشارات شهرية (موقع + هاتف)</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.pro.f2">المساعد القانوني المتقدم</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.pro.f3">مراجعة العقود والوثائق</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.pro.f4">استشارات هاتفية مباشرة</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.pro.f5">أولوية في الرد والمتابعة</span></li>
+          <li class="disabled"><div class="pricing-feat__icon pricing-feat__icon--no"><i class="fas fa-times"></i></div><span data-i18n="pricing.pro.f6">تمثيل قانوني في المحاكم</span></li>
+        </ul>
+        <button class="btn btn--gold btn--full pricing-btn" data-plan="pro" data-i18n="pricing.subscribe">اشترك الآن</button>
+      </div>
+      <!-- Enterprise -->
+      <div class="pricing-card glass reveal-up" style="--d:200ms" data-tier="enterprise">
+        <div class="pricing-card__ribbon"></div>
+        <div class="pricing-card__icon"><i class="fas fa-building"></i></div>
+        <div class="pricing-card__header">
+          <span class="pricing-card__badge" data-i18n="pricing.enterprise.badge">شركات</span>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount" data-monthly="2,500,000" data-yearly="25,000,000">2,500,000</span>
+            <div class="pricing-card__meta">
+              <span class="pricing-card__currency" data-i18n="pricing.currency">د.ع</span>
+              <span class="pricing-card__period" data-i18n="pricing.period">/ شهرياً</span>
+            </div>
+          </div>
+          <p class="pricing-card__desc" data-i18n="pricing.enterprise.desc">للشركات والمؤسسات - حماية قانونية كاملة</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.enterprise.f1">استشارات غير محدودة</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.enterprise.f2">محامي مخصص للشركة</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.enterprise.f3">مراجعة جميع العقود والاتفاقيات</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.enterprise.f4">تمثيل قانوني في المحاكم</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.enterprise.f5">زيارات مكتبية شهرية</span></li>
+          <li><div class="pricing-feat__icon"><i class="fas fa-check"></i></div><span data-i18n="pricing.enterprise.f6">تقارير قانونية دورية</span></li>
+        </ul>
+        <button class="btn btn--outline btn--full pricing-btn" data-plan="enterprise" data-i18n="pricing.subscribe">اشترك الآن</button>
+      </div>
+    </div>
+    <!-- Trust Badges -->
+    <div class="pricing-trust reveal-up">
+      <div class="pricing-trust__item"><i class="fas fa-shield-alt"></i><span data-i18n="pricing.trust1">دفع آمن 100%</span></div>
+      <div class="pricing-trust__item"><i class="fas fa-undo"></i><span data-i18n="pricing.trust2">ضمان استرداد 7 أيام</span></div>
+      <div class="pricing-trust__item"><i class="fas fa-headset"></i><span data-i18n="pricing.trust3">دعم على مدار الساعة</span></div>
+      <div class="pricing-trust__item"><i class="fas fa-lock"></i><span data-i18n="pricing.trust4">بياناتك محمية</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAYMENT MODAL ===== -->
+<div class="payment-modal" id="paymentModal" style="display:none">
+  <div class="payment-modal__overlay" id="paymentOverlay"></div>
+  <div class="payment-modal__content glass">
+    <div class="payment-modal__header">
+      <h3 data-i18n="payment.title">اختر طريقة الدفع</h3>
+      <button class="payment-modal__close" id="paymentClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="payment-modal__plan">
+      <span data-i18n="payment.selectedPlan">الباقة المختارة:</span>
+      <strong id="selectedPlanName">-</strong>
+      <span class="payment-modal__price" id="selectedPlanPrice">-</span>
+    </div>
+    <div class="payment-methods">
+      <div class="payment-method" data-method="mastercard">
+        <i class="fab fa-cc-mastercard"></i>
+        <span>Mastercard</span>
+      </div>
+      <div class="payment-method" data-method="zain-cash">
+        <i class="fas fa-mobile-alt"></i>
+        <span data-i18n="payment.zainCash">زين كاش</span>
+      </div>
+      <div class="payment-method" data-method="rafidain">
+        <i class="fas fa-university"></i>
+        <span data-i18n="payment.rafidain">ماستر كارد الرافدين</span>
+      </div>
+      <div class="payment-method" data-method="ahli">
+        <i class="fas fa-landmark"></i>
+        <span data-i18n="payment.ahli">المصرف الأهلي العراقي</span>
+      </div>
+      <div class="payment-method" data-method="fib">
+        <i class="fas fa-credit-card"></i>
+        <span>FIB - First Iraqi Bank</span>
+      </div>
+      <div class="payment-method" data-method="bank-transfer">
+        <i class="fas fa-exchange-alt"></i>
+        <span data-i18n="payment.bankTransfer">تحويل بنكي</span>
+      </div>
+    </div>
+    <div class="payment-form" id="paymentForm" style="display:none">
+      <div class="payment-form__method-info" id="paymentMethodInfo"></div>
+      <div class="form-group">
+        <label data-i18n="payment.nameLabel">الاسم الكامل</label>
+        <input type="text" id="paymentName" required placeholder="أدخل اسمك الكامل">
+      </div>
+      <div class="form-group">
+        <label data-i18n="payment.phoneLabel">رقم الهاتف</label>
+        <input type="tel" id="paymentPhone" required placeholder="+964 7XX XXX XXXX">
+      </div>
+      <div class="form-group">
+        <label data-i18n="payment.emailLabel">البريد الإلكتروني</label>
+        <input type="email" id="paymentEmail" placeholder="example@email.com">
+      </div>
+      <button class="btn btn--gold btn--full" id="paymentSubmit"><i class="fas fa-lock"></i> <span data-i18n="payment.confirm">تأكيد الاشتراك</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== APP DOWNLOAD ===== -->
+<section id="app" class="section app-section">
+  <div class="container">
+    <div class="app-grid">
+      <div class="app__content reveal-right">
+        <span class="section__tag" data-i18n="app.tag">التطبيق الذكي</span>
+        <h2 class="section__title" data-i18n="app.title">حمّل تطبيق الشرق الأوسط للمحاماة</h2>
+        <p class="section__sub" data-i18n="app.subtitle">احصل على جميع الخدمات القانونية في جيبك - مساعد قانوني ذكي، قاعدة بيانات القوانين العراقية، واستشارات فورية</p>
+        <div class="app__features-grid">
+          <div class="app-feat glass"><div class="app-feat__icon"><i class="fas fa-robot"></i></div><div class="app-feat__text"><h4 data-i18n="app.f1">مساعد قانوني ذكي بالصوت والنص</h4></div></div>
+          <div class="app-feat glass"><div class="app-feat__icon"><i class="fas fa-search"></i></div><div class="app-feat__text"><h4 data-i18n="app.f2">بحث فوري في القوانين العراقية</h4></div></div>
+          <div class="app-feat glass"><div class="app-feat__icon"><i class="fas fa-calendar-check"></i></div><div class="app-feat__text"><h4 data-i18n="app.f3">حجز مواعيد مع المحامين</h4></div></div>
+          <div class="app-feat glass"><div class="app-feat__icon"><i class="fas fa-bell"></i></div><div class="app-feat__text"><h4 data-i18n="app.f4">إشعارات بآخر التحديثات القانونية</h4></div></div>
+          <div class="app-feat glass"><div class="app-feat__icon"><i class="fas fa-lock"></i></div><div class="app-feat__text"><h4 data-i18n="app.f5">تتبع قضيتك بسرية تامة</h4></div></div>
+          <div class="app-feat glass"><div class="app-feat__icon"><i class="fas fa-globe"></i></div><div class="app-feat__text"><h4 data-i18n="app.f6">دعم متعدد اللغات</h4></div></div>
+        </div>
+        <div class="app__buttons">
+          <a href="#" class="app-store-btn app-store-btn--primary" id="installPWA">
+            <div class="app-store-btn__icon"><i class="fas fa-download"></i></div>
+            <div><small data-i18n="app.install">تثبيت التطبيق</small><strong data-i18n="app.installNow">ثبّت الآن مجاناً</strong></div>
+          </a>
+          <a href="#" class="app-store-btn">
+            <div class="app-store-btn__icon"><i class="fab fa-google-play"></i></div>
+            <div><small>Google Play</small><strong data-i18n="app.googlePlay">تحميل من جوجل بلاي</strong></div>
+          </a>
+          <a href="#" class="app-store-btn">
+            <div class="app-store-btn__icon"><i class="fab fa-apple"></i></div>
+            <div><small>App Store</small><strong data-i18n="app.appStore">تحميل من آب ستور</strong></div>
+          </a>
+        </div>
+      </div>
+      <div class="app__visual reveal-left">
+        <div class="phone-mockup">
+          <div class="phone-mockup__glow"></div>
+          <div class="phone-mockup__frame">
+            <div class="phone-mockup__notch">
+              <span class="phone-mockup__camera"></span>
+            </div>
+            <div class="phone-mockup__screen">
+              <div class="mock-header">
+                <div class="mock-header__left">
+                  <div class="mock-header__logo"><i class="fas fa-balance-scale"></i></div>
+                  <span data-i18n="app.mockHeader">الشرق الأوسط للمحاماة</span>
+                </div>
+                <div class="mock-header__right"><i class="fas fa-ellipsis-v"></i></div>
+              </div>
+              <div class="mock-chat">
+                <div class="mock-msg mock-msg--bot">
+                  <div class="mock-msg__avatar"><i class="fas fa-robot"></i></div>
+                  <div class="mock-msg__bubble" data-i18n="app.mockBot1">مرحباً! كيف يمكنني مساعدتك؟ 👋</div>
+                </div>
+                <div class="mock-msg mock-msg--user">
+                  <div class="mock-msg__bubble" data-i18n="app.mockUser1">ما هي حقوقي في الطلاق؟</div>
+                </div>
+                <div class="mock-msg mock-msg--bot">
+                  <div class="mock-msg__avatar"><i class="fas fa-robot"></i></div>
+                  <div class="mock-msg__bubble" data-i18n="app.mockBot2">وفقاً لقانون الأحوال الشخصية العراقي رقم 188...</div>
+                </div>
+                <div class="mock-msg mock-msg--user">
+                  <div class="mock-msg__bubble" data-i18n="app.mockUser2">شكراً جزيلاً!</div>
+                </div>
+              </div>
+              <div class="mock-input">
+                <i class="fas fa-microphone"></i>
+                <span data-i18n="app.mockInput">اكتب سؤالك القانوني...</span>
+                <i class="fas fa-paper-plane" style="margin-right:auto"></i>
+              </div>
+              <div class="mock-nav">
+                <div class="mock-nav-item active"><i class="fas fa-home"></i><span data-i18n="app.mockNavHome">الرئيسية</span></div>
+                <div class="mock-nav-item"><i class="fas fa-gavel"></i><span data-i18n="app.mockNavLaws">القوانين</span></div>
+                <div class="mock-nav-item mock-nav-item--center"><i class="fas fa-robot"></i></div>
+                <div class="mock-nav-item"><i class="fas fa-calendar"></i><span data-i18n="app.mockNavAppts">المواعيد</span></div>
+                <div class="mock-nav-item"><i class="fas fa-user"></i><span data-i18n="app.mockNavAccount">حسابي</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="app-stats reveal-up">
+      <div class="app-stat glass">
+        <div class="app-stat__num">10K+</div>
+        <div class="app-stat__label" data-i18n="app.stat1">تحميل</div>
+      </div>
+      <div class="app-stat glass">
+        <div class="app-stat__num">4.8</div>
+        <div class="app-stat__label" data-i18n="app.stat2">تقييم</div>
+      </div>
+      <div class="app-stat glass">
+        <div class="app-stat__num">75+</div>
+        <div class="app-stat__label" data-i18n="app.stat3">قانون</div>
+      </div>
+      <div class="app-stat glass">
+        <div class="app-stat__num">24/7</div>
+        <div class="app-stat__label" data-i18n="app.stat4">دعم</div>
+      </div>
+    </div>
+    <div class="app-notification glass reveal-up">
+      <div class="app-notif__icon"><i class="fas fa-mobile-alt"></i></div>
+      <div class="app-notif__text">
+        <h4 data-i18n="app.notifTitle">هل تعلم أنه يمكنك تثبيت هذا الموقع كتطبيق؟</h4>
+        <p data-i18n="app.notifDesc">اضغط على زر "تثبيت التطبيق" أو أضفه إلى الشاشة الرئيسية من متصفحك للحصول على تجربة تطبيق كاملة!</p>
+      </div>
+      <button class="btn btn--gold btn--sm" id="installAppBtn" data-i18n="app.installBtn">تثبيت</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="section section--alt">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="faq.tag">الأسئلة الشائعة</span>
+      <h2 class="section__title" data-i18n="faq.title">أسئلة متكررة</h2>
+    </div>
+    <div class="faq-list reveal-up">
+      <div class="faq-item glass">
+        <button class="faq-q"><span data-i18n="faq.q1">ما هي تكلفة الاستشارة الأولى؟</span><i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a1">الاستشارة الأولى مجانية تماماً. نحرص على فهم قضيتك بشكل كامل قبل تحديد أي تكاليف.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <button class="faq-q"><span data-i18n="faq.q2">هل المساعد القانوني الذكي مجاني؟</span><i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a2">نعم! المساعد القانوني الذكي متاح مجاناً لجميع زوار الموقع والتطبيق. يمكنك طرح أي سؤال عن القوانين العراقية بأي لغة.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <button class="faq-q"><span data-i18n="faq.q3">هل يمكنني استخدام المساعد الصوتي؟</span><i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a3">بالتأكيد! يدعم المساعد القانوني الإدخال الصوتي بالعربية والإنجليزية والكردية ولغات أخرى. اضغط على أيقونة الميكروفون وتحدث بسؤالك.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <button class="faq-q"><span data-i18n="faq.q4">كيف أحمّل التطبيق؟</span><i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a4">يمكنك تثبيت التطبيق مباشرة من هذا الموقع بالضغط على "تثبيت التطبيق"، أو تحميله من Google Play أو App Store.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <button class="faq-q"><span data-i18n="faq.q5">هل المعلومات القانونية في الموقع محدّثة؟</span><i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a5">نعم، نحدّث قاعدة البيانات باستمرار لضمان دقة المعلومات وتوافقها مع آخر التعديلات القانونية.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag" data-i18n="contact.tag">تواصل معنا</span>
+      <h2 class="section__title" data-i18n="contact.title">احصل على استشارة مجانية</h2>
+      <p class="section__sub" data-i18n="contact.subtitle">نحن هنا لمساعدتك - تواصل معنا الآن واحصل على استشارتك الأولى مجاناً</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-right">
+        <div class="contact-info__card glass">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4 data-i18n="contact.address">العنوان</h4>
+          <p data-i18n="contact.addressVal" data-admin="address">بغداد - الكرادة - شارع 42</p>
+        </div>
+        <div class="contact-info__card glass">
+          <i class="fas fa-phone-alt"></i>
+          <h4 data-i18n="contact.phone">الهاتف</h4>
+          <p dir="ltr" data-admin="phone">+964 770 551 5535</p>
+        </div>
+        <div class="contact-info__card glass">
+          <i class="fas fa-envelope"></i>
+          <h4 data-i18n="contact.email">البريد الإلكتروني</h4>
+          <p data-admin="email">info@middleeast-law.com</p>
+        </div>
+        <div class="contact-info__card glass">
+          <i class="fas fa-clock"></i>
+          <h4 data-i18n="contact.hours">ساعات العمل</h4>
+          <p data-i18n="contact.hoursVal" data-admin="hours">السبت - الخميس: 9 ص - 5 م</p>
+        </div>
+        <div class="contact-social">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <form class="contact-form glass reveal-left" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="contact.nameLabel">الاسم الكامل</label>
+            <input type="text" name="name" required data-i18n-placeholder="contact.namePH" placeholder="أدخل اسمك الكامل">
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact.phoneLabel">رقم الهاتف</label>
+            <input type="tel" name="phone" required placeholder="+964 7XX XXX XXXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="contact.emailLabel">البريد الإلكتروني</label>
+            <input type="email" name="email" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact.serviceLabel">نوع الخدمة</label>
+            <select name="service">
+              <option value="" data-i18n="contact.selectService">اختر الخدمة</option>
+              <option value="real-estate" data-i18n="contact.opt1">قضايا عقارية</option>
+              <option value="commercial" data-i18n="contact.opt2">قضايا تجارية</option>
+              <option value="family" data-i18n="contact.opt3">قانون الأسرة</option>
+              <option value="criminal" data-i18n="contact.opt4">قضايا جنائية</option>
+              <option value="civil" data-i18n="contact.opt5">قضايا مدنية</option>
+              <option value="consultation" data-i18n="contact.opt6">استشارة قانونية</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="contact.msgLabel">رسالتك</label>
+          <textarea name="message" rows="4" data-i18n-placeholder="contact.msgPH" placeholder="اكتب تفاصيل قضيتك أو استفسارك"></textarea>
+        </div>
+        <button type="submit" class="btn btn--gold btn--full"><i class="fas fa-paper-plane"></i> <span data-i18n="contact.submit">إرسال الطلب</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="logo.svg" alt="logo" style="width:36px;height:36px;border-radius:8px">
+          <div>
+            <strong data-i18n="nav.brand">الشرق الأوسط</strong>
+            <small data-i18n="nav.brandSub">للمحاماة والاستشارات</small>
+          </div>
+        </div>
+        <p data-i18n="footer.desc">شركة الشرق الأوسط للمحاماة والاستشارات القانونية - شريكك القانوني الموثوق في العراق منذ 2009.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
+        <a href="#about" data-i18n="nav.about">من نحن</a>
+        <a href="#services" data-i18n="nav.services">خدماتنا</a>
+        <a href="#laws" data-i18n="nav.laws">القوانين العراقية</a>
+        <a href="#assistant" data-i18n="nav.assistant">المساعد القانوني</a>
+        <a href="#pricing" data-i18n="nav.pricing">الباقات</a>
+        <a href="#team" data-i18n="nav.team">فريقنا</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">خدماتنا</h4>
+        <a href="#services" data-i18n="services.s1.title">القضايا العقارية</a>
+        <a href="#services" data-i18n="services.s2.title">القضايا التجارية</a>
+        <a href="#services" data-i18n="services.s3.title">قانون الأسرة</a>
+        <a href="#services" data-i18n="services.s4.title">القضايا الجنائية</a>
+        <a href="#services" data-i18n="services.s5.title">القضايا المدنية</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">تواصل معنا</h4>
+        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="contact.addressVal" data-admin="address">بغداد - الكرادة - شارع 42</span></p>
+        <p dir="ltr"><i class="fas fa-phone-alt"></i> <span data-admin="phone">+964 770 551 5535</span></p>
+        <p><i class="fas fa-envelope"></i> <span data-admin="email">info@middleeast-law.com</span></p>
+        <div class="footer-app">
+          <p data-i18n="footer.downloadApp">حمّل التطبيق:</p>
+          <div class="footer-app-btns">
+            <a href="#app"><i class="fab fa-google-play"></i></a>
+            <a href="#app"><i class="fab fa-apple"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">&copy; 2024 شركة الشرق الأوسط للمحاماة. جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING ELEMENTS ===== -->
+<a href="https://wa.me/9647705515535" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<button class="back-to-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ===== FLOATING CHAT TOGGLE ===== -->
+<button class="floating-chat" id="floatingChat">
+  <i class="fas fa-robot"></i>
+  <span data-i18n="ai.floatLabel">المساعد القانوني</span>
+</button>
+
+<!-- ===== TOAST ===== -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="laws-data.js?v=25"></script>
+<script src="laws-data-2.js?v=25"></script>
+<script src="laws-data-3.js?v=25"></script>
+<script src="laws-data-4.js?v=25"></script>
+<script src="laws-data-5.js?v=25"></script>
+<script src="laws-data-6.js?v=25"></script>
+<script src="laws-data-7.js?v=25"></script>
+<script src="laws-data-8.js?v=25"></script>
+<script src="laws-data-9.js?v=25"></script>
+<script src="laws-data-10.js?v=25"></script>
+<script src="ai-engine.js?v=25"></script>
+<script src="script.js?v=25"></script>
+<script src="lang-data.js?v=25"></script>
+<script src="language-system.js?v=25"></script>
+<script src="admin-bridge.js?v=25"></script>
+</body>
+</html>

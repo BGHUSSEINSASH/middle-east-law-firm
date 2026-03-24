@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="قضايانا الناجحة - شركة الشرق الأوسط للمحاماة | سجل حافل من الإنجازات في مختلف المجالات القانونية">
+  <meta name="robots" content="index, follow">
+  <title>قضايانا الناجحة - شركة الشرق الأوسط للمحاماة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-emblem"><img src="logo.svg" alt="logo" style="width:64px;height:64px;border-radius:12px"></div>
+      <div class="loader-bar-wrap"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <p class="loader-label">شركة الشرق الأوسط للمحاماة</p>
+    </div>
+  </div>
+
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="ann-bar" id="annBar">
+    <div class="ann-text">
+      <i class="fas fa-trophy"></i>
+      <span>نسبة نجاحنا تتجاوز 95% — </span>
+      <a href="booking.html" class="ann-link">ابدأ قضيتك معنا</a>
+    </div>
+    <button class="ann-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-emblem"><img src="logo.svg" alt="logo" style="width:38px;height:38px;border-radius:8px"></div>
+        <div class="logo-txt">
+          <span class="lt-main">الشرق الأوسط</span>
+          <span class="lt-sub">للمحاماة والاستشارات القانونية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"          class="nl">الرئيسية</a></li>
+        <li><a href="about.html"          class="nl">عن الشركة</a></li>
+        <li><a href="lawyers.html"        class="nl">المحامون</a></li>
+        <li><a href="cases.html"          class="nl active">قضايانا</a></li>
+        <li><a href="blog.html"           class="nl">المدونة</a></li>
+        <li><a href="faq.html"            class="nl">الأسئلة</a></li>
+        <li><a href="index.html#contact"  class="nl">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-controls">
+        <select class="lang-select" data-language-selector aria-label="اختر اللغة">
+          <option value="ar">🇮🇶 AR</option>
+          <option value="en">🇺🇸 EN</option>
+          <option value="ku">KU</option>
+          <option value="tr">🇹🇷 TR</option>
+          <option value="fa">🇮🇷 FA</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="ru">🇷🇺 RU</option>
+          <option value="zh">🇨🇳 ZH</option>
+        </select>
+        <button class="theme-toggle-btn" id="themeBtn" aria-label="تبديل المظهر">
+          <i class="fas fa-moon" id="themeIco"></i>
+        </button>
+        <a href="tel:+9647705515535" class="nav-phone-btn">
+          <i class="fas fa-phone-alt"></i>
+          <span>اتصل الآن</span>
+        </a>
+        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mm-inner">
+      <button class="mm-close" id="mmClose"><i class="fas fa-times"></i></button>
+      <ul class="mm-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">عن الشركة</a></li>
+        <li><a href="lawyers.html">المحامون</a></li>
+        <li><a href="cases.html">قضايانا الناجحة</a></li>
+        <li><a href="blog.html">المدونة</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li><a href="index.html#contact">تواصل معنا</a></li>
+      </ul>
+      <a href="tel:+9647705515535" class="mm-phone"><i class="fas fa-phone-alt"></i> +964 770 551 5535</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <span class="bc-sep"><i class="fas fa-chevron-left"></i></span>
+        <span class="bc-current">قضايانا الناجحة</span>
+      </nav>
+      <div class="page-banner-tag"><i class="fas fa-trophy"></i> سجل الإنجازات</div>
+      <h1>قضايانا الناجحة</h1>
+      <p>نفخر بسجل حافل يضم أكثر من 500 قضية ناجحة في مختلف المجالات القانونية — جميع الأسماء سرية</p>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="sbox-icon"><i class="fas fa-gavel"></i></div>
+          <div class="sbox-body">
+            <strong><span class="counter-anim" data-target="500">0</span>+</strong>
+            <span>قضية منجزة</span>
+          </div>
+        </div>
+        <div class="sbox-sep"></div>
+        <div class="stat-box">
+          <div class="sbox-icon"><i class="fas fa-trophy"></i></div>
+          <div class="sbox-body">
+            <strong><span class="counter-anim" data-target="95">0</span>%</strong>
+            <span>نسبة النجاح</span>
+          </div>
+        </div>
+        <div class="sbox-sep"></div>
+        <div class="stat-box">
+          <div class="sbox-icon"><i class="fas fa-building"></i></div>
+          <div class="sbox-body">
+            <strong><span class="counter-anim" data-target="180">0</span>+</strong>
+            <span>قضية عقارية</span>
+          </div>
+        </div>
+        <div class="sbox-sep"></div>
+        <div class="stat-box">
+          <div class="sbox-icon"><i class="fas fa-heart"></i></div>
+          <div class="sbox-body">
+            <strong><span class="counter-anim" data-target="120">0</span>+</strong>
+            <span>قضية أسرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES CONTENT -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter -->
+      <div class="cases-filter reveal-up">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="realestate"><i class="fas fa-building"></i> عقاري</button>
+        <button class="filter-btn" data-filter="commercial"><i class="fas fa-chart-line"></i> تجاري</button>
+        <button class="filter-btn" data-filter="family"><i class="fas fa-heart"></i> أسرة</button>
+        <button class="filter-btn" data-filter="criminal"><i class="fas fa-gavel"></i> جنائي</button>
+        <button class="filter-btn" data-filter="civil"><i class="fas fa-file-alt"></i> مدني</button>
+      </div>
+
+      <div class="cases-grid">
+
+        <div class="case-card reveal-up" data-cat="realestate" style="--d:0ms">
+          <div class="case-card-head">
+            <span class="case-type-badge bc-realestate"><i class="fas fa-building"></i> عقاري</span>
+            <span class="case-result"><i class="fas fa-check-circle"></i> ربح للموكل</span>
+          </div>
+          <h3>قضية نزاع ملكية عقارية في منطقة الكرادة</h3>
+          <p>قضية معقدة تتعلق بنزاع ملكية عقار سكني امتد لسنوات بسبب وثائق متضاربة. تمكن فريقنا من إثبات ملكية موكلنا بالكامل وإزالة حالة التعدي.</p>
+          <div class="case-stats">
+            <div class="case-stat"><strong>14 شهراً</strong><small>مدة القضية</small></div>
+            <div class="case-stat"><strong>3 درجات</strong><small>التقاضي</small></div>
+            <div class="case-stat"><strong>100%</strong><small>للموكل</small></div>
+          </div>
+        </div>
+
+        <div class="case-card reveal-up" data-cat="commercial" style="--d:80ms">
+          <div class="case-card-head">
+            <span class="case-type-badge bc-commercial"><i class="fas fa-chart-line"></i> تجاري</span>
+            <span class="case-result"><i class="fas fa-check-circle"></i> تسوية ناجحة</span>
+          </div>
+          <h3>نزاع تجاري بين شركتين حول عقد توريد دولي</h3>
+          <p>خلاف تجاري حول عقد توريد بضائع بقيمة مليون دولار. أتمت الفريق القانوني التفاوض وأحضر تسوية ودية عادلة دون اللجوء للمحكمة.</p>
+          <div class="case-stats">
+            <div class="case-stat"><strong>6 أشهر</strong><small>مدة القضية</small></div>
+            <div class="case-stat"><strong>تسوية</strong><small>بدون محكمة</small></div>
+            <div class="case-stat"><strong>85%</strong><small>من المطالبة</small></div>
+          </div>
+        </div>
+
+        <div class="case-card reveal-up" data-cat="family" style="--d:0ms">
+          <div class="case-card-head">
+            <span class="case-type-badge bc-family"><i class="fas fa-heart"></i> أسرة</span>
+            <span class="case-result"><i class="fas fa-check-circle"></i> حضانة للأم</span>
+          </div>
+          <h3>قضية حضانة أطفال في ظروف صعبة</h3>
+          <p>قضية حضانة من 3 أطفال في ظروف معقدة، تمكن فريقنا من إثبات الأحقية القانونية للأم وضمان رفاهية الأطفال وحقوقهم المالية كاملاً.</p>
+          <div class="case-stats">
+            <div class="case-stat"><strong>8 أشهر</strong><small>مدة القضية</small></div>
+            <div class="case-stat"><strong>3 أطفال</strong><small>محمييون</small></div>
+            <div class="case-stat"><strong>نفقة كاملة</strong><small>مضمونة</small></div>
+          </div>
+        </div>
+
+        <div class="case-card reveal-up" data-cat="criminal" style="--d:80ms">
+          <div class="case-card-head">
+            <span class="case-type-badge bc-criminal"><i class="fas fa-gavel"></i> جنائي</span>
+            <span class="case-result"><i class="fas fa-check-circle"></i> براءة كاملة</span>
+          </div>
+          <h3>دفاع جنائي في قضية احتيال مالي</h3>
+          <p>اتُّهم موكلنا بجريمة احتيال مالي بقرائن ظرفية. استطاع فريق الدفاع لدينا دحض جميع الأدلة وإثبات البراءة أمام محكمة الجنايات.</p>
+          <div class="case-stats">
+            <div class="case-stat"><strong>20 شهراً</strong><small>مدة القضية</small></div>
+            <div class="case-stat"><strong>براءة</strong><small>الحكم النهائي</small></div>
+            <div class="case-stat"><strong>محكمة الجنايات</strong><small>درجة التقاضي</small></div>
+          </div>
+        </div>
+
+        <div class="case-card reveal-up" data-cat="civil" style="--d:0ms">
+          <div class="case-card-head">
+            <span class="case-type-badge bc-general"><i class="fas fa-file-alt"></i> مدني</span>
+            <span class="case-result"><i class="fas fa-check-circle"></i> تعويض كامل</span>
+          </div>
+          <h3>قضية تعويض عن أضرار إنشائية لمشروع تجاري</h3>
+          <p>قضية تعويض مدني بسبب أضرار جسيمة لحقت بمشروع تجاري نتيجة أخطاء متعاقد. حُكم لموكلنا بالتعويض الكامل عن الأضرار المباشرة وغير المباشرة.</p>
+          <div class="case-stats">
+            <div class="case-stat"><strong>11 شهراً</strong><small>مدة القضية</small></div>
+            <div class="case-stat"><strong>تعويض كامل</strong><small>الحكم</small></div>
+            <div class="case-stat"><strong>محكمة الاستئناف</small></div>
+          </div>
+        </div>
+
+        <div class="case-card reveal-up" data-cat="realestate" style="--d:80ms">
+          <div class="case-card-head">
+            <span class="case-type-badge bc-realestate"><i class="fas fa-building"></i> عقاري</span>
+            <span class="case-result"><i class="fas fa-check-circle"></i> عقد مُفسوخ</span>
+          </div>
+          <h3>فسخ عقد بيع عقاري بسبب التدليس والغش</h3>
+          <p>عقد بيع عقاري مشوب بعيوب خفية لم يُفصح عنها البائع. نجح فريقنا في إثبات التدليس أمام محكمة البداءة واستعادة كامل مبلغ الموكل بالإضافة للتعويض.</p>
+          <div class="case-stats">
+            <div class="case-stat"><strong>7 أشهر</strong><small>مدة القضية</small></div>
+            <div class="case-stat"><strong>فسخ + تعويض</strong><small>الحكم</small></div>
+            <div class="case-stat"><strong>محكمة البداءة</small></div>
+          </div>
+        </div>
+
+      </div><!-- /.cases-grid -->
+
+      <div class="reveal-up" style="text-align:center; margin-top:4rem; padding:3rem 2rem; background:var(--card); border:1px solid var(--border); border-radius:var(--r3);">
+        <h2 style="font-size:1.6rem; color:var(--txI); margin-bottom:.6rem;">قضيتك قادمة في قائمة نجاحاتنا</h2>
+        <p style="color:var(--tx2); margin-bottom:1.8rem;">احجز استشارة مجانية اليوم وابدأ رحلتك نحو العدالة</p>
+        <a href="booking.html" class="btn-hero-primary"><i class="fas fa-calendar-check"></i> احجز استشارة مجانية</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="logo.svg" alt="logo" style="width:36px;height:36px;border-radius:8px">
+              <div><span class="fl-a">الشرق الأوسط</span><span class="fl-b">للمحاماة والاستشارات القانونية</span></div>
+            </a>
+            <p>نقدم خدمات قانونية متميزة بالتزام وأمانة كاملة منذ عام 2009.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/9647705515535" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="lawyers.html">المحامون</a></li>
+              <li><a href="cases.html">قضايانا الناجحة</a></li>
+              <li><a href="blog.html">المدونة</a></li>
+              <li><a href="career.html">الوظائف</a></li>
+              <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>خدماتنا القانونية</h4>
+            <ul>
+              <li><a href="index.html#services">القضايا العقارية</a></li>
+              <li><a href="index.html#services">القضايا التجارية</a></li>
+              <li><a href="index.html#services">قانون الأسرة</a></li>
+              <li><a href="index.html#services">القضايا الجنائية</a></li>
+              <li><a href="index.html#services">الاستشارات القانونية</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>تواصل معنا</h4>
+            <ul class="footer-contact-list">
+              <li><i class="fas fa-phone-alt"></i><a href="tel:+9647705515535" dir="ltr">+964 770 551 5535</a></li>
+              <li><i class="fas fa-envelope"></i><a href="mailto:info@middleeast-law.com">info@middleeast-law.com</a></li>
+              <li><i class="fas fa-map-marker-alt"></i><span>بغداد - الكرادة - شارع 42</span></li>
+              <li><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 شركة الشرق الأوسط للمحاماة. جميع الحقوق محفوظة.</p>
+        <div class="fbot-links"><a href="#">سياسة الخصوصية</a><a href="#">شروط الاستخدام</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backTop" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+  <a href="https://wa.me/9647705515535?text=مرحباً، أود الاستفسار عن خدماتكم القانونية."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="واتساب">
+    <i class="fab fa-whatsapp"></i><span>تحدث معنا</span>
+  </a>
+  <div class="toast-box" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+  <script src="laws-data.js?v=25" defer></script>
+  <script src="laws-data-2.js?v=25" defer></script>
+  <script src="laws-data-3.js?v=25" defer></script>
+  <script src="laws-data-4.js?v=25" defer></script>
+  <script src="laws-data-5.js?v=25" defer></script>
+  <script src="laws-data-6.js?v=25" defer></script>
+  <script src="laws-data-7.js?v=25" defer></script>
+  <script src="laws-data-8.js?v=25" defer></script>
+  <script src="laws-data-9.js?v=25" defer></script>
+  <script src="laws-data-10.js?v=25" defer></script>
+  <script src="ai-engine.js?v=25" defer></script>
+  <script src="language-system.js?v=25" defer></script>
+  <script src="admin-bridge.js?v=25" defer></script>
+  <script src="script.js?v=25" defer></script>
+</body>
+</html>

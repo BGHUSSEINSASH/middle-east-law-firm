@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565C0"/>
+      <stop offset="50%" style="stop-color:#1976D2"/>
+      <stop offset="100%" style="stop-color:#1E88E5"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.15)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="80" ry="80" fill="url(#bgGrad)"/>
+  <rect width="512" height="256" rx="80" ry="80" fill="url(#shine)"/>
+  
+  <!-- Decorative top bar -->
+  <rect x="226" y="82" width="60" height="6" rx="3" fill="white" opacity="0.9"/>
+  
+  <!-- Main horizontal beam -->
+  <rect x="118" y="102" width="276" height="32" rx="6" fill="none" stroke="white" stroke-width="7"/>
+  
+  <!-- Decorative scroll - left -->
+  <path d="M132 134 C132 134 108 138 100 156 C92 174 100 190 116 188 C128 186 132 178 130 170" 
+        fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="124" cy="168" r="3" fill="white" opacity="0.6"/>
+  
+  <!-- Decorative scroll - right -->
+  <path d="M380 134 C380 134 404 138 412 156 C420 174 412 190 396 188 C384 186 380 178 382 170" 
+        fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="388" cy="168" r="3" fill="white" opacity="0.6"/>
+  
+  <!-- Left chain links -->
+  <line x1="108" y1="185" x2="108" y2="200" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="108" cy="210" rx="4" ry="10" fill="none" stroke="white" stroke-width="3"/>
+  <line x1="108" y1="220" x2="108" y2="245" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Right chain links -->
+  <line x1="404" y1="185" x2="404" y2="200" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="404" cy="210" rx="4" ry="10" fill="none" stroke="white" stroke-width="3"/>
+  <line x1="404" y1="220" x2="404" y2="245" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Left scale pan -->
+  <path d="M108 248 L62 338 L154 338 Z" fill="none" stroke="white" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M54 338 Q54 394 108 394 Q162 394 162 338" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Right scale pan -->
+  <path d="M404 248 L358 338 L450 338 Z" fill="none" stroke="white" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M350 338 Q350 394 404 394 Q458 394 458 338" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Center pillar connecting beam to M -->
+  <line x1="256" y1="134" x2="256" y2="185" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  
+  <!-- Stylized "M" letter in center -->
+  <path d="M216 190 L216 320 M216 190 L256 265 L296 190 M296 190 L296 320" 
+        fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Base platform -->
+  <rect x="196" y="325" width="120" height="8" rx="4" fill="white" opacity="0.7"/>
+  
+  <!-- Decorative dots -->
+  <circle cx="256" cy="420" r="4" fill="white" opacity="0.3"/>
+  <circle cx="236" cy="420" r="3" fill="white" opacity="0.2"/>
+  <circle cx="276" cy="420" r="3" fill="white" opacity="0.2"/>
+</svg>

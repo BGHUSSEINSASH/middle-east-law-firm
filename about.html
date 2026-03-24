@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="من نحن - شركة الشرق الأوسط للمحاماة | تعرف على فريقنا ورؤيتنا ورسالتنا وقيمنا">
+  <meta name="robots" content="index, follow">
+  <title>من نحن - شركة الشرق الأوسط للمحاماة والاستشارات القانونية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-emblem"><img src="logo.svg" alt="logo" style="width:64px;height:64px;border-radius:12px"></div>
+      <div class="loader-bar-wrap"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <p class="loader-label">شركة الشرق الأوسط للمحاماة</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND DECOR -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-emblem"><img src="logo.svg" alt="logo" style="width:38px;height:38px;border-radius:8px"></div>
+        <div class="logo-txt">
+          <span class="lt-main">الشرق الأوسط</span>
+          <span class="lt-sub">للمحاماة والاستشارات القانونية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"          class="nl" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="about.html"          class="nl active" data-i18n="nav.about">عن الشركة</a></li>
+        <li><a href="index.html#services" class="nl" data-i18n="nav.services">الخدمات</a></li>
+        <li><a href="index.html#team"     class="nl" data-i18n="nav.team">الفريق</a></li>
+        <li><a href="faq.html"            class="nl" data-i18n="nav.faq">الأسئلة</a></li>
+        <li><a href="index.html#contact"  class="nl" data-i18n="nav.contact">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-controls">
+        <select class="lang-select" data-language-selector aria-label="اختر اللغة">
+          <option value="ar">🇮🇶 AR</option>
+          <option value="en">🇺🇸 EN</option>
+          <option value="ku">KU</option>
+          <option value="tr">🇹🇷 TR</option>
+          <option value="fa">🇮🇷 FA</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="ru">🇷🇺 RU</option>
+          <option value="zh">🇨🇳 ZH</option>
+        </select>
+        <button class="theme-toggle-btn" id="themeBtn" aria-label="تبديل المظهر">
+          <i class="fas fa-moon" id="themeIco"></i>
+        </button>
+        <a href="tel:+9647705515535" class="nav-phone-btn">
+          <i class="fas fa-phone-alt"></i>
+          <span>اتصل الآن</span>
+        </a>
+        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mm-inner">
+      <button class="mm-close" id="mmClose"><i class="fas fa-times"></i></button>
+      <ul class="mm-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">عن الشركة</a></li>
+        <li><a href="index.html#services">الخدمات</a></li>
+        <li><a href="index.html#team">الفريق</a></li>
+        <li><a href="faq.html">الأسئلة</a></li>
+        <li><a href="index.html#contact">تواصل معنا</a></li>
+      </ul>
+      <a href="tel:+9647705515535" class="mm-phone"><i class="fas fa-phone-alt"></i> +964 770 551 5535</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="container">
+      <div class="page-banner-tag"><i class="fas fa-landmark"></i> تعرّف علينا</div>
+      <h1>من نحن</h1>
+      <p>شركة قانونية رائدة تأسست عام 2013 وبنت سمعتها على الكفاءة والنزاهة والتميز في خدمة العملاء</p>
+    </div>
+  </div>
+
+  <!-- STORY SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="about-text-wrap reveal-up">
+          <div class="sec-tag"><i class="fas fa-book-open"></i> قصتنا</div>
+          <h2 class="sec-title">رحلة 14 عاماً من الثقة والنجاح</h2>
+          <p style="color:var(--tx2); line-height:1.85; margin-bottom:1rem;">تأسست شركة الشرق الأوسط للمحاماة والاستشارات القانونية عام 2013 برؤية واضحة: تقديم خدمات قانونية متميزة تجمع بين الخبرة العميقة والتفاني في خدمة العملاء.</p>
+          <p style="color:var(--tx2); line-height:1.85; margin-bottom:1rem;">على مدار أكثر من 14 عاماً، نجحنا في بناء سمعة قوية في السوق العراقي. نفخر بتحقيق معدل نجاح يبلغ 95% في القضايا التي نتولى الدفاع فيها.</p>
+          <p style="color:var(--tx2); line-height:1.85; margin-bottom:1.5rem;">يضم فريقنا نخبة من المحامين ذوي الخبرة العالية في مختلف المجالات القانونية، ملتزمين بتحقيق أفضل النتائج لكل عميل.</p>
+          <div class="about-values-grid">
+            <div class="av-val">
+              <div class="avv-icon"><i class="fas fa-shield-alt"></i></div>
+              <div><h4>النزاهة والأمانة</h4><p>أعلى معايير الأخلاقيات المهنية</p></div>
+            </div>
+            <div class="av-val">
+              <div class="avv-icon"><i class="fas fa-star"></i></div>
+              <div><h4>التميز في الأداء</h4><p>خدمات قانونية بجودة عالية</p></div>
+            </div>
+            <div class="av-val">
+              <div class="avv-icon"><i class="fas fa-handshake"></i></div>
+              <div><h4>الالتزام بالعملاء</h4><p>شراكة حقيقية في كل قضية</p></div>
+            </div>
+            <div class="av-val">
+              <div class="avv-icon"><i class="fas fa-balance-scale"></i></div>
+              <div><h4>السعي للعدالة</h4><p>الدفاع عن حقوق عملائنا</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="av-main">
+            <div class="av-emblem"><i class="fas fa-balance-scale"></i></div>
+            <div class="av-badge">
+              <span class="av-years">14</span>
+              <span>عاماً من الخبرة</span>
+            </div>
+            <div class="av-card av-c1">
+              <i class="fas fa-trophy"></i>
+              <span>95% معدل نجاح</span>
+            </div>
+            <div class="av-card av-c2">
+              <i class="fas fa-users"></i>
+              <span>1000+ عميل راضٍ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" style="background:var(--s2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box reveal-up">
+          <div class="sbox-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="sbox-body">
+            <strong class="counter-anim" data-target="500">0</strong>
+            <span>قضية منجزة</span>
+          </div>
+        </div>
+        <div class="stat-box reveal-up">
+          <div class="sbox-icon"><i class="fas fa-users"></i></div>
+          <div class="sbox-body">
+            <strong class="counter-anim" data-target="1000">0</strong>
+            <span>عميل راضٍ</span>
+          </div>
+        </div>
+        <div class="stat-box reveal-up">
+          <div class="sbox-icon"><i class="fas fa-trophy"></i></div>
+          <div class="sbox-body">
+            <strong><span class="counter-anim" data-target="95">0</span>%</strong>
+            <span>معدل النجاح</span>
+          </div>
+        </div>
+        <div class="stat-box reveal-up">
+          <div class="sbox-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="sbox-body">
+            <strong class="counter-anim" data-target="15">0</strong>
+            <span>سنة خبرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-hd" style="text-align:center; margin-bottom:3rem;">
+        <div class="sec-tag" style="margin:0 auto 1rem;">رؤيتنا ورسالتنا</div>
+        <h2 class="sec-title">ما الذي يُحرّكنا كل يوم</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal-up">
+          <div class="why-ico"><i class="fas fa-eye"></i></div>
+          <h3>رؤيتنا</h3>
+          <p>أن نكون الخيار الأول للخدمات القانونية في العراق والمنطقة، معروفين بالتميز والنزاهة والالتزام بتحقيق العدالة لكل عميل.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-ico"><i class="fas fa-bullseye"></i></div>
+          <h3>رسالتنا</h3>
+          <p>تقديم خدمات قانونية عالية الجودة تلبي احتياجات عملائنا، مع الحفاظ على أعلى معايير الأخلاقيات المهنية والشفافية في كل تعاملاتنا.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-ico"><i class="fas fa-lightbulb"></i></div>
+          <h3>ابتكارنا</h3>
+          <p>نتبنى أحدث الحلول القانونية والتقنيات الرقمية لتقديم خدمات أكثر كفاءة وفعالية، ونواكب التطورات التشريعية المستجدة.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-ico"><i class="fas fa-handshake"></i></div>
+          <h3>التزامنا</h3>
+          <p>نؤمن بأن نجاح عملائنا هو نجاحنا. نعمل كشركاء حقيقيين نتفاني في تحقيق أهدافهم والدفاع عن حقوقهم بأعلى مستوى من الاحترافية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--s2); border-top:1px solid var(--border);">
+    <div class="container" style="text-align:center; max-width:660px;">
+      <div class="sec-tag" style="margin:0 auto 1rem;"><i class="fas fa-calendar-check"></i> ابدأ الآن</div>
+      <h2 class="sec-title reveal-up">هل أنت مستعد للحصول على مساعدتنا؟</h2>
+      <p style="color:var(--tx2); margin-bottom:2.5rem;" class="reveal-up">تواصل معنا اليوم للحصول على استشارة قانونية مجانية مع أحد محامينا المتخصصين</p>
+      <div class="hero-actions reveal-up">
+        <a href="index.html#contact" class="btn-hero-primary">
+          <i class="fas fa-calendar-check"></i>
+          <span>احجز استشارة مجانية</span>
+        </a>
+        <a href="tel:+9647705515535" class="btn-hero-secondary">
+          <i class="fas fa-phone-alt"></i>
+          <span dir="ltr">+964 770 551 5535</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="logo.svg" alt="logo" style="width:36px;height:36px;border-radius:8px">
+              <div>
+                <span class="fl-a">الشرق الأوسط</span>
+                <span class="fl-b">للمحاماة والاستشارات القانونية</span>
+              </div>
+            </a>
+            <p>نقدم خدمات قانونية متميزة بالتزام وأمانة كاملة منذ عام 2009. ثقتكم هي أساس نجاحنا.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/9647705515535" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">عن الشركة</a></li>
+              <li><a href="index.html#services">الخدمات</a></li>
+              <li><a href="index.html#team">الفريق</a></li>
+              <li><a href="faq.html">الأسئلة الشائعة</a></li>
+              <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>خدماتنا القانونية</h4>
+            <ul>
+              <li><a href="index.html#services">القضايا العقارية</a></li>
+              <li><a href="index.html#services">القضايا التجارية</a></li>
+              <li><a href="index.html#services">قانون الأسرة</a></li>
+              <li><a href="index.html#services">القضايا المدنية</a></li>
+              <li><a href="index.html#services">الاستشارات القانونية</a></li>
+              <li><a href="index.html#services">القضايا الجنائية</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>تواصل معنا</h4>
+            <ul class="footer-contact-list">
+              <li><i class="fas fa-phone-alt"></i><a href="tel:+9647705515535" dir="ltr">+964 770 551 5535</a></li>
+              <li><i class="fas fa-envelope"></i><a href="mailto:info@mideastls.com">info@mideastls.com</a></li>
+              <li><i class="fas fa-map-marker-alt"></i><span>بغداد - الكرادة - شارع 42</span></li>
+              <li><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 شركة الشرق الأوسط للمحاماة. جميع الحقوق محفوظة.</p>
+        <div class="fbot-links">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">شروط الاستخدام</a>
+          <a href="faq.html">الأسئلة الشائعة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backTop" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/9647705515535?text=مرحباً، أود الاستفسار عن خدماتكم القانونية."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="واتساب">
+    <i class="fab fa-whatsapp"></i>
+    <span>تحدث معنا</span>
+  </a>
+
+  <!-- TOAST -->
+  <div class="toast-box" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="laws-data.js?v=25" defer></script>
+  <script src="laws-data-2.js?v=25" defer></script>
+  <script src="laws-data-3.js?v=25" defer></script>
+  <script src="laws-data-4.js?v=25" defer></script>
+  <script src="laws-data-5.js?v=25" defer></script>
+  <script src="laws-data-6.js?v=25" defer></script>
+  <script src="laws-data-7.js?v=25" defer></script>
+  <script src="laws-data-8.js?v=25" defer></script>
+  <script src="laws-data-9.js?v=25" defer></script>
+  <script src="laws-data-10.js?v=25" defer></script>
+  <script src="ai-engine.js?v=25" defer></script>
+  <script src="language-system.js?v=25" defer></script>
+  <script src="admin-bridge.js?v=25" defer></script>
+  <script src="script.js?v=25" defer></script>
+</body>
+</html>

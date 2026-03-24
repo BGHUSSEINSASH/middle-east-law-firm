@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="احجز موعد استشارة قانونية مجانية - شركة الشرق الأوسط للمحاماة | بغداد - الكرادة">
+  <meta name="robots" content="index, follow">
+  <title>حجز موعد - شركة الشرق الأوسط للمحاماة والاستشارات القانونية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="ann-bar" id="annBar">
+    <div class="ann-text">
+      <i class="fas fa-star"></i>
+      <span>استشارتك القانونية الأولى مجانية على 30 دقيقة — احجز الآن!</span>
+    </div>
+    <button class="ann-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+  </div>
+
+  <!-- PAGE LOADER -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-emblem"><img src="logo.svg" alt="logo" style="width:64px;height:64px;border-radius:12px"></div>
+      <div class="loader-bar-wrap"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <p class="loader-label">شركة الشرق الأوسط للمحاماة</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND DECOR -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-emblem"><img src="logo.svg" alt="logo" style="width:38px;height:38px;border-radius:8px"></div>
+        <div class="logo-txt">
+          <span class="lt-main">الشرق الأوسط</span>
+          <span class="lt-sub">للمحاماة والاستشارات القانونية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"          class="nl">الرئيسية</a></li>
+        <li><a href="about.html"          class="nl">عن الشركة</a></li>
+        <li><a href="lawyers.html"        class="nl">المحامون</a></li>
+        <li><a href="cases.html"          class="nl">قضايانا</a></li>
+        <li><a href="blog.html"           class="nl">المدونة</a></li>
+        <li><a href="faq.html"            class="nl">الأسئلة</a></li>
+        <li><a href="index.html#contact"  class="nl">تواصل</a></li>
+      </ul>
+      <div class="nav-controls">
+        <select class="lang-select" data-language-selector aria-label="اختر اللغة">
+          <option value="ar">🇮🇶 AR</option>
+          <option value="en">🇺🇸 EN</option>
+          <option value="ku">KU</option>
+          <option value="tr">🇹🇷 TR</option>
+          <option value="fa">🇮🇷 FA</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="ru">🇷🇺 RU</option>
+          <option value="zh">🇨🇳 ZH</option>
+        </select>
+        <button class="theme-toggle-btn" id="themeBtn" aria-label="تبديل المظهر">
+          <i class="fas fa-moon" id="themeIco"></i>
+        </button>
+        <a href="tel:+9647705515535" class="nav-phone-btn">
+          <i class="fas fa-phone-alt"></i>
+          <span>اتصل الآن</span>
+        </a>
+        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mm-inner">
+      <button class="mm-close" id="mmClose"><i class="fas fa-times"></i></button>
+      <ul class="mm-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">عن الشركة</a></li>
+        <li><a href="lawyers.html">المحامون</a></li>
+        <li><a href="cases.html">قضايانا</a></li>
+        <li><a href="blog.html">المدونة</a></li>
+        <li><a href="faq.html">الأسئلة</a></li>
+        <li><a href="career.html">الوظائف</a></li>
+        <li><a href="index.html#contact">تواصل</a></li>
+      </ul>
+      <a href="tel:+9647705515535" class="mm-phone"><i class="fas fa-phone-alt"></i> +964 770 551 5535</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="container">
+      <div class="page-banner-tag"><i class="fas fa-calendar-check"></i> استشارة مجانية</div>
+      <h1>احجز موعدك الآن</h1>
+      <p>اختر الوقت المناسب لك وسيتواصل فريقنا القانوني معك لتأكيد الموعد</p>
+    </div>
+  </div>
+
+  <!-- BOOKING BENEFITS -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="why-grid reveal-up">
+        <div class="why-card">
+          <div class="why-ico"><i class="fas fa-gift"></i></div>
+          <h3>استشارة مجانية</h3>
+          <p>أول استشارة قانونية مجانية تماماً لمدة 30 دقيقة مع أحد محامينا المتخصصين</p>
+        </div>
+        <div class="why-card">
+          <div class="why-ico"><i class="fas fa-video"></i></div>
+          <h3>استشارة عن بُعد</h3>
+          <p>متاح الاستشارات عبر مكالمة الفيديو أو الهاتف للعملاء خارج بغداد</p>
+        </div>
+        <div class="why-card">
+          <div class="why-ico"><i class="fas fa-clock"></i></div>
+          <h3>مرونة في المواعيد</h3>
+          <p>ساعات عمل مرنة من السبت إلى الخميس، مع إمكانية المواعيد الطارئة</p>
+        </div>
+        <div class="why-card">
+          <div class="why-ico"><i class="fas fa-shield-alt"></i></div>
+          <h3>سرية تامة</h3>
+          <p>جميع معلوماتك ومعطيات قضيتك محفوظة بسرية مهنية كاملة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <div class="contact-grid" style="grid-template-columns:1fr;">
+        <div class="cform-wrap">
+          <form id="bookingForm" class="cform" novalidate>
+            <h3 style="font-size:1.4rem; margin-bottom:1.5rem; color:var(--txI);"><i class="fas fa-calendar-alt" style="color:var(--accent);"></i> بيانات الحجز</h3>
+
+            <div class="cform-row">
+              <div class="cform-field">
+                <label for="bname">الاسم الكامل *</label>
+                <div class="cff-wrap">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="bname" name="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+              </div>
+              <div class="cform-field">
+                <label for="bphone">رقم الهاتف *</label>
+                <div class="cff-wrap">
+                  <i class="fas fa-phone-alt"></i>
+                  <input type="tel" id="bphone" name="phone" required placeholder="+964 7XX XXX XXXX">
+                </div>
+              </div>
+            </div>
+
+            <div class="cform-row">
+              <div class="cform-field">
+                <label for="bemail">البريد الإلكتروني</label>
+                <div class="cff-wrap">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" id="bemail" name="email" placeholder="your@email.com">
+                </div>
+              </div>
+              <div class="cform-field">
+                <label for="bservice">نوع الخدمة المطلوبة *</label>
+                <div class="cff-wrap">
+                  <i class="fas fa-briefcase"></i>
+                  <select id="bservice" name="service" required>
+                    <option value="">اختر نوع الخدمة</option>
+                    <option value="consultation">استشارة قانونية</option>
+                    <option value="real-estate">قضايا عقارية</option>
+                    <option value="commercial">دعاوى تجارية</option>
+                    <option value="family">قضايا أحوال شخصية</option>
+                    <option value="criminal">قضايا جنائية</option>
+                    <option value="labor">قضايا عمل</option>
+                    <option value="other">أخرى</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="cform-row">
+              <div class="cform-field">
+                <label for="bdate">تاريخ الموعد المفضل *</label>
+                <div class="cff-wrap">
+                  <i class="fas fa-calendar"></i>
+                  <input type="date" id="bdate" name="date" required>
+                </div>
+              </div>
+              <div class="cform-field">
+                <label for="btime">الوقت المفضل *</label>
+                <div class="cff-wrap">
+                  <i class="fas fa-clock"></i>
+                  <select id="btime" name="time" required>
+                    <option value="">اختر الوقت</option>
+                    <option value="09:00">09:00 صباحاً</option>
+                    <option value="10:00">10:00 صباحاً</option>
+                    <option value="11:00">11:00 صباحاً</option>
+                    <option value="12:00">12:00 ظهراً</option>
+                    <option value="13:00">01:00 مساءً</option>
+                    <option value="14:00">02:00 مساءً</option>
+                    <option value="15:00">03:00 مساءً</option>
+                    <option value="16:00">04:00 مساءً</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="cform-field full">
+              <label for="bmessage">تفاصيل إضافية عن قضيتك</label>
+              <div class="cff-wrap">
+                <i class="fas fa-comment"></i>
+                <textarea id="bmessage" name="message" rows="4" placeholder="أخبرنا المزيد عن قضيتك أو ما تودّ الاستفسار عنه..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit" id="bookingSubmitBtn">
+              <i class="fas fa-calendar-check"></i>
+              <span class="btn-txt">إرسال طلب الحجز</span>
+              <span class="btn-loading" aria-hidden="true" style="display:none"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
+
+            <p class="cform-note"><i class="fas fa-shield-alt"></i> بياناتك محفوظة بسرية تامة — سنتواصل معك لتأكيد الموعد خلال 24 ساعة</p>
+          </form>
+
+          <div class="cform-success" id="bookingSuccess" aria-live="polite" style="display:none">
+            <div class="fs-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>تم إرسال طلب الحجز بنجاح!</h3>
+            <p>شكراً لك. سيتصل بك أحد فريقنا القانوني خلال 24 ساعة لتأكيد موعدك.</p>
+            <a href="index.html" class="btn-secondary" style="display:inline-block; margin-top:1rem; padding:.7rem 2rem; border-radius:var(--r4); border:1px solid var(--border); color:var(--tx1);">العودة للرئيسية</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="logo.svg" alt="logo" style="width:36px;height:36px;border-radius:8px">
+              <div>
+                <span class="fl-a">الشرق الأوسط</span>
+                <span class="fl-b">للمحاماة والاستشارات القانونية</span>
+              </div>
+            </a>
+            <p>نقدم خدمات قانونية متميزة بالتزام وأمانة كاملة منذ عام 2009.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/9647705515535" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="lawyers.html">المحامون</a></li>
+              <li><a href="cases.html">قضايانا</a></li>
+              <li><a href="blog.html">المدونة</a></li>
+              <li><a href="career.html">الوظائف</a></li>
+              <li><a href="faq.html">الأسئلة الشائعة</a></li>
+              <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>خدماتنا القانونية</h4>
+            <ul>
+              <li><a href="index.html#services">القضايا العقارية</a></li>
+              <li><a href="index.html#services">القضايا التجارية</a></li>
+              <li><a href="index.html#services">قانون الأسرة</a></li>
+              <li><a href="index.html#services">القضايا الجنائية</a></li>
+              <li><a href="index.html#services">الاستشارات القانونية</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>تواصل معنا</h4>
+            <ul class="footer-contact-list">
+              <li><i class="fas fa-phone-alt"></i><a href="tel:+9647705515535" dir="ltr">+964 770 551 5535</a></li>
+              <li><i class="fas fa-envelope"></i><a href="mailto:info@middleeast-law.com">info@middleeast-law.com</a></li>
+              <li><i class="fas fa-map-marker-alt"></i><span>بغداد - الكرادة - شارع 42</span></li>
+              <li><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 شركة الشرق الأوسط للمحاماة. جميع الحقوق محفوظة.</p>
+        <div class="fbot-links">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">شروط الاستخدام</a>
+          <a href="faq.html">الأسئلة الشائعة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backTop" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/9647705515535?text=مرحباً، أود حجز موعد استشارة قانونية."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="واتساب">
+    <i class="fab fa-whatsapp"></i>
+    <span>احجز عبر واتساب</span>
+  </a>
+
+  <!-- TOAST -->
+  <div class="toast-box" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="laws-data.js?v=25" defer></script>
+  <script src="laws-data-2.js?v=25" defer></script>
+  <script src="laws-data-3.js?v=25" defer></script>
+  <script src="laws-data-4.js?v=25" defer></script>
+  <script src="laws-data-5.js?v=25" defer></script>
+  <script src="laws-data-6.js?v=25" defer></script>
+  <script src="laws-data-7.js?v=25" defer></script>
+  <script src="laws-data-8.js?v=25" defer></script>
+  <script src="laws-data-9.js?v=25" defer></script>
+  <script src="laws-data-10.js?v=25" defer></script>
+  <script src="ai-engine.js?v=25" defer></script>
+  <script src="language-system.js?v=25" defer></script>
+  <script src="admin-bridge.js?v=25" defer></script>
+  <script src="script.js?v=25" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('bookingForm');
+      const success = document.getElementById('bookingSuccess');
+      const submitBtn = document.getElementById('bookingSubmitBtn');
+
+      // Show time slots after calendar day selection
+      document.addEventListener('calendarDaySelected', () => {
+        const ts = document.getElementById('timeSlots');
+        if (ts) ts.style.display = '';
+      });
+
+      // Time slot selection
+      document.addEventListener('click', (e) => {
+        const slot = e.target.closest('.time-slot');
+        if (!slot || slot.classList.contains('taken')) return;
+        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+        slot.classList.add('selected');
+        const hidden = document.getElementById('bookingTime');
+        if (hidden) hidden.value = slot.dataset.time;
+      });
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const dateVal = document.getElementById('bookingDate')?.value;
+          const timeVal = document.getElementById('bookingTime')?.value;
+          if (!dateVal) { alert('يرجى اختيار يوم من التقويم'); return; }
+          if (!timeVal) { alert('يرجى اختيار وقت الموعد'); return; }
+
+          const btnTxt  = submitBtn?.querySelector('.btn-txt');
+          const btnLoad = submitBtn?.querySelector('.btn-loading');
+          if (submitBtn) submitBtn.disabled = true;
+          if (btnTxt)  btnTxt.style.display  = 'none';
+          if (btnLoad) btnLoad.style.display = '';
+
+          await new Promise(r => setTimeout(r, 1600));
+          if (form) form.style.display = 'none';
+          document.querySelector('.booking-steps').style.display = 'none';
+          if (success) success.style.display = '';
+          if (typeof showToast === 'function') showToast('تم إرسال طلب الحجز بنجاح!', 'success');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

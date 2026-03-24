@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "brand": "Medio Oriente",
+    "brandSub": "Abogados y Consultoría",
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "laws": "Leyes Iraquíes",
+    "assistant": "Asistente Legal",
+    "team": "Equipo",
+    "app": "Aplicación",
+    "contact": "Contacto",
+    "cta": "Consulta Gratuita",
+    "pricing": "Paquetes"
+  },
+  "hero": {
+    "badge": "La firma líder en Irak",
+    "titleLine1": "La justicia comienza",
+    "titleLine2": "aquí",
+    "title": "La justicia comienza aquí",
+    "subtitle": "Más de 15 años de experiencia en derecho iraquí – le ofrecemos las mejores soluciones legales con un asistente inteligente que responde todas sus consultas",
+    "askAI": "Pregunte al asistente legal",
+    "consult": "Consulta gratuita",
+    "getApp": "Descargar la app"
+  },
+  "stats": {
+    "cases": "Casos exitosos",
+    "success": "Tasa de éxito",
+    "years": "Años de experiencia",
+    "clients": "Clientes satisfechos"
+  },
+  "about": {
+    "tag": "Nosotros",
+    "title": "Firma de Abogados Medio Oriente",
+    "p1": "La firma de abogados Medio Oriente fue fundada en 2009 en el corazón de Bagdad, siendo una de las firmas legales más destacadas de Irak.",
+    "p2": "Combinamos una profunda experiencia en derecho iraquí con tecnología moderna, incluyendo nuestro asistente legal inteligente que le brinda respuestas inmediatas a cualquier consulta legal.",
+    "f1": "Equipo de los mejores abogados iraquíes",
+    "f2": "Asistente legal inteligente las 24 horas",
+    "f3": "Base de datos completa de leyes iraquíes",
+    "f4": "Aplicación inteligente para Android y iPhone",
+    "cta": "Descubra nuestros servicios",
+    "cardYears": "Años de experiencia legal",
+    "cardCases": "Casos ganados",
+    "cardClients": "Clientes confían en nosotros",
+    "cardAI": "Asistente legal inteligente"
+  },
+  "services": {
+    "tag": "Nuestros servicios legales",
+    "title": "Soluciones legales integrales",
+    "subtitle": "Ofrecemos una amplia gama de servicios legales especializados",
+    "s1": {
+      "title": "Derecho Inmobiliario",
+      "desc": "Resolución de disputas inmobiliarias, registro de propiedades y revisión de contratos con amplia experiencia."
+    },
+    "s2": {
+      "title": "Derecho Comercial",
+      "desc": "Constitución de empresas, contratos comerciales y resolución de disputas entre socios."
+    },
+    "s3": {
+      "title": "Derecho de Familia",
+      "desc": "Divorcio, custodia, pensión alimenticia y herencia con total confidencialidad."
+    },
+    "s4": {
+      "title": "Derecho Penal",
+      "desc": "Defensa en casos penales en todas las instancias judiciales."
+    },
+    "s5": {
+      "title": "Derecho Civil",
+      "desc": "Litigios civiles en todas sus etapas ante los tribunales iraquíes."
+    },
+    "s6": {
+      "title": "Consultoría Legal",
+      "desc": "Consultoría legal especializada para particulares y empresas en todos los ámbitos."
+    },
+    "ask": "Pregunte sobre esta ley"
+  },
+  "laws": {
+    "tag": "Biblioteca Legal",
+    "title": "Biblioteca Legal Iraquí Completa",
+    "subtitle": "La mayor biblioteca legal digital iraquí — Explore 50+ leyes y 350+ artículos en 10 categorías con el asistente de IA",
+    "statsLaws": "Ley Iraquí",
+    "statsArticles": "Artículo Legal",
+    "statsCategories": "Categoría Legal",
+    "statsAssistant": "Asistente Legal IA",
+    "civil": "Derecho Civil",
+    "criminal": "Derecho Penal",
+    "family": "Estado Personal",
+    "commercial": "Derecho Comercial",
+    "labor": "Derecho Laboral",
+    "constitutional": "Constitución",
+    "property": "Derecho Inmobiliario",
+    "administrative": "Derecho Administrativo",
+    "financial": "Derecho Financiero",
+    "procedural": "Procedimientos Legales",
+    "ctaTitle": "Pregunte al Asistente Legal IA",
+    "ctaDesc": "Escriba su pregunta o haga clic en cualquier categoría arriba — el asistente de IA mostrará todas las leyes relacionadas con detalles completos",
+    "ctaBtn": "Ir al Asistente Legal"
+  },
+  "ai": {
+    "tag": "Asistente Legal Inteligente",
+    "title": "Su asistente legal disponible las 24 horas",
+    "subtitle": "Haga cualquier pregunta sobre leyes iraquíes en cualquier idioma – el asistente está listo para responder",
+    "f1": {
+      "title": "Asistente de voz",
+      "desc": "Hable y obtenga respuestas instantáneas en su idioma preferido"
+    },
+    "f2": {
+      "title": "Multilingüe",
+      "desc": "Admite árabe, inglés, kurdo, turco, persa, francés, alemán, español, ruso y chino"
+    },
+    "f3": {
+      "title": "Base de datos completa",
+      "desc": "Cubre todas las leyes iraquíes y legislación vigente"
+    },
+    "f4": {
+      "title": "Disponible 24/7",
+      "desc": "Obtenga ayuda legal en cualquier momento"
+    },
+    "chatName": "Asistente Legal",
+    "online": "En línea ahora",
+    "welcome": "¡Bienvenido! Soy el asistente legal de la firma Medio Oriente. Puedo ayudarle con cualquier pregunta sobre leyes iraquíes. ¡Escriba su pregunta o hable! 🎯",
+    "inputPlaceholder": "Escriba su pregunta legal aquí...",
+    "listening": "Escuchando...",
+    "floatLabel": "Asistente Legal"
+  },
+  "team": {
+    "tag": "Nuestro equipo destacado",
+    "title": "Abogados expertos de élite",
+    "subtitle": "Un equipo de los abogados más experimentados en diversas ramas del derecho",
+    "m1": {
+      "name": "Abg. Ahmed Al-Husseini",
+      "role": "Fundador y Director General",
+      "desc": "Más de 15 años de experiencia en derecho comercial e inmobiliario. Miembro del Colegio de Abogados de Irak."
+    },
+    "m2": {
+      "name": "Abg. Sarah Al-Mohammadi",
+      "role": "Especialista en Derecho de Familia",
+      "desc": "Especializada en asuntos de estado personal con 10 años de experiencia. Reconocida por su trato humano."
+    },
+    "m3": {
+      "name": "Abg. Ali Al-Kadhimi",
+      "role": "Experto en Derecho Penal",
+      "desc": "Amplia experiencia en defensa penal y casos complejos. Alta tasa de éxito en tribunales."
+    }
+  },
+  "testi": {
+    "tag": "Opiniones de clientes",
+    "title": "Lo que dicen nuestros clientes",
+    "t1": {
+      "text": "Excelente experiencia con la firma Medio Oriente. El asistente legal inteligente y el equipo profesional fueron de gran ayuda.",
+      "name": "Ahmed Mohammed",
+      "role": "Empresario – Bagdad"
+    },
+    "t2": {
+      "text": "¡El asistente de voz es una función increíble! Respuestas rápidas sobre mis derechos legales en cualquier momento.",
+      "name": "Fatima Al-Ali",
+      "role": "Ingeniera – Erbil"
+    },
+    "t3": {
+      "text": "La mejor firma de abogados con la que he trabajado. La app es fácil de usar y el equipo muy profesional.",
+      "name": "Karim Hassan",
+      "role": "Comerciante – Basora"
+    }
+  },
+  "app": {
+    "tag": "La app inteligente",
+    "title": "Descargue la app de la firma Medio Oriente",
+    "subtitle": "Todos los servicios legales en su bolsillo",
+    "f1": "Asistente legal inteligente por voz y texto",
+    "f2": "Búsqueda instantánea en leyes iraquíes",
+    "f3": "Reserve citas con abogados",
+    "f4": "Notificaciones de actualizaciones legales",
+    "f5": "Seguimiento confidencial de su caso",
+    "f6": "Soporte multilingüe",
+    "install": "Instalar app",
+    "installNow": "Instalar ahora gratis",
+    "googlePlay": "Descargar en Google Play",
+    "appStore": "Descargar en App Store",
+    "notifTitle": "¿Sabía que puede instalar este sitio como aplicación?",
+    "notifDesc": "Pulse instalar o añádalo a la pantalla de inicio para una experiencia completa de aplicación.",
+    "installBtn": "Instalar",
+    "mockHeader": "Medio Oriente Legal",
+    "mockBot1": "¡Hola! ¿Cómo puedo ayudarle? 👋",
+    "mockUser1": "¿Cuáles son mis derechos en el divorcio?",
+    "mockBot2": "Según la Ley de Estado Personal iraquí nº 188...",
+    "mockUser2": "¡Muchas gracias!",
+    "mockInput": "Escriba su pregunta legal...",
+    "mockNavHome": "Inicio",
+    "mockNavLaws": "Leyes",
+    "mockNavAssistant": "Asistente",
+    "mockNavAppts": "Citas",
+    "mockNavAccount": "Mi Cuenta",
+    "stat1": "Descargas",
+    "stat2": "Calificación",
+    "stat3": "Leyes",
+    "stat4": "Soporte"
+  },
+  "faq": {
+    "tag": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes",
+    "q1": "¿Cuánto cuesta la primera consulta?",
+    "a1": "La primera consulta es totalmente gratuita. Nos aseguramos de entender su caso completamente antes de determinar costos.",
+    "q2": "¿El asistente legal inteligente es gratuito?",
+    "a2": "¡Sí! El asistente legal inteligente está disponible gratuitamente para todos los visitantes del sitio y la app.",
+    "q3": "¿Puedo usar el asistente de voz?",
+    "a3": "¡Por supuesto! El asistente legal admite entrada de voz en árabe, inglés, kurdo y otros idiomas.",
+    "q4": "¿Cómo descargo la aplicación?",
+    "a4": "Puede instalar la app directamente desde este sitio o descargarla desde Google Play o App Store.",
+    "q5": "¿La información legal está actualizada?",
+    "a5": "Sí, actualizamos nuestra base de datos continuamente para garantizar la precisión y conformidad con las últimas modificaciones legales."
+  },
+  "contact": {
+    "tag": "Contáctenos",
+    "title": "Obtenga una consulta gratuita",
+    "subtitle": "Estamos aquí para ayudarle – contáctenos ahora y obtenga su primera consulta gratuita",
+    "address": "Dirección",
+    "addressVal": "Bagdad – Karrada – Calle 42",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "hours": "Horario de trabajo",
+    "hoursVal": "Sábado – Jueves: 9:00 AM – 5:00 PM",
+    "nameLabel": "Nombre completo",
+    "namePH": "Ingrese su nombre completo",
+    "phoneLabel": "Número de teléfono",
+    "emailLabel": "Correo electrónico",
+    "serviceLabel": "Tipo de servicio",
+    "selectService": "Seleccionar servicio",
+    "opt1": "Derecho inmobiliario",
+    "opt2": "Derecho comercial",
+    "opt3": "Derecho de familia",
+    "opt4": "Derecho penal",
+    "opt5": "Derecho civil",
+    "opt6": "Consultoría legal",
+    "msgLabel": "Su mensaje",
+    "msgPH": "Describa los detalles de su caso o consulta",
+    "submit": "Enviar solicitud"
+  },
+  "pricing": {
+    "tag": "Paquetes de suscripción",
+    "title": "Elija el paquete adecuado",
+    "subtitle": "Paquetes de consultoría integral para particulares y empresas – consultas presenciales y remotas",
+    "currency": "IQD",
+    "period": "/ mensual",
+    "subscribe": "Suscribirse ahora",
+    "popular": "Más popular",
+    "basic": {
+      "badge": "Básico",
+      "desc": "Para particulares con necesidades de consulta simple",
+      "f1": "3 consultas mensuales por el sitio web",
+      "f2": "Acceso al asistente legal inteligente",
+      "f3": "Acceso completo a leyes iraquíes",
+      "f4": "Soporte por correo electrónico",
+      "f5": "Consultas telefónicas",
+      "f6": "Visitas a la oficina"
+    },
+    "pro": {
+      "badge": "Profesional",
+      "desc": "Para particulares y pequeñas empresas – consultoría integral",
+      "f1": "10 consultas mensuales (web + teléfono)",
+      "f2": "Asistente legal avanzado",
+      "f3": "Revisión de contratos y documentos",
+      "f4": "Consultas telefónicas directas",
+      "f5": "Prioridad en respuestas y seguimiento",
+      "f6": "Representación legal en tribunales"
+    },
+    "enterprise": {
+      "badge": "Empresas",
+      "desc": "Para empresas e instituciones – protección legal completa",
+      "f1": "Consultas ilimitadas",
+      "f2": "Abogado dedicado a la empresa",
+      "f3": "Revisión de todos los contratos y acuerdos",
+      "f4": "Representación legal en tribunales",
+      "f5": "Visitas mensuales a la oficina",
+      "f6": "Informes legales periódicos"
+    },
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "save": "Ahorra 20%",
+    "trust1": "Pago 100% Seguro",
+    "trust2": "Garantía de Reembolso 7 Días",
+    "trust3": "Soporte 24/7",
+    "trust4": "Tus Datos Protegidos",
+    "periodYearly": "/ Anual"
+  },
+  "payment": {
+    "title": "Seleccionar método de pago",
+    "selectedPlan": "Paquete seleccionado:",
+    "zainCash": "Zain Cash",
+    "rafidain": "Mastercard Rafidain",
+    "ahli": "Banco Nacional Iraquí",
+    "bankTransfer": "Transferencia bancaria",
+    "nameLabel": "Nombre completo",
+    "phoneLabel": "Número de teléfono",
+    "emailLabel": "Correo electrónico",
+    "confirm": "Confirmar suscripción"
+  },
+  "footer": {
+    "desc": "Firma Medio Oriente de Abogados y Consultoría Legal – su socio legal de confianza en Irak desde 2009.",
+    "quickLinks": "Enlaces rápidos",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "downloadApp": "Descargar app:",
+    "copy": "© 2024 Firma Medio Oriente de Abogados. Todos los derechos reservados."
+  },
+  "page": {
+    "title": "Firma Medio Oriente - Abogados y Consultoría Legal"
+  },
+  "meta": {
+    "description": "Firma Medio Oriente de Abogados - Más de 15 años de experiencia en derecho iraquí y consultoría legal",
+    "keywords": "firma de abogados, derecho iraquí, consultoría legal, abogado Bagdad"
+  },
+  "loader": {
+    "title": "Firma Medio Oriente Legal"
+  }
+}

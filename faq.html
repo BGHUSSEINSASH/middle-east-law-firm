@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="الأسئلة الشائعة - شركة الشرق الأوسط للمحاماة | إجابات على أكثر الأسئلة شيوعاً حول خدماتنا القانونية">
+  <meta name="robots" content="index, follow">
+  <title>الأسئلة الشائعة - شركة الشرق الأوسط للمحاماة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="ann-bar" id="annBar">
+    <div class="ann-text">
+      <i class="fas fa-star"></i>
+      <span>استشارتك القانونية الأولى مجانية —</span>
+      <a href="booking.html" class="ann-link">احجز الآن</a>
+    </div>
+    <button class="ann-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+  </div>
+
+  <!-- PAGE LOADER -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-emblem"><img src="logo.svg" alt="logo" style="width:64px;height:64px;border-radius:12px"></div>
+      <div class="loader-bar-wrap"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <p class="loader-label">شركة الشرق الأوسط للمحاماة</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND DECOR -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-emblem"><img src="logo.svg" alt="logo" style="width:38px;height:38px;border-radius:8px"></div>
+        <div class="logo-txt">
+          <span class="lt-main">الشرق الأوسط</span>
+          <span class="lt-sub">للمحاماة والاستشارات القانونية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"          class="nl">الرئيسية</a></li>
+        <li><a href="index.html#about"    class="nl">عن الشركة</a></li>
+        <li><a href="lawyers.html"        class="nl">المحامون</a></li>
+        <li><a href="cases.html"          class="nl">قضايانا</a></li>
+        <li><a href="blog.html"           class="nl">المدونة</a></li>
+        <li><a href="faq.html"            class="nl active">الأسئلة</a></li>
+        <li><a href="index.html#contact"  class="nl">تواصل</a></li>
+      </ul>
+      <div class="nav-controls">
+        <select class="lang-select" data-language-selector aria-label="اختر اللغة">
+          <option value="ar">🇮🇶 AR</option>
+          <option value="en">🇺🇸 EN</option>
+          <option value="ku">KU</option>
+          <option value="tr">🇹🇷 TR</option>
+          <option value="fa">🇮🇷 FA</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="ru">🇷🇺 RU</option>
+          <option value="zh">🇨🇳 ZH</option>
+        </select>
+        <button class="theme-toggle-btn" id="themeBtn" aria-label="تبديل المظهر">
+          <i class="fas fa-moon" id="themeIco"></i>
+        </button>
+        <a href="tel:+9647705515535" class="nav-phone-btn">
+          <i class="fas fa-phone-alt"></i>
+          <span>اتصل الآن</span>
+        </a>
+        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mm-inner">
+      <button class="mm-close" id="mmClose"><i class="fas fa-times"></i></button>
+      <ul class="mm-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#about">عن الشركة</a></li>
+        <li><a href="lawyers.html">المحامون</a></li>
+        <li><a href="cases.html">قضايانا</a></li>
+        <li><a href="blog.html">المدونة</a></li>
+        <li><a href="faq.html">الأسئلة</a></li>
+        <li><a href="career.html">الوظائف</a></li>
+        <li><a href="index.html#contact">تواصل</a></li>
+      </ul>
+      <a href="tel:+9647705515535" class="mm-phone"><i class="fas fa-phone-alt"></i> +964 770 551 5535</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="container">
+      <div class="page-banner-tag"><i class="fas fa-question-circle"></i> مركز المساعدة</div>
+      <h1>الأسئلة الشائعة</h1>
+      <p>إجابات شاملة على أكثر الأسئلة شيوعاً حول خدماتنا القانونية وإجراءاتنا</p>
+    </div>
+  </div>
+
+  <!-- FAQ CONTENT -->
+  <section class="section">
+    <div class="container">
+      <!-- FAQ SEARCH + FILTER -->
+      <div class="faq-search-wrap reveal-up">
+        <i class="fas fa-search"></i>
+        <input type="text" id="faqSearch" class="faq-search" placeholder="ابحث في الأسئلة…" aria-label="بحث في الأسئلة">
+      </div>
+
+      <div class="faq-filter-row reveal-up">
+        <button class="filter-btn active" data-filter="all">كل الأسئلة</button>
+        <button class="filter-btn" data-filter="general"><i class="fas fa-info-circle"></i> عام</button>
+        <button class="filter-btn" data-filter="procedure"><i class="fas fa-balance-scale"></i> الإجراءات</button>
+        <button class="filter-btn" data-filter="payment"><i class="fas fa-money-bill-wave"></i> الأتعاب</button>
+        <button class="filter-btn" data-filter="contact"><i class="fas fa-comments"></i> التواصل</button>
+      </div>
+
+      <div class="faq-list" id="faqList">
+
+        <!-- أسئلة عامة -->
+        <div class="sec-tag" style="margin-bottom:1.5rem; display:inline-flex; align-items:center; gap:.6rem;">
+          <i class="fas fa-info-circle"></i> أسئلة عامة
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="general">
+          <button class="faq-q" aria-expanded="false">
+            <span>ما هي مجالات تخصصكم القانونية؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نتخصص في مجالات متعددة تشمل: القضايا العقارية، الدعاوى التجارية، قضايا الأحوال الشخصية، القضايا الجنائية، الاستشارات القانونية للشركات، وقضايا العمل. يضم فريقنا محامين متخصصين في كل مجال لضمان أفضل تمثيل قانوني.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="general">
+          <button class="faq-q" aria-expanded="false">
+            <span>كم تبلغ تكلفة الاستشارة القانونية؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نقدم استشارة قانونية مجانية للحالة الأولى لمدة 30 دقيقة. بعد ذلك، تختلف التكلفة حسب نوع القضية ومدى تعقيدها. يمكنك التواصل معنا للحصول على عرض سعر مخصص لوضعك.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="general">
+          <button class="faq-q" aria-expanded="false">
+            <span>ما هي ساعات العمل؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نعمل من السبت إلى الخميس من الساعة 9:00 صباحاً حتى 6:00 مساءً. نوفر أيضاً خدمة الحجز المسبق للمواعيد خارج هذه الأوقات في الحالات الطارئة. يمكنك التواصل معنا عبر واتساب على مدار الساعة.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="general">
+          <button class="faq-q" aria-expanded="false">
+            <span>هل تقدمون خدمات قانونية لغير العراقيين؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نعم، نقدم خدماتنا القانونية للمقيمين في العراق من مختلف الجنسيات، كما نتعامل مع قضايا الشركات الأجنبية العاملة في السوق العراقية. يتحدث فريقنا العربية والإنجليزية والكردية.</p>
+          </div>
+        </div>
+
+        <!-- الإجراءات القانونية -->
+        <div class="sec-tag" style="margin: 2.5rem 0 1.5rem; display:inline-flex; align-items:center; gap:.6rem;">
+          <i class="fas fa-balance-scale"></i> الإجراءات القانونية
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="procedure">
+          <button class="faq-q" aria-expanded="false">
+            <span>كم من الوقت تستغرق القضية عادةً؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>المدة الزمنية تختلف حسب نوع القضية وتعقيدها. القضايا البسيطة قد تستغرق 3-6 أشهر، بينما القضايا المعقدة قد تمتد لسنة أو أكثر. نحرص على إبقائك على اطلاع دائم بتطورات قضيتك في كل مرحلة.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="procedure">
+          <button class="faq-q" aria-expanded="false">
+            <span>هل أحتاج للحضور شخصياً لكل جلسة؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>في معظم الحالات، يمكن لمحامينا تمثيلك دون الحاجة لحضورك الشخصي. ومع ذلك، قد تتطلب بعض الجلسات حضورك، وسنخبرك مسبقاً بذلك مع شرح السبب وأهمية حضورك.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="procedure">
+          <button class="faq-q" aria-expanded="false">
+            <span>ما هي المستندات المطلوبة لبدء القضية؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>المستندات المطلوبة تختلف حسب نوع القضية، لكن عموماً ستحتاج: بطاقة الهوية، أي عقود أو اتفاقيات ذات صلة، المراسلات ذات العلاقة، والإثباتات المتاحة. سنرشدك بالتفصيل عن المستندات المحددة المطلوبة لقضيتك خلال الاستشارة الأولى.</p>
+          </div>
+        </div>
+
+        <!-- الدفع والأتعاب -->
+        <div class="sec-tag" style="margin: 2.5rem 0 1.5rem; display:inline-flex; align-items:center; gap:.6rem;">
+          <i class="fas fa-money-bill-wave"></i> الدفع والأتعاب
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="payment">
+          <button class="faq-q" aria-expanded="false">
+            <span>ما هي طرق الدفع المتاحة؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نقبل الدفع نقداً، بالتحويل البنكي، أو عبر البطاقات الإلكترونية. كما نوفر خطط دفع مرنة للقضايا طويلة الأمد، مع إمكانية تقسيم المبلغ على دفعات تناسب وضعك المالي.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="payment">
+          <button class="faq-q" aria-expanded="false">
+            <span>هل تقدمون خدمات قانونية مجانية؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نقدم استشارة قانونية مجانية أولى لمدة 30 دقيقة لجميع العملاء. كما نساهم في قضايا المصلحة العامة وبعض الحالات الإنسانية. تواصل معنا لمعرفة إذا كنت مؤهلاً للحصول على مساعدة قانونية مخفضة أو مجانية.</p>
+          </div>
+        </div>
+
+        <!-- التواصل والمتابعة -->
+        <div class="sec-tag" style="margin: 2.5rem 0 1.5rem; display:inline-flex; align-items:center; gap:.6rem;">
+          <i class="fas fa-comments"></i> التواصل والمتابعة
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="contact">
+          <button class="faq-q" aria-expanded="false">
+            <span>كيف أتابع تطورات قضيتي؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>يمكنك متابعة قضيتك عبر الهاتف، البريد الإلكتروني، أو من خلال زيارة مكتبنا. نحرص على التواصل المنتظم معك وإبلاغك بكل جديد في قضيتك فور حدوثه.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up" data-cat="contact">
+          <button class="faq-q" aria-expanded="false">
+            <span>هل تقدمون استشارات عن بُعد؟</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-a" hidden>
+            <p>نعم، نقدم استشارات قانونية عبر الهاتف أو مكالمة الفيديو للعملاء الذين لا يستطيعون الحضور شخصياً. يمكنك حجز موعد استشارة عن بُعد من خلال الاتصال بنا أو التواصل عبر واتساب.</p>
+          </div>
+        </div>
+
+        <div id="faqNoResults" class="faq-no-results">
+          <i class="fas fa-search" style="font-size:2rem; color:var(--tx3); display:block; margin-bottom:.75rem;"></i>
+          لا توجد نتائج تطابق بحثك — جرب كلمات أخرى
+        </div>
+      </div><!-- /.faq-list -->
+
+      <!-- CTA -->
+      <div class="contact-cta reveal-up" style="text-align:center; margin-top:4rem; padding:3rem 2rem; background: var(--card); border:1px solid var(--border); border-radius:var(--r3); backdrop-filter:blur(16px);">
+        <h2 style="font-size:1.8rem; margin-bottom:.8rem; color:var(--txI);">لم تجد إجابة لسؤالك؟</h2>
+        <p style="color:var(--tx2); margin-bottom:2rem;">تواصل معنا مباشرة وسيسعد فريقنا القانوني بمساعدتك</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="index.html#contact" class="btn-hero-primary">
+            <i class="fas fa-envelope"></i>
+            <span>راسلنا الآن</span>
+          </a>
+          <a href="tel:+9647705515535" class="btn-hero-secondary">
+            <i class="fas fa-phone-alt"></i>
+            <span dir="ltr">+964 770 551 5535</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="logo.svg" alt="logo" style="width:36px;height:36px;border-radius:8px">
+              <div>
+                <span class="fl-a">الشرق الأوسط</span>
+                <span class="fl-b">للمحاماة والاستشارات القانونية</span>
+              </div>
+            </a>
+            <p>نقدم خدمات قانونية متميزة بالتزام وأمانة كاملة منذ عام 2009. ثقتكم هي أساس نجاحنا.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/9647705515535" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="lawyers.html">المحامون</a></li>
+              <li><a href="cases.html">قضايانا</a></li>
+              <li><a href="blog.html">المدونة</a></li>
+              <li><a href="career.html">الوظائف</a></li>
+              <li><a href="faq.html">الأسئلة الشائعة</a></li>
+              <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>خدماتنا القانونية</h4>
+            <ul>
+              <li><a href="index.html#services">القضايا العقارية</a></li>
+              <li><a href="index.html#services">القضايا التجارية</a></li>
+              <li><a href="index.html#services">قانون الأسرة</a></li>
+              <li><a href="index.html#services">القضايا المدنية</a></li>
+              <li><a href="index.html#services">الاستشارات القانونية</a></li>
+              <li><a href="index.html#services">القضايا الجنائية</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h4>تواصل معنا</h4>
+            <ul class="footer-contact-list">
+              <li><i class="fas fa-phone-alt"></i><a href="tel:+9647705515535" dir="ltr">+964 770 551 5535</a></li>
+              <li><i class="fas fa-envelope"></i><a href="mailto:info@middleeast-law.com">info@middleeast-law.com</a></li>
+              <li><i class="fas fa-map-marker-alt"></i><span>بغداد - الكرادة - شارع 42</span></li>
+              <li><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 شركة الشرق الأوسط للمحاماة. جميع الحقوق محفوظة.</p>
+        <div class="fbot-links">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">شروط الاستخدام</a>
+          <a href="faq.html">الأسئلة الشائعة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backTop" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/9647705515535?text=مرحباً، أود الاستفسار عن خدماتكم القانونية."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="واتساب">
+    <i class="fab fa-whatsapp"></i>
+    <span>تحدث معنا</span>
+  </a>
+
+  <!-- TOAST -->
+  <div class="toast-box" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="laws-data.js?v=25" defer></script>
+  <script src="laws-data-2.js?v=25" defer></script>
+  <script src="laws-data-3.js?v=25" defer></script>
+  <script src="laws-data-4.js?v=25" defer></script>
+  <script src="laws-data-5.js?v=25" defer></script>
+  <script src="laws-data-6.js?v=25" defer></script>
+  <script src="laws-data-7.js?v=25" defer></script>
+  <script src="laws-data-8.js?v=25" defer></script>
+  <script src="laws-data-9.js?v=25" defer></script>
+  <script src="laws-data-10.js?v=25" defer></script>
+  <script src="ai-engine.js?v=25" defer></script>
+  <script src="language-system.js?v=25" defer></script>
+  <script src="admin-bridge.js?v=25" defer></script>
+  <script src="script.js?v=25" defer></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "brand": "Moyen-Orient",
+    "brandSub": "Droit et Consultations",
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "laws": "Lois Irakiennes",
+    "assistant": "Assistant Juridique",
+    "team": "Notre Équipe",
+    "app": "Application",
+    "contact": "Contact",
+    "cta": "Consultation Gratuite",
+    "pricing": "Forfaits"
+  },
+  "hero": {
+    "badge": "Cabinet N°1 en Irak",
+    "titleLine1": "La Justice Commence",
+    "titleLine2": "Ici",
+    "title": "La Justice Commence Ici",
+    "subtitle": "Plus de 15 ans d'expertise en droit irakien - Les meilleures solutions juridiques avec un assistant intelligent qui répond à toutes vos questions",
+    "askAI": "Demander à l'Assistant",
+    "consult": "Consultation Gratuite",
+    "getApp": "Télécharger l'App"
+  },
+  "stats": {
+    "cases": "Affaires Réussies",
+    "success": "Taux de Réussite",
+    "years": "Ans d'Expérience",
+    "clients": "Clients Satisfaits"
+  },
+  "about": {
+    "tag": "Qui Sommes-Nous",
+    "title": "Cabinet Moyen-Orient pour le Droit",
+    "p1": "La Société du Moyen-Orient pour le Droit et les Consultations Juridiques a été fondée en 2009 au cœur de Bagdad, devenant l'un des cabinets juridiques les plus éminents d'Irak.",
+    "p2": "Nous combinons une expertise approfondie du droit irakien avec les technologies modernes, y compris notre assistant juridique intelligent qui répond instantanément à toute question juridique.",
+    "f1": "Équipe des avocats irakiens les plus qualifiés",
+    "f2": "Assistant juridique intelligent disponible 24/7",
+    "f3": "Base de données complète des lois irakiennes",
+    "f4": "Application intelligente pour Android et iPhone",
+    "cta": "Découvrez Nos Services",
+    "cardYears": "Années d'expérience juridique",
+    "cardCases": "Affaires gagnées",
+    "cardClients": "Clients qui nous font confiance",
+    "cardAI": "Assistant juridique intelligent"
+  },
+  "services": {
+    "tag": "Nos Services Juridiques",
+    "title": "Solutions Juridiques Complètes",
+    "subtitle": "Nous offrons une large gamme de services juridiques spécialisés",
+    "s1": {
+      "title": "Affaires Immobilières",
+      "desc": "Résolution de litiges immobiliers, enregistrement de propriétés et révision de contrats."
+    },
+    "s2": {
+      "title": "Affaires Commerciales",
+      "desc": "Création de sociétés, contrats commerciaux et résolution de différends entre associés."
+    },
+    "s3": {
+      "title": "Droit de la Famille",
+      "desc": "Affaires de divorce, garde d'enfants, pension alimentaire et succession en toute confidentialité."
+    },
+    "s4": {
+      "title": "Affaires Pénales",
+      "desc": "Défense dans les affaires pénales à tous les degrés de juridiction."
+    },
+    "s5": {
+      "title": "Affaires Civiles",
+      "desc": "Contentieux civil à tous les stades devant les tribunaux irakiens."
+    },
+    "s6": {
+      "title": "Consultations Juridiques",
+      "desc": "Conseils juridiques spécialisés pour particuliers et entreprises dans tous les domaines."
+    },
+    "ask": "Poser une question sur cette loi"
+  },
+  "laws": {
+    "tag": "Bibliothèque Juridique",
+    "title": "Bibliothèque Juridique Irakienne Complète",
+    "subtitle": "La plus grande bibliothèque juridique numérique irakienne — Parcourez 50+ lois et 350+ articles dans 10 catégories via l'assistant IA",
+    "statsLaws": "Loi Irakienne",
+    "statsArticles": "Article Juridique",
+    "statsCategories": "Catégorie Juridique",
+    "statsAssistant": "Assistant Juridique IA",
+    "civil": "Droit Civil",
+    "criminal": "Droit Pénal",
+    "family": "Statut Personnel",
+    "commercial": "Droit Commercial",
+    "labor": "Droit du Travail",
+    "constitutional": "Constitution",
+    "property": "Droit Immobilier",
+    "administrative": "Droit Administratif",
+    "financial": "Droit Financier",
+    "procedural": "Procédures Juridiques",
+    "ctaTitle": "Demandez à l'Assistant Juridique IA",
+    "ctaDesc": "Tapez votre question ou cliquez sur une catégorie ci-dessus — l'assistant IA affichera toutes les lois associées avec les détails complets",
+    "ctaBtn": "Aller à l'Assistant Juridique"
+  },
+  "ai": {
+    "tag": "Assistant Juridique Intelligent",
+    "title": "Votre Assistant Juridique Disponible 24/7",
+    "subtitle": "Posez n'importe quelle question sur les lois irakiennes dans n'importe quelle langue - L'assistant intelligent est prêt à répondre",
+    "f1": {
+      "title": "Assistant Vocal",
+      "desc": "Parlez et obtenez une réponse instantanée"
+    },
+    "f2": {
+      "title": "Multilingue",
+      "desc": "Supporte l'arabe, l'anglais, le kurde, le turc et plus"
+    },
+    "f3": {
+      "title": "Base de Données Complète",
+      "desc": "Couvre toutes les lois irakiennes et législations en vigueur"
+    },
+    "f4": {
+      "title": "Disponible 24/7",
+      "desc": "Obtenez une aide juridique à tout moment"
+    },
+    "chatName": "Assistant Juridique",
+    "online": "En ligne maintenant",
+    "welcome": "Bonjour! Je suis l'assistant juridique du Moyen-Orient. Je peux vous aider avec toute question sur les lois irakiennes. Écrivez votre question ou parlez! 🎯",
+    "inputPlaceholder": "Écrivez votre question juridique ici...",
+    "listening": "Écoute en cours...",
+    "floatLabel": "Assistant Juridique"
+  },
+  "team": {
+    "tag": "Notre Équipe Distinguée",
+    "title": "Élite d'Avocats Experts",
+    "subtitle": "Une équipe des avocats les plus qualifiés avec une vaste expérience dans diverses branches du droit",
+    "m1": {
+      "name": "Me Ahmed Al-Husseini",
+      "role": "Fondateur et Directeur Général",
+      "desc": "Plus de 15 ans d'expérience en affaires commerciales et immobilières. Membre du Barreau Irakien."
+    },
+    "m2": {
+      "name": "Me Sara Al-Mohammadi",
+      "role": "Spécialiste Droit Familial",
+      "desc": "Spécialiste des affaires de statut personnel avec 10 ans d'expérience. Reconnue pour son approche humaine."
+    },
+    "m3": {
+      "name": "Me Ali Al-Kazimi",
+      "role": "Expert Droit Pénal",
+      "desc": "Vaste expérience en défense pénale et affaires complexes. Taux de réussite élevé devant les tribunaux."
+    }
+  },
+  "testi": {
+    "tag": "Avis des Clients",
+    "title": "Ce Que Disent Nos Clients",
+    "t1": {
+      "text": "Excellente expérience avec Moyen-Orient. J'ai beaucoup bénéficié de l'assistant juridique intelligent et de l'équipe distinguée.",
+      "name": "Ahmed Mohammed",
+      "role": "Homme d'affaires - Bagdad"
+    },
+    "t2": {
+      "text": "L'assistant vocal est une fonctionnalité formidable! J'ai pu obtenir des réponses rapides sur mes droits juridiques à tout moment.",
+      "name": "Fatima Ali",
+      "role": "Ingénieure - Erbil"
+    },
+    "t3": {
+      "text": "Le meilleur cabinet d'avocats avec lequel j'ai travaillé. L'application est facile à utiliser et l'équipe très professionnelle.",
+      "name": "Karim Hassan",
+      "role": "Commerçant - Basra"
+    }
+  },
+  "app": {
+    "tag": "Application Intelligente",
+    "title": "Téléchargez l'Application Moyen-Orient Juridique",
+    "subtitle": "Ayez tous les services juridiques dans votre poche",
+    "f1": "Assistant juridique intelligent vocal et textuel",
+    "f2": "Recherche instantanée dans les lois irakiennes",
+    "f3": "Réservation de rendez-vous avec les avocats",
+    "f4": "Notifications des dernières mises à jour juridiques",
+    "f5": "Suivez votre affaire en toute confidentialité",
+    "f6": "Support multilingue",
+    "install": "Installer l'Application",
+    "installNow": "Installez Gratuitement Maintenant",
+    "googlePlay": "Télécharger sur Google Play",
+    "appStore": "Télécharger sur App Store",
+    "notifTitle": "Saviez-vous que vous pouvez installer ce site comme application?",
+    "notifDesc": "Appuyez sur Installer l'application ou ajoutez-le à l'écran d'accueil depuis votre navigateur!",
+    "installBtn": "Installer",
+    "mockHeader": "Moyen-Orient Juridique",
+    "mockBot1": "Bonjour! Comment puis-je vous aider? 👋",
+    "mockUser1": "Quels sont mes droits en cas de divorce?",
+    "mockBot2": "Selon la loi irakienne du statut personnel n°188...",
+    "mockUser2": "Merci beaucoup!",
+    "mockInput": "Tapez votre question juridique...",
+    "mockNavHome": "Accueil",
+    "mockNavLaws": "Lois",
+    "mockNavAssistant": "Assistant",
+    "mockNavAppts": "Rendez-vous",
+    "mockNavAccount": "Mon Compte",
+    "stat1": "Téléchargements",
+    "stat2": "Évaluation",
+    "stat3": "Lois",
+    "stat4": "Support"
+  },
+  "faq": {
+    "tag": "Questions Fréquentes",
+    "title": "Questions Fréquemment Posées",
+    "q1": "Quel est le coût de la première consultation?",
+    "a1": "La première consultation est entièrement gratuite. Nous prenons soin de comprendre votre affaire avant de déterminer tout coût.",
+    "q2": "L'assistant juridique intelligent est-il gratuit?",
+    "a2": "Oui! L'assistant juridique intelligent est disponible gratuitement pour tous les visiteurs du site et de l'application.",
+    "q3": "Puis-je utiliser l'assistant vocal?",
+    "a3": "Absolument! L'assistant juridique supporte la saisie vocale en arabe, anglais, kurde et autres langues.",
+    "q4": "Comment télécharger l'application?",
+    "a4": "Vous pouvez installer l'application directement depuis ce site ou la télécharger depuis Google Play ou App Store.",
+    "q5": "Les informations juridiques du site sont-elles à jour?",
+    "a5": "Oui, nous mettons continuellement à jour notre base de données pour garantir l'exactitude des informations."
+  },
+  "contact": {
+    "tag": "Contactez-Nous",
+    "title": "Obtenez une Consultation Gratuite",
+    "subtitle": "Nous sommes là pour vous aider - Contactez-nous maintenant et obtenez votre première consultation gratuitement",
+    "address": "Adresse",
+    "addressVal": "Bagdad - Karrada - Rue 42",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "hours": "Heures d'Ouverture",
+    "hoursVal": "Samedi - Jeudi: 9h - 17h",
+    "nameLabel": "Nom Complet",
+    "namePH": "Entrez votre nom complet",
+    "phoneLabel": "Numéro de Téléphone",
+    "emailLabel": "E-mail",
+    "serviceLabel": "Type de Service",
+    "selectService": "Choisissez le Service",
+    "opt1": "Affaires Immobilières",
+    "opt2": "Affaires Commerciales",
+    "opt3": "Droit de la Famille",
+    "opt4": "Affaires Pénales",
+    "opt5": "Affaires Civiles",
+    "opt6": "Consultation Juridique",
+    "msgLabel": "Votre Message",
+    "msgPH": "Décrivez les détails de votre affaire ou question",
+    "submit": "Envoyer la Demande"
+  },
+  "pricing": {
+    "tag": "Forfaits d'Abonnement",
+    "title": "Choisissez le Forfait Qui Vous Convient",
+    "subtitle": "Des forfaits de consultation complémentaires pour les particuliers et les entreprises",
+    "currency": "IQD",
+    "period": "/ mensuel",
+    "subscribe": "S'abonner Maintenant",
+    "popular": "Le Plus Populaire",
+    "basic": {
+      "badge": "Basique",
+      "desc": "Pour les particuliers ayant besoin de consultations juridiques simples",
+      "f1": "3 consultations mensuelles via le site",
+      "f2": "Accès à l'assistant juridique IA",
+      "f3": "Accès complet aux lois irakiennes",
+      "f4": "Support par e-mail",
+      "f5": "Consultations téléphoniques",
+      "f6": "Visites au bureau"
+    },
+    "pro": {
+      "badge": "Professionnel",
+      "desc": "Pour les particuliers et petites entreprises",
+      "f1": "10 consultations mensuelles (site + téléphone)",
+      "f2": "Assistant juridique avancé",
+      "f3": "Révision des contrats et documents",
+      "f4": "Consultations téléphoniques directes",
+      "f5": "Priorité de réponse et suivi",
+      "f6": "Représentation juridique au tribunal"
+    },
+    "enterprise": {
+      "badge": "Entreprise",
+      "desc": "Pour les entreprises et institutions - protection juridique complète",
+      "f1": "Consultations illimitées",
+      "f2": "Avocat dédié à l'entreprise",
+      "f3": "Révision de tous les contrats",
+      "f4": "Représentation juridique au tribunal",
+      "f5": "Visites mensuelles au bureau",
+      "f6": "Rapports juridiques périodiques"
+    },
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "Économisez 20%",
+    "trust1": "Paiement 100% Sécurisé",
+    "trust2": "Garantie Remboursement 7 Jours",
+    "trust3": "Support 24/7",
+    "trust4": "Vos Données Protégées",
+    "periodYearly": "/ Annuel"
+  },
+  "payment": {
+    "title": "Choisissez le Mode de Paiement",
+    "selectedPlan": "Forfait sélectionné :",
+    "zainCash": "Zain Cash",
+    "rafidain": "Mastercard Rafidain",
+    "ahli": "Banque Al-Ahli Irakienne",
+    "bankTransfer": "Virement Bancaire",
+    "nameLabel": "Nom Complet",
+    "phoneLabel": "Numéro de Téléphone",
+    "emailLabel": "E-mail",
+    "confirm": "Confirmer l'Abonnement"
+  },
+  "footer": {
+    "desc": "Société du Moyen-Orient pour le Droit et les Consultations Juridiques - Votre partenaire juridique de confiance en Irak depuis 2009.",
+    "quickLinks": "Liens Rapides",
+    "services": "Nos Services",
+    "contact": "Contact",
+    "downloadApp": "Télécharger l'Application:",
+    "copy": "© 2024 Cabinet Moyen-Orient. Tous droits réservés."
+  },
+  "page": {
+    "title": "Cabinet Moyen-Orient - Droit et Consultations Juridiques"
+  },
+  "meta": {
+    "description": "Cabinet Moyen-Orient - Plus de 15 ans d'expérience en droit irakien et consultations juridiques",
+    "keywords": "cabinet d'avocats, droit irakien, consultation juridique, avocat Bagdad"
+  },
+  "loader": {
+    "title": "Cabinet Moyen-Orient"
+  }
+}

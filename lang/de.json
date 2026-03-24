@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "brand": "Naher Osten",
+    "brandSub": "Anwaltskanzlei & Beratung",
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "laws": "Irakische Gesetze",
+    "assistant": "Rechtsassistent",
+    "team": "Unser Team",
+    "app": "App",
+    "contact": "Kontakt",
+    "cta": "Kostenlose Beratung",
+    "pricing": "Pakete"
+  },
+  "hero": {
+    "badge": "Die führende Kanzlei im Irak",
+    "titleLine1": "Gerechtigkeit beginnt",
+    "titleLine2": "hier",
+    "title": "Gerechtigkeit beginnt hier",
+    "subtitle": "Über 15 Jahre Erfahrung im irakischen Recht – wir bieten Ihnen die besten Rechtslösungen mit einem intelligenten Assistenten, der alle Ihre Fragen beantwortet",
+    "askAI": "Fragen Sie den Rechtsassistenten",
+    "consult": "Kostenlose Beratung",
+    "getApp": "App herunterladen"
+  },
+  "stats": {
+    "cases": "Erfolgreiche Fälle",
+    "success": "Erfolgsquote",
+    "years": "Jahre Erfahrung",
+    "clients": "Zufriedene Mandanten"
+  },
+  "about": {
+    "tag": "Über uns",
+    "title": "Naher Osten Anwaltskanzlei",
+    "p1": "Die Anwaltskanzlei Naher Osten für Rechtsberatung wurde 2009 im Herzen von Bagdad gegründet und ist eine der führenden Kanzleien im Irak.",
+    "p2": "Wir verbinden tiefgreifende Expertise im irakischen Recht mit modernster Technologie, einschließlich unseres intelligenten Rechtsassistenten, der Ihnen sofortige Antworten auf alle rechtlichen Fragen liefert.",
+    "f1": "Team aus erfahrenen irakischen Anwälten",
+    "f2": "Intelligenter Rechtsassistent rund um die Uhr",
+    "f3": "Umfassende Datenbank irakischer Gesetze",
+    "f4": "Smarte App für Android und iPhone",
+    "cta": "Unsere Dienste entdecken",
+    "cardYears": "Jahre Rechtserfahrung",
+    "cardCases": "Gewonnene Fälle",
+    "cardClients": "Mandanten vertrauen uns",
+    "cardAI": "Intelligenter Rechtsassistent"
+  },
+  "services": {
+    "tag": "Unsere Rechtsdienstleistungen",
+    "title": "Umfassende Rechtslösungen",
+    "subtitle": "Wir bieten eine breite Palette spezialisierter Rechtsdienstleistungen",
+    "s1": {
+      "title": "Immobilienrecht",
+      "desc": "Lösung von Immobilienstreitigkeiten, Eigentumsregistrierung und Vertragsprüfung mit umfangreicher Erfahrung."
+    },
+    "s2": {
+      "title": "Handelsrecht",
+      "desc": "Unternehmensgründung, Handelsverträge und Beilegung von Gesellschafterstreitigkeiten."
+    },
+    "s3": {
+      "title": "Familienrecht",
+      "desc": "Scheidung, Sorgerecht, Unterhalt und Erbschaftsangelegenheiten in absoluter Vertraulichkeit."
+    },
+    "s4": {
+      "title": "Strafrecht",
+      "desc": "Verteidigung in Strafsachen auf allen Gerichtsebenen."
+    },
+    "s5": {
+      "title": "Zivilrecht",
+      "desc": "Zivilprozessführung in allen Instanzen vor irakischen Gerichten."
+    },
+    "s6": {
+      "title": "Rechtsberatung",
+      "desc": "Spezialisierte Rechtsberatung für Privatpersonen und Unternehmen in allen Bereichen."
+    },
+    "ask": "Fragen Sie zu diesem Gesetz"
+  },
+  "laws": {
+    "tag": "Rechtsbibliothek",
+    "title": "Umfassende Irakische Rechtsbibliothek",
+    "subtitle": "Die größte digitale irakische Rechtsbibliothek — Durchsuchen Sie 50+ Gesetze und 350+ Artikel in 10 Kategorien mit dem KI-Assistenten",
+    "statsLaws": "Irakisches Gesetz",
+    "statsArticles": "Rechtsartikel",
+    "statsCategories": "Rechtskategorie",
+    "statsAssistant": "KI-Rechtsassistent",
+    "civil": "Zivilrecht",
+    "criminal": "Strafrecht",
+    "family": "Personenstand",
+    "commercial": "Handelsrecht",
+    "labor": "Arbeitsrecht",
+    "constitutional": "Verfassung",
+    "property": "Immobilienrecht",
+    "administrative": "Verwaltungsrecht",
+    "financial": "Finanzrecht",
+    "procedural": "Rechtsverfahren",
+    "ctaTitle": "Fragen Sie den KI-Rechtsassistenten",
+    "ctaDesc": "Geben Sie Ihre Frage ein oder klicken Sie auf eine Kategorie oben — der KI-Assistent zeigt alle relevanten Gesetze mit vollständigen Details an",
+    "ctaBtn": "Zum Rechtsassistenten"
+  },
+  "ai": {
+    "tag": "Intelligenter Rechtsassistent",
+    "title": "Ihr Rechtsassistent rund um die Uhr",
+    "subtitle": "Stellen Sie jede Frage zu irakischen Gesetzen in jeder Sprache – der Assistent ist bereit zu antworten",
+    "f1": {
+      "title": "Sprachassistent",
+      "desc": "Sprechen Sie und erhalten Sie sofortige Antworten in Ihrer bevorzugten Sprache"
+    },
+    "f2": {
+      "title": "Mehrsprachig",
+      "desc": "Unterstützt Arabisch, Englisch, Kurdisch, Türkisch, Persisch, Französisch, Deutsch, Spanisch, Russisch und Chinesisch"
+    },
+    "f3": {
+      "title": "Umfassende Datenbank",
+      "desc": "Deckt alle irakischen Gesetze und geltenden Vorschriften ab"
+    },
+    "f4": {
+      "title": "24/7 Verfügbar",
+      "desc": "Erhalten Sie jederzeit rechtliche Hilfe"
+    },
+    "chatName": "Rechtsassistent",
+    "online": "Jetzt online",
+    "welcome": "Willkommen! Ich bin der Rechtsassistent der Kanzlei Naher Osten. Ich kann Ihnen bei jeder Frage zu irakischen Gesetzen helfen. Schreiben Sie Ihre Frage oder sprechen Sie! 🎯",
+    "inputPlaceholder": "Schreiben Sie Ihre rechtliche Frage hier...",
+    "listening": "Zuhören...",
+    "floatLabel": "Rechtsassistent"
+  },
+  "team": {
+    "tag": "Unser herausragendes Team",
+    "title": "Elite-Anwälte mit Expertise",
+    "subtitle": "Ein Team aus den erfahrensten Anwälten in verschiedenen Rechtsgebieten",
+    "m1": {
+      "name": "RA Ahmed Al-Husseini",
+      "role": "Gründer & Geschäftsführer",
+      "desc": "Über 15 Jahre Erfahrung in Handels- und Immobilienrecht. Mitglied der irakischen Anwaltskammer."
+    },
+    "m2": {
+      "name": "RA Sarah Al-Mohammadi",
+      "role": "Spezialistin für Familienrecht",
+      "desc": "Spezialisiert auf Personenstandsangelegenheiten mit 10 Jahren Erfahrung. Bekannt für ihren einfühlsamen Umgang."
+    },
+    "m3": {
+      "name": "RA Ali Al-Kadhimi",
+      "role": "Experte für Strafrecht",
+      "desc": "Umfangreiche Erfahrung in der Strafverteidigung und komplexen Fällen. Hohe Erfolgsquote vor Gericht."
+    }
+  },
+  "testi": {
+    "tag": "Kundenmeinungen",
+    "title": "Was unsere Mandanten sagen",
+    "t1": {
+      "text": "Hervorragende Erfahrung mit der Kanzlei Naher Osten. Der intelligente Rechtsassistent und das professionelle Team waren sehr hilfreich.",
+      "name": "Ahmed Mohammed",
+      "role": "Geschäftsmann – Bagdad"
+    },
+    "t2": {
+      "text": "Der Sprachassistent ist eine großartige Funktion! Schnelle Antworten zu meinen Rechten – jederzeit.",
+      "name": "Fatima Al-Ali",
+      "role": "Ingenieurin – Erbil"
+    },
+    "t3": {
+      "text": "Die beste Kanzlei, mit der ich zusammengearbeitet habe. Die App ist benutzerfreundlich und das Team sehr professionell.",
+      "name": "Karim Hassan",
+      "role": "Händler – Basra"
+    }
+  },
+  "app": {
+    "tag": "Die smarte App",
+    "title": "Laden Sie die App der Kanzlei Naher Osten herunter",
+    "subtitle": "Alle Rechtsdienstleistungen in Ihrer Tasche",
+    "f1": "Intelligenter Rechtsassistent per Sprache und Text",
+    "f2": "Sofortige Suche in irakischen Gesetzen",
+    "f3": "Termine mit Anwälten buchen",
+    "f4": "Benachrichtigungen über rechtliche Aktualisierungen",
+    "f5": "Verfolgen Sie Ihren Fall vertraulich",
+    "f6": "Mehrsprachige Unterstützung",
+    "install": "App installieren",
+    "installNow": "Jetzt kostenlos installieren",
+    "googlePlay": "Bei Google Play herunterladen",
+    "appStore": "Im App Store herunterladen",
+    "notifTitle": "Wussten Sie, dass Sie diese Website als App installieren können?",
+    "notifDesc": "Klicken Sie auf App installieren oder fügen Sie sie zum Startbildschirm hinzu, um ein vollständiges App-Erlebnis zu erhalten!",
+    "installBtn": "Installieren",
+    "mockHeader": "Naher Osten Kanzlei",
+    "mockBot1": "Hallo! Wie kann ich Ihnen helfen? 👋",
+    "mockUser1": "Was sind meine Rechte bei einer Scheidung?",
+    "mockBot2": "Gemäß dem irakischen Personenstandsgesetz Nr. 188...",
+    "mockUser2": "Vielen Dank!",
+    "mockInput": "Ihre Rechtsfrage eingeben...",
+    "mockNavHome": "Startseite",
+    "mockNavLaws": "Gesetze",
+    "mockNavAssistant": "Assistent",
+    "mockNavAppts": "Termine",
+    "mockNavAccount": "Mein Konto",
+    "stat1": "Downloads",
+    "stat2": "Bewertung",
+    "stat3": "Gesetze",
+    "stat4": "Support"
+  },
+  "faq": {
+    "tag": "Häufige Fragen",
+    "title": "Häufig gestellte Fragen",
+    "q1": "Was kostet die Erstberatung?",
+    "a1": "Die Erstberatung ist völlig kostenlos. Wir nehmen uns Zeit, Ihren Fall vollständig zu verstehen, bevor Kosten anfallen.",
+    "q2": "Ist der intelligente Rechtsassistent kostenlos?",
+    "a2": "Ja! Der intelligente Rechtsassistent steht allen Website- und App-Besuchern kostenlos zur Verfügung.",
+    "q3": "Kann ich den Sprachassistenten nutzen?",
+    "a3": "Natürlich! Der Rechtsassistent unterstützt Spracheingabe auf Arabisch, Englisch, Kurdisch und weiteren Sprachen.",
+    "q4": "Wie lade ich die App herunter?",
+    "a4": "Sie können die App direkt von dieser Website installieren oder aus dem Google Play Store oder App Store herunterladen.",
+    "q5": "Sind die rechtlichen Informationen aktuell?",
+    "a5": "Ja, wir aktualisieren unsere Datenbank kontinuierlich, um Genauigkeit und Übereinstimmung mit den neuesten Gesetzesänderungen zu gewährleisten."
+  },
+  "contact": {
+    "tag": "Kontaktieren Sie uns",
+    "title": "Kostenlose Beratung erhalten",
+    "subtitle": "Wir sind hier, um Ihnen zu helfen – kontaktieren Sie uns jetzt für Ihre kostenlose Erstberatung",
+    "address": "Adresse",
+    "addressVal": "Bagdad – Karrada – Straße 42",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "hours": "Öffnungszeiten",
+    "hoursVal": "Samstag – Donnerstag: 9:00 – 17:00 Uhr",
+    "nameLabel": "Vollständiger Name",
+    "namePH": "Geben Sie Ihren vollständigen Namen ein",
+    "phoneLabel": "Telefonnummer",
+    "emailLabel": "E-Mail",
+    "serviceLabel": "Art der Dienstleistung",
+    "selectService": "Dienstleistung wählen",
+    "opt1": "Immobilienrecht",
+    "opt2": "Handelsrecht",
+    "opt3": "Familienrecht",
+    "opt4": "Strafrecht",
+    "opt5": "Zivilrecht",
+    "opt6": "Rechtsberatung",
+    "msgLabel": "Ihre Nachricht",
+    "msgPH": "Beschreiben Sie Ihren Fall oder Ihre Anfrage",
+    "submit": "Anfrage senden"
+  },
+  "pricing": {
+    "tag": "Abonnementpakete",
+    "title": "Wählen Sie das passende Paket",
+    "subtitle": "Umfassende Beratungspakete für Privatpersonen und Unternehmen – Beratung vor Ort und remote",
+    "currency": "IQD",
+    "period": "/ monatlich",
+    "subscribe": "Jetzt abonnieren",
+    "popular": "Am beliebtesten",
+    "basic": {
+      "badge": "Basis",
+      "desc": "Für Privatpersonen mit einfachem Beratungsbedarf",
+      "f1": "3 monatliche Beratungen über die Website",
+      "f2": "Zugang zum intelligenten Rechtsassistenten",
+      "f3": "Vollständiger Zugriff auf irakische Gesetze",
+      "f4": "Support per E-Mail",
+      "f5": "Telefonberatungen",
+      "f6": "Bürobesuche"
+    },
+    "pro": {
+      "badge": "Professionell",
+      "desc": "Für Privatpersonen und kleine Unternehmen – umfassende Beratung",
+      "f1": "10 monatliche Beratungen (Website + Telefon)",
+      "f2": "Erweiterter Rechtsassistent",
+      "f3": "Vertrags- und Dokumentenprüfung",
+      "f4": "Direkte Telefonberatung",
+      "f5": "Priorität bei Antworten und Nachverfolgung",
+      "f6": "Gerichtliche Vertretung"
+    },
+    "enterprise": {
+      "badge": "Unternehmen",
+      "desc": "Für Unternehmen und Institutionen – vollständiger Rechtsschutz",
+      "f1": "Unbegrenzte Beratungen",
+      "f2": "Dedizierter Firmenanwalt",
+      "f3": "Prüfung aller Verträge und Vereinbarungen",
+      "f4": "Gerichtliche Vertretung",
+      "f5": "Monatliche Bürobesuche",
+      "f6": "Regelmäßige Rechtsberichte"
+    },
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "save": "20% Sparen",
+    "trust1": "100% Sichere Zahlung",
+    "trust2": "7-Tage Rückerstattung",
+    "trust3": "24/7 Support",
+    "trust4": "Ihre Daten sind geschützt",
+    "periodYearly": "/ Jährlich"
+  },
+  "payment": {
+    "title": "Zahlungsmethode wählen",
+    "selectedPlan": "Gewähltes Paket:",
+    "zainCash": "Zain Cash",
+    "rafidain": "Mastercard Rafidain",
+    "ahli": "Al-Ahli Irakische Bank",
+    "bankTransfer": "Banküberweisung",
+    "nameLabel": "Vollständiger Name",
+    "phoneLabel": "Telefonnummer",
+    "emailLabel": "E-Mail",
+    "confirm": "Abonnement bestätigen"
+  },
+  "footer": {
+    "desc": "Naher Osten Anwaltskanzlei & Rechtsberatung – Ihr vertrauenswürdiger Rechtspartner im Irak seit 2009.",
+    "quickLinks": "Schnelllinks",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "downloadApp": "App herunterladen:",
+    "copy": "© 2024 Naher Osten Anwaltskanzlei. Alle Rechte vorbehalten."
+  },
+  "page": {
+    "title": "Naher Osten Anwaltskanzlei & Rechtsberatung"
+  },
+  "meta": {
+    "description": "Naher Osten Anwaltskanzlei – Über 15 Jahre Erfahrung im irakischen Recht und Rechtsberatung",
+    "keywords": "Anwaltskanzlei, irakisches Recht, Rechtsberatung, Anwalt Bagdad"
+  },
+  "loader": {
+    "title": "Naher Osten Anwaltskanzlei"
+  }
+}

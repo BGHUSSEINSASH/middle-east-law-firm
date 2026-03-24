@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>لوحة التحكم - شركة الشرق الأوسط للمحاماة</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+<style>
+/* ===== VARIABLES ===== */
+:root {
+  --p:#2563eb; --p-dark:#1d4ed8; --p-light:#60a5fa; --p-glow:rgba(37,99,235,.25);
+  --accent:#06b6d4; --accent-light:#22d3ee;
+  --success:#10b981; --danger:#ef4444; --warning:#f59e0b; --info:#8b5cf6;
+  --navy:#0a0f1e; --navy-light:#111827; --navy-lighter:#1f2937;
+  --text:#f1f5f9; --text-muted:#94a3b8; --text-dark:#1e293b;
+  --bg:#0a0f1e; --bg-alt:#111827; --bg-card:rgba(255,255,255,.04);
+  --glass:rgba(255,255,255,.05); --glass-border:rgba(255,255,255,.08);
+  --shadow:0 8px 32px rgba(0,0,0,.4); --shadow-lg:0 20px 60px rgba(0,0,0,.5);
+  --r:20px; --r-sm:12px; --r-xs:8px;
+  --font-ar:'Tajawal',sans-serif; --font-en:'Inter',sans-serif;
+  --t:.35s cubic-bezier(.4,0,.2,1);
+  --sidebar-w:280px;
+}
+[data-theme="light"]{
+  --navy:#f8fafc; --navy-light:#f1f5f9; --navy-lighter:#e2e8f0;
+  --text:#0f172a; --text-muted:#475569; --text-dark:#f8fafc;
+  --bg:#f8fafc; --bg-alt:#f1f5f9; --bg-card:rgba(0,0,0,.03);
+  --glass:rgba(0,0,0,.03); --glass-border:rgba(0,0,0,.08);
+  --shadow:0 8px 32px rgba(0,0,0,.1); --shadow-lg:0 20px 60px rgba(0,0,0,.15);
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ar);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background var(--t),color var(--t)}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit}
+input,select,textarea{font-family:inherit;color:inherit}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--navy-light)}
+::-webkit-scrollbar-thumb{background:var(--p);border-radius:3px}
+
+/* ===== LOGIN GATE ===== */
+.login-gate{position:fixed;inset:0;background:var(--bg);z-index:10000;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.login-gate.hidden{display:none}
+.login-box{width:100%;max-width:420px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:2.5rem;backdrop-filter:blur(24px);box-shadow:var(--shadow-lg);text-align:center;position:relative;overflow:hidden}
+.login-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--p),var(--accent),var(--p-light))}
+.login-box .logo-area{margin-bottom:1.5rem}
+.login-box .logo-area img{width:64px;height:64px;border-radius:14px;margin-bottom:.8rem}
+.login-box .logo-area h2{font-size:1.2rem;font-weight:700;margin-bottom:.3rem}
+.login-box .logo-area p{font-size:.82rem;color:var(--text-muted)}
+.login-box .field{margin-bottom:1.2rem;text-align:start}
+.login-box .field label{display:block;font-size:.82rem;font-weight:600;color:var(--text-muted);margin-bottom:.4rem}
+.login-box .field .input-wrap{position:relative}
+.login-box .field .input-wrap i{position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:.85rem;pointer-events:none}
+html[dir="ltr"] .login-box .field .input-wrap i{right:auto;left:1rem}
+.login-box .field input{width:100%;padding:.72rem 2.5rem .72rem 1rem;background:var(--bg-alt);border:1px solid var(--glass-border);border-radius:var(--r-xs);font-size:.9rem;transition:border-color var(--t),box-shadow var(--t)}
+html[dir="ltr"] .login-box .field input{padding:.72rem 1rem .72rem 2.5rem}
+.login-box .field input:focus{outline:none;border-color:var(--p-light);box-shadow:0 0 0 3px var(--p-glow)}
+.login-box .login-btn{width:100%;padding:.82rem;background:linear-gradient(135deg,var(--p),var(--p-light));border-radius:var(--r-xs);color:#fff;font-weight:700;font-size:.95rem;transition:transform var(--t),box-shadow var(--t);box-shadow:0 4px 20px var(--p-glow)}
+.login-box .login-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px var(--p-glow)}
+.login-error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:var(--r-xs);padding:.6rem;color:var(--danger);font-size:.8rem;margin-bottom:1rem;display:none}
+
+/* ===== LAYOUT ===== */
+.admin-layout{display:flex;min-height:100vh}
+
+/* ===== SIDEBAR ===== */
+.sidebar{position:fixed;top:0;right:0;bottom:0;width:var(--sidebar-w);background:var(--navy-light);border-left:1px solid var(--glass-border);display:flex;flex-direction:column;z-index:100;transition:transform var(--t)}
+html[dir="ltr"] .sidebar{right:auto;left:0;border-left:none;border-right:1px solid var(--glass-border)}
+.sidebar-header{padding:1.5rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid var(--glass-border)}
+.sidebar-header img{width:42px;height:42px;border-radius:10px}
+.sidebar-header .sh-text h3{font-size:.9rem;font-weight:700}
+.sidebar-header .sh-text span{font-size:.72rem;color:var(--text-muted)}
+.sidebar-nav{flex:1;overflow-y:auto;padding:.8rem 0}
+.sidebar-nav .nav-group{padding:.5rem 1rem;margin-bottom:.3rem}
+.sidebar-nav .nav-group-title{font-size:.7rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem;padding:0 .5rem}
+.sidebar-nav .nav-item{display:flex;align-items:center;gap:.7rem;padding:.65rem 1rem;border-radius:var(--r-xs);cursor:pointer;transition:all var(--t);font-size:.85rem;font-weight:500;color:var(--text-muted);margin-bottom:2px}
+.sidebar-nav .nav-item:hover{background:var(--glass);color:var(--text)}
+.sidebar-nav .nav-item.active{background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(6,182,212,.1));color:var(--p-light);font-weight:600}
+.sidebar-nav .nav-item.active i{color:var(--p-light)}
+.sidebar-nav .nav-item i{width:20px;text-align:center;font-size:.9rem}
+.sidebar-nav .nav-item .badge{margin-right:auto;background:var(--p);color:#fff;font-size:.65rem;padding:.15rem .45rem;border-radius:10px;font-weight:700}
+html[dir="ltr"] .sidebar-nav .nav-item .badge{margin-right:0;margin-left:auto}
+.sidebar-footer{padding:1rem 1.5rem;border-top:1px solid var(--glass-border);display:flex;align-items:center;gap:.8rem}
+.sidebar-footer .sf-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff}
+.sidebar-footer .sf-info{flex:1}
+.sidebar-footer .sf-info span{display:block;font-size:.82rem;font-weight:600}
+.sidebar-footer .sf-info small{font-size:.7rem;color:var(--text-muted)}
+.sidebar-footer .sf-logout{font-size:.9rem;color:var(--text-muted);transition:color var(--t);padding:.3rem}
+.sidebar-footer .sf-logout:hover{color:var(--danger)}
+
+/* ===== MAIN CONTENT ===== */
+.main-content{flex:1;margin-right:var(--sidebar-w);padding:0;transition:margin var(--t)}
+html[dir="ltr"] .main-content{margin-right:0;margin-left:var(--sidebar-w)}
+
+/* Top Bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(10,15,30,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--glass-border);padding:.8rem 2rem;display:flex;align-items:center;gap:1rem}
+[data-theme="light"] .topbar{background:rgba(248,250,252,.85)}
+.topbar .toggle-sidebar{display:none;font-size:1.2rem;color:var(--text-muted);padding:.3rem}
+.topbar .page-title{font-size:1.1rem;font-weight:700;flex:1}
+.topbar .topbar-actions{display:flex;align-items:center;gap:.8rem}
+.topbar .topbar-actions button{width:36px;height:36px;border-radius:var(--r-xs);background:var(--glass);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--text-muted);transition:all var(--t)}
+.topbar .topbar-actions button:hover{background:var(--p);color:#fff;border-color:var(--p)}
+.topbar .topbar-actions .notif-badge{position:relative}
+.topbar .topbar-actions .notif-badge::after{content:'3';position:absolute;top:-4px;left:-4px;width:16px;height:16px;background:var(--danger);border-radius:50%;font-size:.6rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* Content Area */
+.content-area{padding:2rem}
+
+/* ===== CARDS & WIDGETS ===== */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-bottom:2rem}
+.stat-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-sm);padding:1.5rem;backdrop-filter:blur(12px);transition:all var(--t);position:relative;overflow:hidden}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.stat-card:nth-child(1)::before{background:var(--p)}
+.stat-card:nth-child(2)::before{background:var(--success)}
+.stat-card:nth-child(3)::before{background:var(--warning)}
+.stat-card:nth-child(4)::before{background:var(--accent)}
+.stat-card:nth-child(5)::before{background:var(--info)}
+.stat-card:nth-child(6)::before{background:var(--danger)}
+.stat-card .sc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem}
+.stat-card .sc-icon{width:44px;height:44px;border-radius:var(--r-xs);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.stat-card:nth-child(1) .sc-icon{background:rgba(37,99,235,.15);color:var(--p-light)}
+.stat-card:nth-child(2) .sc-icon{background:rgba(16,185,129,.15);color:var(--success)}
+.stat-card:nth-child(3) .sc-icon{background:rgba(245,158,11,.15);color:var(--warning)}
+.stat-card:nth-child(4) .sc-icon{background:rgba(6,182,212,.15);color:var(--accent)}
+.stat-card:nth-child(5) .sc-icon{background:rgba(139,92,246,.15);color:var(--info)}
+.stat-card:nth-child(6) .sc-icon{background:rgba(239,68,68,.15);color:var(--danger)}
+.stat-card .sc-change{font-size:.72rem;padding:.2rem .5rem;border-radius:10px;font-weight:600}
+.stat-card .sc-change.up{background:rgba(16,185,129,.15);color:var(--success)}
+.stat-card .sc-change.down{background:rgba(239,68,68,.15);color:var(--danger)}
+.stat-card .sc-value{font-size:1.8rem;font-weight:800;margin-bottom:.2rem}
+.stat-card .sc-label{font-size:.8rem;color:var(--text-muted)}
+
+/* Panel Box */
+.panel{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-sm);backdrop-filter:blur(12px);margin-bottom:1.5rem;overflow:hidden}
+.panel-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;border-bottom:1px solid var(--glass-border);flex-wrap:wrap;gap:.8rem}
+.panel-header h3{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.panel-header h3 i{color:var(--p-light);font-size:.9rem}
+.panel-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.panel-actions .btn{padding:.45rem 1rem;border-radius:var(--r-xs);font-size:.8rem;font-weight:600;transition:all var(--t);display:inline-flex;align-items:center;gap:.4rem;border:1px solid transparent}
+.btn-primary{background:var(--p);color:#fff;border-color:var(--p)!important}
+.btn-primary:hover{background:var(--p-dark);box-shadow:0 4px 16px var(--p-glow)}
+.btn-secondary{background:var(--glass);border-color:var(--glass-border)!important;color:var(--text-muted)}
+.btn-secondary:hover{background:var(--glass-border);color:var(--text)}
+.btn-success{background:var(--success);color:#fff}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-warning{background:var(--warning);color:#fff}
+.panel-body{padding:1.5rem}
+
+/* ===== TABLE ===== */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:.75rem 1rem;text-align:start;font-size:.84rem;border-bottom:1px solid var(--glass-border)}
+th{font-weight:600;color:var(--text-muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.5px;background:var(--bg-card)}
+tr:hover td{background:var(--glass)}
+td .status{display:inline-block;padding:.2rem .6rem;border-radius:10px;font-size:.72rem;font-weight:600}
+td .status.active{background:rgba(16,185,129,.15);color:var(--success)}
+td .status.pending{background:rgba(245,158,11,.15);color:var(--warning)}
+td .status.closed{background:rgba(239,68,68,.15);color:var(--danger)}
+td .actions-cell{display:flex;gap:.3rem}
+td .actions-cell button{width:30px;height:30px;border-radius:var(--r-xs);display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all var(--t)}
+td .actions-cell .btn-edit{background:rgba(37,99,235,.1);color:var(--p-light)}
+td .actions-cell .btn-edit:hover{background:var(--p);color:#fff}
+td .actions-cell .btn-del{background:rgba(239,68,68,.1);color:var(--danger)}
+td .actions-cell .btn-del:hover{background:var(--danger);color:#fff}
+td .actions-cell .btn-view{background:rgba(6,182,212,.1);color:var(--accent)}
+td .actions-cell .btn-view:hover{background:var(--accent);color:#fff}
+
+/* ===== FORMS ===== */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--text-muted);margin-bottom:.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem 1rem;background:var(--bg-alt);border:1px solid var(--glass-border);border-radius:var(--r-xs);font-size:.88rem;transition:border-color var(--t),box-shadow var(--t)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--p-light);box-shadow:0 0 0 3px var(--p-glow)}
+.form-group textarea{min-height:100px;resize:vertical}
+.form-group select{cursor:pointer;appearance:auto}
+
+/* ===== MODAL ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.show{display:flex}
+.modal{width:100%;max-width:640px;max-height:90vh;background:var(--navy-light);border:1px solid var(--glass-border);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.modal-head{padding:1.2rem 1.5rem;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;justify-content:space-between}
+.modal-head h3{font-size:1rem;font-weight:700}
+.modal-head .modal-close{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--text-muted);transition:all var(--t)}
+.modal-head .modal-close:hover{background:rgba(239,68,68,.15);color:var(--danger)}
+.modal-body{padding:1.5rem;overflow-y:auto;flex:1}
+.modal-foot{padding:1rem 1.5rem;border-top:1px solid var(--glass-border);display:flex;justify-content:flex-end;gap:.5rem}
+
+/* ===== SECTIONS (hidden by default) ===== */
+.admin-section{display:none}
+.admin-section.active{display:block}
+
+/* ===== SETTINGS GRID ===== */
+.settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.setting-card{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:var(--r-sm);padding:1.5rem}
+.setting-card h4{font-size:.92rem;font-weight:700;margin-bottom:.3rem;display:flex;align-items:center;gap:.5rem}
+.setting-card h4 i{color:var(--p-light)}
+.setting-card p{font-size:.78rem;color:var(--text-muted);margin-bottom:1rem}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--glass-border)}
+.toggle-row:last-child{border:none}
+.toggle-row span{font-size:.84rem}
+.toggle-switch{position:relative;width:44px;height:24px}
+.toggle-switch input{opacity:0;width:0;height:0}
+.toggle-switch .slider{position:absolute;inset:0;background:var(--navy-lighter);border-radius:12px;cursor:pointer;transition:var(--t)}
+.toggle-switch .slider::before{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;right:3px;transition:var(--t)}
+html[dir="ltr"] .toggle-switch .slider::before{right:auto;left:3px}
+.toggle-switch input:checked+.slider{background:var(--p)}
+.toggle-switch input:checked+.slider::before{right:23px}
+html[dir="ltr"] .toggle-switch input:checked+.slider::before{right:auto;left:23px}
+.color-input{display:flex;align-items:center;gap:.5rem;margin-top:.3rem}
+.color-input input[type="color"]{width:36px;height:30px;border:none;border-radius:6px;cursor:pointer;background:none}
+.color-input span{font-size:.8rem;color:var(--text-muted)}
+
+/* ===== QUICK ACTIONS ===== */
+.quick-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-bottom:2rem}
+.qa-btn{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.2rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-sm);transition:all var(--t);text-align:center}
+.qa-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--p)}
+.qa-btn i{font-size:1.3rem;color:var(--p-light)}
+.qa-btn span{font-size:.78rem;font-weight:600}
+
+/* ===== ACTIVITY LIST ===== */
+.activity-list{list-style:none}
+.activity-item{display:flex;align-items:flex-start;gap:.8rem;padding:.8rem 0;border-bottom:1px solid var(--glass-border)}
+.activity-item:last-child{border:none}
+.activity-item .ai-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.activity-item .ai-icon.blue{background:rgba(37,99,235,.15);color:var(--p-light)}
+.activity-item .ai-icon.green{background:rgba(16,185,129,.15);color:var(--success)}
+.activity-item .ai-icon.orange{background:rgba(245,158,11,.15);color:var(--warning)}
+.activity-item .ai-icon.red{background:rgba(239,68,68,.15);color:var(--danger)}
+.activity-item .ai-text{flex:1}
+.activity-item .ai-text strong{font-size:.84rem}
+.activity-item .ai-text p{font-size:.76rem;color:var(--text-muted);margin-top:.15rem}
+.activity-item .ai-time{font-size:.7rem;color:var(--text-muted);white-space:nowrap}
+
+/* ===== CHART PLACEHOLDER ===== */
+.chart-box{background:var(--bg-card);border-radius:var(--r-sm);padding:1.5rem;min-height:220px;display:flex;align-items:flex-end;gap:6px}
+.chart-bar{flex:1;background:linear-gradient(to top,var(--p),var(--accent));border-radius:6px 6px 0 0;min-height:20px;transition:height .6s ease;position:relative}
+.chart-bar:hover{opacity:.8}
+.chart-bar .bar-label{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:.6rem;color:var(--text-muted);white-space:nowrap}
+.chart-bar .bar-value{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;color:var(--text)}
+
+/* ===== SEARCH ===== */
+.search-box{position:relative;max-width:350px}
+.search-box input{width:100%;padding:.6rem 2.2rem .6rem 1rem;background:var(--bg-alt);border:1px solid var(--glass-border);border-radius:var(--r-xs);font-size:.84rem}
+html[dir="ltr"] .search-box input{padding:.6rem 1rem .6rem 2.2rem}
+.search-box i{position:absolute;right:.8rem;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:.8rem;pointer-events:none}
+html[dir="ltr"] .search-box i{right:auto;left:.8rem}
+
+/* ===== TOAST ===== */
+.toast-container{position:fixed;top:1rem;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:.5rem}
+.toast{padding:.7rem 1.2rem;border-radius:var(--r-xs);font-size:.84rem;font-weight:600;backdrop-filter:blur(12px);box-shadow:var(--shadow);animation:toastIn .35s ease;display:flex;align-items:center;gap:.5rem}
+.toast.success{background:rgba(16,185,129,.9);color:#fff}
+.toast.error{background:rgba(239,68,68,.9);color:#fff}
+.toast.info{background:rgba(37,99,235,.9);color:#fff}
+@keyframes toastIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .sidebar{transform:translateX(100%)}
+  html[dir="ltr"] .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .main-content{margin-right:0!important;margin-left:0!important}
+  .topbar .toggle-sidebar{display:block}
+}
+@media(max-width:640px){
+  .content-area{padding:1rem}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+  .quick-actions{grid-template-columns:1fr 1fr}
+  .stat-card .sc-value{font-size:1.4rem}
+}
+@media(max-width:400px){
+  .stats-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== LOGIN GATE ===== -->
+<div class="login-gate" id="loginGate">
+  <div class="login-box">
+    <div class="logo-area">
+      <img src="logo.svg" alt="logo">
+      <h2>لوحة التحكم</h2>
+      <p>شركة الشرق الأوسط للمحاماة</p>
+    </div>
+    <div class="login-error" id="loginError">اسم المستخدم أو كلمة المرور غير صحيحة</div>
+    <form id="loginForm">
+      <div class="field">
+        <label>اسم المستخدم</label>
+        <div class="input-wrap">
+          <i class="fas fa-user"></i>
+          <input type="text" id="loginUser" placeholder="admin" autocomplete="username" required>
+        </div>
+      </div>
+      <div class="field">
+        <label>كلمة المرور</label>
+        <div class="input-wrap">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password" required>
+        </div>
+      </div>
+      <button type="submit" class="login-btn"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== ADMIN LAYOUT ===== -->
+<div class="admin-layout" id="adminLayout" style="display:none">
+  
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="logo.svg" alt="logo">
+      <div class="sh-text">
+        <h3>لوحة التحكم</h3>
+        <span>شركة الشرق الأوسط</span>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-group">
+        <div class="nav-group-title">عام</div>
+        <div class="nav-item active" data-section="dashboard"><i class="fas fa-chart-pie"></i> الرئيسية</div>
+        <div class="nav-item" data-section="analytics"><i class="fas fa-chart-line"></i> الإحصائيات</div>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">المحتوى</div>
+        <div class="nav-item" data-section="lawyers"><i class="fas fa-user-tie"></i> المحامون <span class="badge">6</span></div>
+        <div class="nav-item" data-section="services"><i class="fas fa-briefcase"></i> الخدمات</div>
+        <div class="nav-item" data-section="cases"><i class="fas fa-gavel"></i> القضايا</div>
+        <div class="nav-item" data-section="blog"><i class="fas fa-newspaper"></i> المدونة</div>
+        <div class="nav-item" data-section="faq"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</div>
+        <div class="nav-item" data-section="laws"><i class="fas fa-book"></i> القوانين <span class="badge">5000+</span></div>
+        <div class="nav-item" data-section="testimonials"><i class="fas fa-star"></i> آراء العملاء</div>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">العمليات</div>
+        <div class="nav-item" data-section="bookings"><i class="fas fa-calendar-check"></i> الحجوزات</div>
+        <div class="nav-item" data-section="careers"><i class="fas fa-user-graduate"></i> الوظائف</div>
+        <div class="nav-item" data-section="subscriptions"><i class="fas fa-credit-card"></i> الاشتراكات</div>
+        <div class="nav-item" data-section="messages"><i class="fas fa-envelope"></i> الرسائل</div>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">النظام</div>
+        <div class="nav-item" data-section="pages"><i class="fas fa-file-alt"></i> الصفحات</div>
+        <div class="nav-item" data-section="languages"><i class="fas fa-globe"></i> اللغات</div>
+        <div class="nav-item" data-section="ai"><i class="fas fa-robot"></i> المساعد الذكي</div>
+        <div class="nav-item" data-section="appearance"><i class="fas fa-palette"></i> المظهر</div>
+        <div class="nav-item" data-section="settings"><i class="fas fa-cog"></i> الإعدادات</div>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="sf-avatar">م</div>
+      <div class="sf-info">
+        <span>المدير</span>
+        <small>admin@middleeast-law.com</small>
+      </div>
+      <button class="sf-logout" id="logoutBtn" title="تسجيل الخروج"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <div class="topbar">
+      <button class="toggle-sidebar" id="toggleSidebar"><i class="fas fa-bars"></i></button>
+      <h2 class="page-title" id="pageTitle">الرئيسية</h2>
+      <div class="topbar-actions">
+        <button title="الإشعارات" class="notif-badge"><i class="fas fa-bell"></i></button>
+        <button title="تبديل المظهر" id="themeToggle"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a href="index.html" target="_blank" title="عرض الموقع"><button><i class="fas fa-external-link-alt"></i></button></a>
+      </div>
+    </div>
+    
+    <div class="content-area">
+
+      <!-- ========== DASHBOARD ========== -->
+      <section class="admin-section active" id="sec-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="sc-header"><div class="sc-icon"><i class="fas fa-gavel"></i></div><span class="sc-change up">+12%</span></div>
+            <div class="sc-value">500+</div>
+            <div class="sc-label">قضية ناجحة</div>
+          </div>
+          <div class="stat-card">
+            <div class="sc-header"><div class="sc-icon"><i class="fas fa-users"></i></div><span class="sc-change up">+8%</span></div>
+            <div class="sc-value">1,000+</div>
+            <div class="sc-label">عميل راضٍ</div>
+          </div>
+          <div class="stat-card">
+            <div class="sc-header"><div class="sc-icon"><i class="fas fa-calendar-check"></i></div><span class="sc-change up">+5</span></div>
+            <div class="sc-value">24</div>
+            <div class="sc-label">حجز هذا الشهر</div>
+          </div>
+          <div class="stat-card">
+            <div class="sc-header"><div class="sc-icon"><i class="fas fa-chart-line"></i></div><span class="sc-change up">95%</span></div>
+            <div class="sc-value">95%</div>
+            <div class="sc-label">نسبة النجاح</div>
+          </div>
+          <div class="stat-card">
+            <div class="sc-header"><div class="sc-icon"><i class="fas fa-book"></i></div></div>
+            <div class="sc-value">5,015</div>
+            <div class="sc-label">قانون في المكتبة</div>
+          </div>
+          <div class="stat-card">
+            <div class="sc-header"><div class="sc-icon"><i class="fas fa-user-tie"></i></div></div>
+            <div class="sc-value">6</div>
+            <div class="sc-label">محامٍ في الفريق</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-bolt"></i> إجراءات سريعة</h3></div>
+          <div class="panel-body">
+            <div class="quick-actions">
+              <button class="qa-btn" onclick="switchSection('lawyers')"><i class="fas fa-user-plus"></i><span>إضافة محامٍ</span></button>
+              <button class="qa-btn" onclick="switchSection('blog')"><i class="fas fa-pen-fancy"></i><span>مقال جديد</span></button>
+              <button class="qa-btn" onclick="switchSection('cases')"><i class="fas fa-folder-plus"></i><span>قضية جديدة</span></button>
+              <button class="qa-btn" onclick="switchSection('bookings')"><i class="fas fa-calendar-plus"></i><span>حجز جديد</span></button>
+              <button class="qa-btn" onclick="switchSection('faq')"><i class="fas fa-plus-circle"></i><span>سؤال شائع</span></button>
+              <button class="qa-btn" onclick="switchSection('settings')"><i class="fas fa-cog"></i><span>الإعدادات</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+          <div class="panel">
+            <div class="panel-header"><h3><i class="fas fa-chart-bar"></i> القضايا حسب الشهر</h3></div>
+            <div class="panel-body">
+              <div class="chart-box" id="casesChart"></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header"><h3><i class="fas fa-clock"></i> آخر النشاطات</h3></div>
+            <div class="panel-body">
+              <ul class="activity-list">
+                <li class="activity-item">
+                  <div class="ai-icon blue"><i class="fas fa-user-plus"></i></div>
+                  <div class="ai-text"><strong>عميل جديد سجّل حجزاً</strong><p>حجز استشارة قانونية - قضايا عقارية</p></div>
+                  <span class="ai-time">منذ 2 ساعة</span>
+                </li>
+                <li class="activity-item">
+                  <div class="ai-icon green"><i class="fas fa-check-circle"></i></div>
+                  <div class="ai-text"><strong>تم إغلاق قضية بنجاح</strong><p>قضية نزاع ملكية #247 - م. أحمد الحسيني</p></div>
+                  <span class="ai-time">منذ 5 ساعات</span>
+                </li>
+                <li class="activity-item">
+                  <div class="ai-icon orange"><i class="fas fa-envelope"></i></div>
+                  <div class="ai-text"><strong>رسالة جديدة من موقع التواصل</strong><p>استفسار حول أسعار الباقات</p></div>
+                  <span class="ai-time">منذ يوم</span>
+                </li>
+                <li class="activity-item">
+                  <div class="ai-icon red"><i class="fas fa-credit-card"></i></div>
+                  <div class="ai-text"><strong>اشتراك جديد - الباقة الاحترافية</strong><p>1,000,000 د.ع / شهرياً</p></div>
+                  <span class="ai-time">منذ يومين</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== ANALYTICS ========== -->
+      <section class="admin-section" id="sec-analytics">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="sc-header"><div class="sc-icon"><i class="fas fa-eye"></i></div><span class="sc-change up">+22%</span></div><div class="sc-value" id="analyticsVisits">12,450</div><div class="sc-label">زيارة هذا الشهر</div></div>
+          <div class="stat-card"><div class="sc-header"><div class="sc-icon"><i class="fas fa-mouse-pointer"></i></div><span class="sc-change up">+15%</span></div><div class="sc-value">3,200</div><div class="sc-label">تفاعل مع المساعد الذكي</div></div>
+          <div class="stat-card"><div class="sc-header"><div class="sc-icon"><i class="fas fa-phone"></i></div><span class="sc-change up">+18%</span></div><div class="sc-value">87</div><div class="sc-label">مكالمة واردة</div></div>
+          <div class="stat-card"><div class="sc-header"><div class="sc-icon"><i class="fas fa-share-alt"></i></div></div><div class="sc-value">456</div><div class="sc-label">مشاركة على وسائل التواصل</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-chart-area"></i> الزيارات خلال الأشهر الستة الماضية</h3></div>
+          <div class="panel-body"><div class="chart-box" id="visitsChart"></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+          <div class="panel">
+            <div class="panel-header"><h3><i class="fas fa-globe"></i> الزوار حسب اللغة</h3></div>
+            <div class="panel-body" id="langStats"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-header"><h3><i class="fas fa-mobile-alt"></i> الأجهزة</h3></div>
+            <div class="panel-body" id="deviceStats"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== LAWYERS ========== -->
+      <section class="admin-section" id="sec-lawyers">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-user-tie"></i> إدارة المحامين</h3>
+            <div class="panel-actions">
+              <button class="btn btn-primary" onclick="openModal('lawyerModal')"><i class="fas fa-plus"></i> إضافة محامٍ</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>الاسم</th><th>التخصص</th><th>الخبرة</th><th>القضايا</th><th>النجاح</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="lawyersTable">
+                  <tr><td>1</td><td>م. أحمد الحسيني</td><td>عقاري / تجاري</td><td>15 سنة</td><td>200+</td><td>97%</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit" title="تعديل"><i class="fas fa-edit"></i></button><button class="btn-view" title="عرض"><i class="fas fa-eye"></i></button><button class="btn-del" title="حذف"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>أ. سارة المحمدي</td><td>أحوال شخصية</td><td>10 سنوات</td><td>150+</td><td>94%</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit" title="تعديل"><i class="fas fa-edit"></i></button><button class="btn-view" title="عرض"><i class="fas fa-eye"></i></button><button class="btn-del" title="حذف"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>م. علي الكاظمي</td><td>جنائي</td><td>12 سنة</td><td>180+</td><td>96%</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit" title="تعديل"><i class="fas fa-edit"></i></button><button class="btn-view" title="عرض"><i class="fas fa-eye"></i></button><button class="btn-del" title="حذف"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>4</td><td>م. حسن الجبوري</td><td>مدني</td><td>9 سنوات</td><td>120+</td><td>92%</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit" title="تعديل"><i class="fas fa-edit"></i></button><button class="btn-view" title="عرض"><i class="fas fa-eye"></i></button><button class="btn-del" title="حذف"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>5</td><td>أ. ريم العبيدي</td><td>عمل / شركات</td><td>7 سنوات</td><td>90+</td><td>93%</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit" title="تعديل"><i class="fas fa-edit"></i></button><button class="btn-view" title="عرض"><i class="fas fa-eye"></i></button><button class="btn-del" title="حذف"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>6</td><td>م. كرار السعدي</td><td>عقاري</td><td>8 سنوات</td><td>100+</td><td>95%</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit" title="تعديل"><i class="fas fa-edit"></i></button><button class="btn-view" title="عرض"><i class="fas fa-eye"></i></button><button class="btn-del" title="حذف"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SERVICES ========== -->
+      <section class="admin-section" id="sec-services">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-briefcase"></i> إدارة الخدمات</h3>
+            <div class="panel-actions"><button class="btn btn-primary" onclick="openModal('serviceModal')"><i class="fas fa-plus"></i> إضافة خدمة</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>الأيقونة</th><th>الخدمة</th><th>الوصف</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="servicesTable">
+                  <tr><td><i class="fas fa-home" style="color:var(--p-light);font-size:1.1rem"></i></td><td>القضايا العقارية</td><td>نزاعات الملكيات، إيجارات، بيع وشراء</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td><i class="fas fa-chart-line" style="color:var(--p-light);font-size:1.1rem"></i></td><td>القضايا التجارية</td><td>عقود تجارية، شراكات، استثمار</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td><i class="fas fa-heart" style="color:var(--p-light);font-size:1.1rem"></i></td><td>قانون الأسرة</td><td>طلاق، حضانة، نفقة، ميراث</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td><i class="fas fa-gavel" style="color:var(--p-light);font-size:1.1rem"></i></td><td>القضايا الجنائية</td><td>الدفاع الجنائي والتمثيل القانوني</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td><i class="fas fa-building" style="color:var(--p-light);font-size:1.1rem"></i></td><td>استشارات الشركات</td><td>تأسيس شركات، عقود، استشارات</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td><i class="fas fa-hard-hat" style="color:var(--p-light);font-size:1.1rem"></i></td><td>قضايا العمل</td><td>حقوق العمال، نزاعات العمل</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CASES ========== -->
+      <section class="admin-section" id="sec-cases">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-gavel"></i> إدارة القضايا</h3>
+            <div class="panel-actions">
+              <div class="search-box"><i class="fas fa-search"></i><input type="text" placeholder="بحث في القضايا..." oninput="filterTable('casesTableBody',this.value)"></div>
+              <button class="btn btn-primary" onclick="openModal('caseModal')"><i class="fas fa-plus"></i> إضافة قضية</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>عنوان القضية</th><th>النوع</th><th>المحامي</th><th>المدة</th><th>النتيجة</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="casesTableBody">
+                  <tr><td>1</td><td>نزاع ملكية عقارية - الكرادة</td><td>عقاري</td><td>م. أحمد الحسيني</td><td>14 شهراً</td><td>ربح كامل</td><td><span class="status active">مُنجزة</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>نزاع تجاري - شركة استيراد</td><td>تجاري</td><td>م. أحمد الحسيني</td><td>8 أشهر</td><td>تسوية ناجحة</td><td><span class="status active">مُنجزة</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>قضية حضانة أطفال</td><td>أسرة</td><td>أ. سارة المحمدي</td><td>6 أشهر</td><td>حضانة كاملة</td><td><span class="status active">مُنجزة</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>4</td><td>دفاع جنائي - تبرئة</td><td>جنائي</td><td>م. علي الكاظمي</td><td>10 أشهر</td><td>تبرئة كاملة</td><td><span class="status active">مُنجزة</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>5</td><td>قضية عمالية - حقوق موظف</td><td>عمل</td><td>أ. ريم العبيدي</td><td>4 أشهر</td><td>تعويض كامل</td><td><span class="status pending">جارية</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== BLOG ========== -->
+      <section class="admin-section" id="sec-blog">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-newspaper"></i> إدارة المدونة</h3>
+            <div class="panel-actions"><button class="btn btn-primary" onclick="openModal('blogModal')"><i class="fas fa-plus"></i> مقال جديد</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>العنوان</th><th>التصنيف</th><th>الكاتب</th><th>التاريخ</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="blogTable">
+                  <tr><td>1</td><td>10 نصائح قبل توقيع أي عقد عقاري</td><td>نصائح</td><td>م. أحمد الحسيني</td><td>5 مارس 2026</td><td><span class="status active">منشور</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>حقوق المرأة في الطلاق والحضانة</td><td>أسرة</td><td>أ. سارة المحمدي</td><td>20 فبراير 2026</td><td><span class="status active">منشور</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>كيف تؤسس شركتك في العراق</td><td>تجاري</td><td>م. أحمد الحسيني</td><td>10 فبراير 2026</td><td><span class="status active">منشور</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FAQ ========== -->
+      <section class="admin-section" id="sec-faq">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-question-circle"></i> إدارة الأسئلة الشائعة</h3>
+            <div class="panel-actions"><button class="btn btn-primary" onclick="openModal('faqModal')"><i class="fas fa-plus"></i> سؤال جديد</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>السؤال</th><th>التصنيف</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="faqTable">
+                  <tr><td>1</td><td>ما هي مجالات تخصصكم القانونية؟</td><td>عام</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>كيف يمكنني حجز استشارة؟</td><td>عام</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>ما هي أسعار الاستشارات؟</td><td>أسعار</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>4</td><td>كيف أتابع حالة قضيتي؟</td><td>إجراءات</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>5</td><td>هل تقدمون استشارات عن بعد؟</td><td>عام</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== LAWS ========== -->
+      <section class="admin-section" id="sec-laws">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-book"></i> مكتبة القوانين</h3>
+            <div class="panel-actions">
+              <div class="search-box"><i class="fas fa-search"></i><input type="text" placeholder="بحث في القوانين..." id="lawSearch"></div>
+              <select class="btn btn-secondary" id="lawCategoryFilter" style="padding:.45rem .8rem;font-size:.8rem;border-radius:var(--r-xs);background:var(--glass);border:1px solid var(--glass-border)">
+                <option value="">جميع التصنيفات</option>
+                <option value="constitutional">دستوري</option>
+                <option value="civil">مدني</option>
+                <option value="criminal">جنائي</option>
+                <option value="family">أسرة</option>
+                <option value="commercial">تجاري</option>
+                <option value="labor">عمل</option>
+                <option value="property">عقاري</option>
+                <option value="procedural">إجراءات</option>
+                <option value="administrative">إداري</option>
+              </select>
+              <button class="btn btn-primary" onclick="openModal('lawModal')"><i class="fas fa-plus"></i> إضافة قانون</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="stats-grid" style="margin-bottom:1.5rem">
+              <div class="stat-card"><div class="sc-value">5,015</div><div class="sc-label">إجمالي القوانين</div></div>
+              <div class="stat-card"><div class="sc-value">17+</div><div class="sc-label">تصنيف قانوني</div></div>
+              <div class="stat-card"><div class="sc-value">3</div><div class="sc-label">ملفات بيانات</div></div>
+            </div>
+            <p style="color:var(--text-muted);font-size:.84rem;margin-bottom:1rem"><i class="fas fa-info-circle"></i> المكتبة تحتوي على 5,015 قانوناً عراقياً موزعة على 3 ملفات بيانات (script.js + laws-data.js + laws-data-2.js)</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>المعرف</th><th>التصنيف</th><th>العنوان</th><th>الرقم</th><th>المواد</th><th>إجراءات</th></tr></thead>
+                <tbody id="lawsTableBody">
+                  <tr><td>1</td><td>دستوري</td><td>الدستور العراقي 2005 - الحقوق الأساسية</td><td>2005</td><td>8</td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button></div></td></tr>
+                  <tr><td>2</td><td>دستوري</td><td>الدستور العراقي - السلطة التشريعية</td><td>2005</td><td>6</td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button></div></td></tr>
+                  <tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:1.5rem">يتم تحميل القوانين من قاعدة البيانات المحلية... يمكنك البحث أو التصفية أعلاه</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TESTIMONIALS ========== -->
+      <section class="admin-section" id="sec-testimonials">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-star"></i> إدارة آراء العملاء</h3>
+            <div class="panel-actions"><button class="btn btn-primary" onclick="openModal('testimonialModal')"><i class="fas fa-plus"></i> إضافة رأي</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>العميل</th><th>الرأي</th><th>التقييم</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="testimonialsTable">
+                  <tr><td>1</td><td>أحمد محمد</td><td>خدمة ممتازة واحترافية عالية...</td><td>⭐⭐⭐⭐⭐</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>فاطمة علي</td><td>ساعدوني في قضية الحضانة بأفضل طريقة...</td><td>⭐⭐⭐⭐⭐</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>شركة النور التجارية</td><td>شركة محاماة موثوقة وذات كفاءة عالية...</td><td>⭐⭐⭐⭐⭐</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== BOOKINGS ========== -->
+      <section class="admin-section" id="sec-bookings">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-calendar-check"></i> إدارة الحجوزات</h3>
+            <div class="panel-actions">
+              <button class="btn btn-secondary"><i class="fas fa-download"></i> تصدير</button>
+              <button class="btn btn-primary" onclick="openModal('bookingModal')"><i class="fas fa-plus"></i> حجز جديد</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="stats-grid" style="margin-bottom:1.5rem">
+              <div class="stat-card"><div class="sc-value">24</div><div class="sc-label">حجز هذا الشهر</div></div>
+              <div class="stat-card"><div class="sc-value">8</div><div class="sc-label">في الانتظار</div></div>
+              <div class="stat-card"><div class="sc-value">16</div><div class="sc-label">مؤكّد</div></div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>الاسم</th><th>البريد</th><th>الهاتف</th><th>نوع القضية</th><th>التاريخ</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody id="bookingsTable">
+                  <tr><td>1</td><td>محمد العلوي</td><td>m.alawi@email.com</td><td>07701234567</td><td>عقاري</td><td>22 مارس 2026</td><td><span class="status pending">في الانتظار</span></td><td><div class="actions-cell"><button class="btn-edit" title="تأكيد"><i class="fas fa-check"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>زينب حسن</td><td>z.hassan@email.com</td><td>07809876543</td><td>أسرة</td><td>23 مارس 2026</td><td><span class="status active">مؤكّد</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-check"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>عمر فاضل</td><td>o.fadel@email.com</td><td>07505551234</td><td>تجاري</td><td>25 مارس 2026</td><td><span class="status pending">في الانتظار</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-check"></i></button><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CAREERS ========== -->
+      <section class="admin-section" id="sec-careers">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-user-graduate"></i> إدارة الوظائف</h3>
+            <div class="panel-actions"><button class="btn btn-primary" onclick="openModal('careerModal')"><i class="fas fa-plus"></i> إضافة وظيفة</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>المسمى الوظيفي</th><th>الموقع</th><th>الخبرة</th><th>النوع</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>محامٍ متخصص - قضايا تجارية</td><td>بغداد - الكرادة</td><td>3+ سنوات</td><td>دوام كامل</td><td><span class="status active">مفتوح</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>محامٍ متخصص - قضايا عقارية</td><td>بغداد - الكرادة</td><td>2+ سنة</td><td>دوام كامل</td><td><span class="status active">مفتوح</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>محامٍ متدرب</td><td>بغداد - الكرادة</td><td>حديث تخرج</td><td>دوام كامل</td><td><span class="status active">مفتوح</span></td><td><div class="actions-cell"><button class="btn-edit"><i class="fas fa-edit"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SUBSCRIPTIONS ========== -->
+      <section class="admin-section" id="sec-subscriptions">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-credit-card"></i> إدارة الاشتراكات والأسعار</h3>
+          </div>
+          <div class="panel-body">
+            <div class="settings-grid">
+              <div class="setting-card">
+                <h4><i class="fas fa-star"></i> الباقة الأساسية</h4>
+                <div class="form-group"><label>السعر الشهري</label><input type="text" id="priceBasic" value="500,000 د.ع"></div>
+                <div class="form-group"><label>السعر السنوي</label><input type="text" id="priceBasicY" value="5,000,000 د.ع"></div>
+                <div class="form-group"><label>المميزات (كل سطر ميزة)</label><textarea id="featBasic">استشارة قانونية أولية
+مراجعة عقد واحد
+استشارة هاتفية (30 دقيقة)
+تقرير قانوني مبسط</textarea></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-crown"></i> الباقة الاحترافية</h4>
+                <div class="form-group"><label>السعر الشهري</label><input type="text" id="pricePro" value="1,000,000 د.ع"></div>
+                <div class="form-group"><label>السعر السنوي</label><input type="text" id="priceProY" value="10,000,000 د.ع"></div>
+                <div class="form-group"><label>المميزات</label><textarea id="featPro">جميع مميزات الباقة الأساسية
+تمثيل قانوني في قضية واحدة
+مراجعة 5 عقود شهرياً
+استشارات غير محدودة
+متابعة قضائية شهرية</textarea></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-gem"></i> باقة الشركات</h4>
+                <div class="form-group"><label>السعر الشهري</label><input type="text" id="priceEnt" value="2,500,000 د.ع"></div>
+                <div class="form-group"><label>السعر السنوي</label><input type="text" id="priceEntY" value="25,000,000 د.ع"></div>
+                <div class="form-group"><label>المميزات</label><textarea id="featEnt">جميع مميزات الباقة الاحترافية
+تمثيل قانوني شامل
+مستشار قانوني مخصص
+مراجعة عقود غير محدودة
+حضور اجتماعات مجلس الإدارة
+تقارير قانونية شهرية</textarea></div>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem;display:flex;gap:.5rem;justify-content:flex-end">
+              <button class="btn btn-primary" onclick="savePricing()"><i class="fas fa-save"></i> حفظ الأسعار</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-money-bill-wave"></i> طرق الدفع</h3></div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>الطريقة</th><th>الحالة</th><th>تبديل</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="fab fa-cc-mastercard" style="color:#ff5f00;margin-inline-end:.5rem"></i> ماستركارد</td><td><span class="status active">مفعّل</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td><i class="fas fa-mobile-alt" style="color:var(--success);margin-inline-end:.5rem"></i> زين كاش</td><td><span class="status active">مفعّل</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td><i class="fas fa-university" style="color:var(--p-light);margin-inline-end:.5rem"></i> مصرف الرافدين</td><td><span class="status active">مفعّل</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td><i class="fas fa-university" style="color:var(--accent);margin-inline-end:.5rem"></i> المصرف الأهلي</td><td><span class="status active">مفعّل</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td><i class="fas fa-credit-card" style="color:var(--warning);margin-inline-end:.5rem"></i> FIB</td><td><span class="status active">مفعّل</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td><i class="fas fa-exchange-alt" style="color:var(--info);margin-inline-end:.5rem"></i> تحويل بنكي</td><td><span class="status active">مفعّل</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MESSAGES ========== -->
+      <section class="admin-section" id="sec-messages">
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-envelope"></i> الرسائل الواردة</h3>
+            <div class="panel-actions"><button class="btn btn-secondary"><i class="fas fa-download"></i> تصدير</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>الاسم</th><th>البريد</th><th>الهاتف</th><th>الرسالة</th><th>التاريخ</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>خالد عبد الله</td><td>khalid@email.com</td><td>07701112233</td><td>أريد استشارة حول قضية عقارية...</td><td>19 مارس</td><td><span class="status pending">جديد</span></td><td><div class="actions-cell"><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-edit"><i class="fas fa-reply"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>2</td><td>نور الدين</td><td>nour@email.com</td><td>07809998877</td><td>ما هي أسعار باقاتكم الشهرية...</td><td>18 مارس</td><td><span class="status active">مقروء</span></td><td><div class="actions-cell"><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-edit"><i class="fas fa-reply"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                  <tr><td>3</td><td>سلمى حسين</td><td>salma@email.com</td><td>07505556677</td><td>هل يمكنكم مساعدتي في قضية حضانة...</td><td>17 مارس</td><td><span class="status active">تم الرد</span></td><td><div class="actions-cell"><button class="btn-view"><i class="fas fa-eye"></i></button><button class="btn-edit"><i class="fas fa-reply"></i></button><button class="btn-del"><i class="fas fa-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PAGES ========== -->
+      <section class="admin-section" id="sec-pages">
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-file-alt"></i> إدارة الصفحات</h3></div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>الصفحة</th><th>الملف</th><th>الوصف</th><th>الحالة</th><th>إجراءات</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="fas fa-home" style="color:var(--p-light);margin-inline-end:.5rem"></i> الرئيسية</td><td>index.html</td><td>الصفحة الرئيسية مع جميع الأقسام</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="index.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-info-circle" style="color:var(--p-light);margin-inline-end:.5rem"></i> عن الشركة</td><td>about.html</td><td>معلومات عن الشركة والفريق</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="about.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-newspaper" style="color:var(--p-light);margin-inline-end:.5rem"></i> المدونة</td><td>blog.html</td><td>المقالات القانونية</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="blog.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-calendar" style="color:var(--p-light);margin-inline-end:.5rem"></i> الحجوزات</td><td>booking.html</td><td>نموذج حجز الاستشارات</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="booking.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-briefcase" style="color:var(--p-light);margin-inline-end:.5rem"></i> الوظائف</td><td>career.html</td><td>فرص العمل والتوظيف</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="career.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-gavel" style="color:var(--p-light);margin-inline-end:.5rem"></i> القضايا</td><td>cases.html</td><td>قصص النجاح والقضايا المُنجزة</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="cases.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-question-circle" style="color:var(--p-light);margin-inline-end:.5rem"></i> الأسئلة الشائعة</td><td>faq.html</td><td>الأسئلة المتكررة وإجاباتها</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="faq.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-user-tie" style="color:var(--p-light);margin-inline-end:.5rem"></i> المحامون</td><td>lawyers.html</td><td>ملفات المحامين التفصيلية</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="lawyers.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                  <tr><td><i class="fas fa-sign-in-alt" style="color:var(--p-light);margin-inline-end:.5rem"></i> تسجيل الدخول</td><td>login.html</td><td>صفحة تسجيل دخول العملاء</td><td><span class="status active">نشط</span></td><td><div class="actions-cell"><a href="login.html" target="_blank"><button class="btn-view"><i class="fas fa-external-link-alt"></i></button></a></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Editor: Contact Info -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-address-book"></i> تعديل معلومات التواصل</h3></div>
+          <div class="panel-body">
+            <div class="form-grid">
+              <div class="form-group"><label>رقم الهاتف</label><input type="text" id="contentPhone" value="+964 770 551 5535"></div>
+              <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="contentEmail" value="info@middleeast-law.com"></div>
+              <div class="form-group"><label>العنوان</label><input type="text" id="contentAddress" value="بغداد - الكرادة - شارع 42"></div>
+              <div class="form-group"><label>ساعات العمل</label><input type="text" id="contentHours" value="السبت - الخميس: 9 ص - 5 م"></div>
+              <div class="form-group"><label>رقم واتساب (بدون رموز)</label><input type="text" id="contentWhatsapp" value="9647705515535"></div>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:.5rem;justify-content:flex-end">
+              <button class="btn btn-primary" onclick="saveContactContent()"><i class="fas fa-save"></i> حفظ معلومات التواصل</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Editor: Hero Stats -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-chart-bar"></i> تعديل إحصائيات الصفحة الرئيسية</h3></div>
+          <div class="panel-body">
+            <div class="form-grid">
+              <div class="form-group"><label>عدد القضايا الناجحة</label><input type="number" id="contentCases" value="500"></div>
+              <div class="form-group"><label>نسبة النجاح (%)</label><input type="number" id="contentSuccess" value="95"></div>
+              <div class="form-group"><label>سنوات الخبرة</label><input type="number" id="contentYears" value="15"></div>
+              <div class="form-group"><label>عدد العملاء</label><input type="number" id="contentClients" value="1000"></div>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:.5rem;justify-content:flex-end">
+              <button class="btn btn-primary" onclick="saveHeroContent()"><i class="fas fa-save"></i> حفظ الإحصائيات</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Editor: Team Members -->
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-users"></i> تعديل فريق العمل</h3>
+            <button class="btn btn-primary" onclick="addTeamMember()"><i class="fas fa-plus"></i> إضافة عضو</button>
+          </div>
+          <div class="panel-body" id="teamEditorContainer">
+            <div class="team-editor-item" data-idx="0">
+              <div class="form-grid">
+                <div class="form-group"><label>الاسم</label><input type="text" class="team-name" value="م. أحمد الحسيني"></div>
+                <div class="form-group"><label>المنصب</label><input type="text" class="team-role" value="المؤسس والمدير العام"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>الوصف</label><textarea class="team-desc" rows="2">خبرة تتجاوز 15 عاماً في القضايا التجارية والعقارية. عضو نقابة المحامين العراقيين.</textarea></div>
+              </div>
+              <button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTeamMember(this)"><i class="fas fa-trash"></i> حذف</button>
+              <hr style="border-color:var(--glass-border);margin:1rem 0">
+            </div>
+            <div class="team-editor-item" data-idx="1">
+              <div class="form-grid">
+                <div class="form-group"><label>الاسم</label><input type="text" class="team-name" value="أ. سارة المحمدي"></div>
+                <div class="form-group"><label>المنصب</label><input type="text" class="team-role" value="أخصائية قانون الأسرة"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>الوصف</label><textarea class="team-desc" rows="2">متخصصة في قضايا الأحوال الشخصية بخبرة 10 سنوات. معروفة بتعاملها الإنساني.</textarea></div>
+              </div>
+              <button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTeamMember(this)"><i class="fas fa-trash"></i> حذف</button>
+              <hr style="border-color:var(--glass-border);margin:1rem 0">
+            </div>
+            <div class="team-editor-item" data-idx="2">
+              <div class="form-grid">
+                <div class="form-group"><label>الاسم</label><input type="text" class="team-name" value="م. علي الكاظمي"></div>
+                <div class="form-group"><label>المنصب</label><input type="text" class="team-role" value="خبير القانون الجنائي"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>الوصف</label><textarea class="team-desc" rows="2">خبرة واسعة في الدفاع الجنائي والقضايا المعقدة. نسبة نجاح عالية في المحاكم.</textarea></div>
+              </div>
+              <button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTeamMember(this)"><i class="fas fa-trash"></i> حذف</button>
+              <hr style="border-color:var(--glass-border);margin:1rem 0">
+            </div>
+          </div>
+          <div style="padding:0 1.5rem 1.5rem;display:flex;gap:.5rem;justify-content:flex-end">
+            <button class="btn btn-primary" onclick="saveTeamContent()"><i class="fas fa-save"></i> حفظ فريق العمل</button>
+          </div>
+        </div>
+
+        <!-- Content Editor: Testimonials -->
+        <div class="panel">
+          <div class="panel-header">
+            <h3><i class="fas fa-star"></i> تعديل آراء العملاء</h3>
+            <button class="btn btn-primary" onclick="addTestimonial()"><i class="fas fa-plus"></i> إضافة رأي</button>
+          </div>
+          <div class="panel-body" id="testiEditorContainer">
+            <div class="testi-editor-item">
+              <div class="form-grid">
+                <div class="form-group"><label>اسم العميل</label><input type="text" class="testi-name" value="أحمد محمد"></div>
+                <div class="form-group"><label>المنصب/المكان</label><input type="text" class="testi-role" value="رجل أعمال - بغداد"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>نص الرأي</label><textarea class="testi-text" rows="2">تجربة ممتازة مع شركة الشرق الأوسط. استفدت كثيراً من المساعد القانوني الذكي والفريق المتميز.</textarea></div>
+              </div>
+              <button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTestimonial(this)"><i class="fas fa-trash"></i> حذف</button>
+              <hr style="border-color:var(--glass-border);margin:1rem 0">
+            </div>
+          </div>
+          <div style="padding:0 1.5rem 1.5rem;display:flex;gap:.5rem;justify-content:flex-end">
+            <button class="btn btn-primary" onclick="saveTestiContent()"><i class="fas fa-save"></i> حفظ آراء العملاء</button>
+          </div>
+        </div>
+
+        <!-- SEO & Meta -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-search"></i> إعدادات SEO</h3></div>
+          <div class="panel-body">
+            <div class="form-grid">
+              <div class="form-group"><label>عنوان الموقع (Title)</label><input type="text" id="seoTitle" value="شركة الشرق الأوسط للمحاماة والاستشارات القانونية"></div>
+              <div class="form-group"><label>وصف الموقع (Meta Description)</label><textarea id="seoDesc">شركة الشرق الأوسط للمحاماة - خبرة تتجاوز 15 عاماً في القانون العراقي والاستشارات القانونية</textarea></div>
+              <div class="form-group"><label>الكلمات المفتاحية</label><input type="text" id="seoKeywords" value="محاماة, قانون عراقي, استشارات قانونية, محامي بغداد"></div>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:.5rem;justify-content:flex-end">
+              <button class="btn btn-primary" onclick="showToast('تم حفظ إعدادات SEO','success')"><i class="fas fa-save"></i> حفظ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== LANGUAGES ========== -->
+      <section class="admin-section" id="sec-languages">
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-globe"></i> إدارة اللغات</h3></div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>اللغة</th><th>الرمز</th><th>الاتجاه</th><th>ملف الترجمة</th><th>الحالة</th><th>تبديل</th></tr></thead>
+                <tbody>
+                  <tr><td>🇮🇶 العربية</td><td>ar</td><td>RTL</td><td>lang/ar.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇺🇸 English</td><td>en</td><td>LTR</td><td>lang/en.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇮🇶 کوردی</td><td>ku</td><td>RTL</td><td>lang/ku.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇹🇷 Türkçe</td><td>tr</td><td>LTR</td><td>lang/tr.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇮🇷 فارسی</td><td>fa</td><td>RTL</td><td>lang/fa.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇫🇷 Français</td><td>fr</td><td>LTR</td><td>lang/fr.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇩🇪 Deutsch</td><td>de</td><td>LTR</td><td>lang/de.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇪🇸 Español</td><td>es</td><td>LTR</td><td>lang/es.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇷🇺 Русский</td><td>ru</td><td>LTR</td><td>lang/ru.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                  <tr><td>🇨🇳 中文</td><td>zh</td><td>LTR</td><td>lang/zh.json</td><td><span class="status active">نشط</span></td><td><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;margin-top:1rem"><i class="fas fa-info-circle"></i> لتعديل الترجمات، قم بتحرير ملفات JSON الموجودة في مجلد lang/</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== AI ASSISTANT ========== -->
+      <section class="admin-section" id="sec-ai">
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-robot"></i> إعدادات المساعد الذكي</h3></div>
+          <div class="panel-body">
+            <div class="settings-grid">
+              <div class="setting-card">
+                <h4><i class="fas fa-comments"></i> المحادثة</h4>
+                <p>إعدادات نظام المحادثة والردود</p>
+                <div class="toggle-row"><span>تفعيل المساعد الذكي</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>ردود تلقائية</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>رسالة ترحيب</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-volume-up"></i> النظام الصوتي</h4>
+                <p>إعدادات التحدث والاستماع</p>
+                <div class="toggle-row"><span>تحويل النص إلى كلام (TTS)</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>التعرف على الصوت (STT)</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>زر الاستماع لكل رسالة</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-brain"></i> قاعدة المعرفة</h4>
+                <p>المواضيع والردود المتاحة</p>
+                <div class="toggle-row"><span>مواضيع أساسية (AI_RESPONSES)</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>مواضيع إضافية (ai-engine.js)</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>المحلل القانوني</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <p style="margin-top:.8rem;font-size:.8rem;color:var(--text-muted)"><i class="fas fa-database"></i> 60+ موضوع أساسي + 41 موضوع إضافي</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-list"></i> مواضيع المساعد الذكي</h3></div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>الموضوع</th><th>الكلمات المفتاحية</th><th>المصدر</th><th>الحالة</th></tr></thead>
+                <tbody id="aiTopicsTable">
+                  <tr><td>الطلاق</td><td>طلاق، divorce، تفريق، boşanma</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>الحضانة</td><td>حضانة، custody، تربية</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>السرقة</td><td>سرقة، theft، نشل</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>الشركات</td><td>شركة، company، تأسيس</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>العمل</td><td>عمل، labor، عقد عمل</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>الميراث</td><td>ميراث، inheritance، إرث</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>المرور</td><td>مرور، traffic، حادث</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td>الإرهاب</td><td>إرهاب، terrorism</td><td>أساسي</td><td><span class="status active">نشط</span></td></tr>
+                  <tr><td colspan="4" style="text-align:center;color:var(--text-muted)">... و 90+ موضوع آخر</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== APPEARANCE ========== -->
+      <section class="admin-section" id="sec-appearance">
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-palette"></i> تخصيص المظهر</h3></div>
+          <div class="panel-body">
+            <div class="settings-grid">
+              <div class="setting-card">
+                <h4><i class="fas fa-paint-brush"></i> الألوان الأساسية</h4>
+                <p>تخصيص ألوان الموقع</p>
+                <div class="color-input"><input type="color" id="colorPrimary" value="#2563eb"><span>اللون الأساسي (Primary)</span></div>
+                <div class="color-input"><input type="color" id="colorAccent" value="#06b6d4"><span>اللون المميز (Accent)</span></div>
+                <div class="color-input"><input type="color" id="colorSuccess" value="#10b981"><span>لون النجاح (Success)</span></div>
+                <div class="color-input"><input type="color" id="colorDanger" value="#ef4444"><span>لون الخطأ (Danger)</span></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-moon"></i> الوضع والخلفية</h4>
+                <p>إعدادات المظهر العام</p>
+                <div class="toggle-row"><span>الوضع الداكن (افتراضي)</span><label class="toggle-switch"><input type="checkbox" checked id="darkModeToggle"><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>تأثير الزجاج (Glass Morphism)</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>الرسوم المتحركة</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                <div class="toggle-row"><span>جزيئات الخلفية (Canvas)</span><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-text-height"></i> الخطوط</h4>
+                <p>إعدادات الخطوط والأحجام</p>
+                <div class="form-group"><label>خط العربي</label><select><option selected>Tajawal</option><option>Cairo</option><option>Amiri</option><option>Noto Sans Arabic</option></select></div>
+                <div class="form-group"><label>خط اللاتيني</label><select><option selected>Inter</option><option>Poppins</option><option>Roboto</option><option>Open Sans</option></select></div>
+                <div class="form-group"><label>حجم الزوايا (Border Radius)</label><input type="range" min="0" max="30" value="20" id="radiusSlider"><span id="radiusValue" style="font-size:.8rem;color:var(--text-muted)">20px</span></div>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem;display:flex;gap:.5rem;justify-content:flex-end">
+              <button class="btn btn-secondary" onclick="resetAppearance()"><i class="fas fa-undo"></i> إعادة تعيين</button>
+              <button class="btn btn-primary" onclick="saveAppearance()"><i class="fas fa-save"></i> حفظ المظهر</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo Management -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-image"></i> إدارة الشعار</h3></div>
+          <div class="panel-body">
+            <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+              <div style="text-align:center">
+                <img src="logo.svg" alt="logo" style="width:96px;height:96px;border-radius:16px;border:2px solid var(--glass-border)">
+                <p style="font-size:.78rem;color:var(--text-muted);margin-top:.5rem">الشعار الحالي (logo.svg)</p>
+              </div>
+              <div>
+                <p style="font-size:.84rem;margin-bottom:.8rem">لتغيير الشعار، قم باستبدال ملف <strong>logo.svg</strong> في مجلد الموقع</p>
+                <p style="font-size:.78rem;color:var(--text-muted)">الحجم الموصى به: 512×512 بكسل | الصيغة: SVG أو PNG</p>
+                <p style="font-size:.78rem;color:var(--text-muted)">يظهر الشعار في: الشريط العلوي، التذييل، اللودر، الفافيكون، التطبيق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SETTINGS ========== -->
+      <section class="admin-section" id="sec-settings">
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-cog"></i> الإعدادات العامة</h3></div>
+          <div class="panel-body">
+            <div class="settings-grid">
+              <div class="setting-card">
+                <h4><i class="fas fa-building"></i> معلومات الشركة</h4>
+                <p>البيانات الأساسية للشركة</p>
+                <div class="form-group"><label>اسم الشركة</label><input type="text" value="شركة الشرق الأوسط للمحاماة"></div>
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" value="info@middleeast-law.com"></div>
+                <div class="form-group"><label>الهاتف</label><input type="tel" value="+964 770 551 5535"></div>
+                <div class="form-group"><label>العنوان</label><input type="text" value="بغداد - الكرادة - شارع الأميرات"></div>
+                <div class="form-group"><label>واتساب</label><input type="text" value="https://wa.me/9647705515535"></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-share-alt"></i> وسائل التواصل</h4>
+                <p>روابط حسابات التواصل الاجتماعي</p>
+                <div class="form-group"><label><i class="fab fa-facebook" style="color:#1877f2"></i> فيسبوك</label><input type="url" placeholder="https://facebook.com/..."></div>
+                <div class="form-group"><label><i class="fab fa-instagram" style="color:#e4405f"></i> انستغرام</label><input type="url" placeholder="https://instagram.com/..."></div>
+                <div class="form-group"><label><i class="fab fa-twitter" style="color:#1da1f2"></i> تويتر</label><input type="url" placeholder="https://twitter.com/..."></div>
+                <div class="form-group"><label><i class="fab fa-linkedin" style="color:#0a66c2"></i> لينكدإن</label><input type="url" placeholder="https://linkedin.com/..."></div>
+                <div class="form-group"><label><i class="fab fa-telegram" style="color:#0088cc"></i> تيليغرام</label><input type="url" placeholder="https://t.me/..."></div>
+              </div>
+              <div class="setting-card">
+                <h4><i class="fas fa-shield-alt"></i> الأمان</h4>
+                <p>إعدادات الحماية والوصول</p>
+                <div class="form-group"><label>اسم المستخدم</label><input type="text" id="settUser" value="admin"></div>
+                <div class="form-group"><label>كلمة المرور الحالية</label><input type="password" id="settPassOld" placeholder="أدخل كلمة المرور الحالية"></div>
+                <div class="form-group"><label>كلمة المرور الجديدة</label><input type="password" id="settPassNew" placeholder="أدخل كلمة المرور الجديدة"></div>
+                <button class="btn btn-warning" onclick="changePassword()" style="margin-top:.5rem"><i class="fas fa-key"></i> تغيير كلمة المرور</button>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem;display:flex;gap:.5rem;justify-content:flex-end">
+              <button class="btn btn-primary" onclick="saveSettings()"><i class="fas fa-save"></i> حفظ الإعدادات</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PWA & Cache -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-mobile-alt"></i> إعدادات التطبيق (PWA)</h3></div>
+          <div class="panel-body">
+            <div class="form-grid">
+              <div class="form-group"><label>اسم التطبيق</label><input type="text" value="شركة الشرق الأوسط للمحاماة"></div>
+              <div class="form-group"><label>الاسم المختصر</label><input type="text" value="الشرق الأوسط"></div>
+              <div class="form-group"><label>لون الثيم</label><input type="color" value="#0a1628"></div>
+              <div class="form-group"><label>إصدار الكاش</label><input type="text" value="me-law-v21" id="cacheVersion" readonly></div>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap">
+              <button class="btn btn-warning" onclick="clearCacheAction()"><i class="fas fa-broom"></i> مسح الكاش</button>
+              <button class="btn btn-secondary" onclick="showToast('إصدار الكاش: me-law-v21','info')"><i class="fas fa-info-circle"></i> معلومات الكاش</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="panel">
+          <div class="panel-header"><h3><i class="fas fa-database"></i> إدارة البيانات</h3></div>
+          <div class="panel-body">
+            <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+              <button class="btn btn-primary" onclick="exportData()"><i class="fas fa-download"></i> تصدير جميع البيانات</button>
+              <button class="btn btn-secondary"><i class="fas fa-upload"></i> استيراد بيانات</button>
+              <button class="btn btn-danger" onclick="if(confirm('هل أنت متأكد من حذف جميع البيانات المحلية؟'))resetAllData()"><i class="fas fa-trash-alt"></i> إعادة تعيين البيانات</button>
+            </div>
+            <p style="font-size:.78rem;color:var(--text-muted);margin-top:.8rem"><i class="fas fa-exclamation-triangle" style="color:var(--warning)"></i> تحذير: إعادة تعيين البيانات ستحذف جميع التعديلات المحلية المحفوظة</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- content-area -->
+  </div><!-- main-content -->
+</div><!-- admin-layout -->
+
+<!-- ===== MODALS ===== -->
+
+<!-- Lawyer Modal -->
+<div class="modal-overlay" id="lawyerModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-user-plus"></i> إضافة / تعديل محامٍ</h3><button class="modal-close" onclick="closeModal('lawyerModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>الاسم الكامل</label><input type="text" placeholder="م. أحمد ..."></div>
+        <div class="form-group"><label>التخصص</label><input type="text" placeholder="عقاري / تجاري"></div>
+        <div class="form-group"><label>سنوات الخبرة</label><input type="number" placeholder="15"></div>
+        <div class="form-group"><label>عدد القضايا</label><input type="text" placeholder="200+"></div>
+        <div class="form-group"><label>نسبة النجاح</label><input type="text" placeholder="97%"></div>
+        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="ahmed@middleeast-law.com"></div>
+        <div class="form-group"><label>واتساب</label><input type="text" placeholder="https://wa.me/964..."></div>
+        <div class="form-group"><label>اللقب / الدور</label><input type="text" placeholder="المؤسس والمدير العام"></div>
+      </div>
+      <div class="form-group"><label>النبذة التعريفية</label><textarea placeholder="وصف مختصر عن المحامي وخبراته..."></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('lawyerModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('lawyerModal');showToast('تم حفظ بيانات المحامي','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Service Modal -->
+<div class="modal-overlay" id="serviceModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-briefcase"></i> إضافة / تعديل خدمة</h3><button class="modal-close" onclick="closeModal('serviceModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>اسم الخدمة</label><input type="text" placeholder="القضايا العقارية"></div>
+        <div class="form-group"><label>الأيقونة (FontAwesome)</label><input type="text" placeholder="fas fa-home"></div>
+      </div>
+      <div class="form-group"><label>الوصف</label><textarea placeholder="وصف الخدمة القانونية..."></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('serviceModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('serviceModal');showToast('تم حفظ الخدمة','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Case Modal -->
+<div class="modal-overlay" id="caseModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-gavel"></i> إضافة / تعديل قضية</h3><button class="modal-close" onclick="closeModal('caseModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>عنوان القضية</label><input type="text" placeholder="نزاع ملكية عقارية"></div>
+        <div class="form-group"><label>النوع</label><select><option>عقاري</option><option>تجاري</option><option>أسرة</option><option>جنائي</option><option>عمل</option><option>مدني</option></select></div>
+        <div class="form-group"><label>المحامي المسؤول</label><select><option>م. أحمد الحسيني</option><option>أ. سارة المحمدي</option><option>م. علي الكاظمي</option><option>م. حسن الجبوري</option><option>أ. ريم العبيدي</option><option>م. كرار السعدي</option></select></div>
+        <div class="form-group"><label>المدة</label><input type="text" placeholder="14 شهراً"></div>
+        <div class="form-group"><label>النتيجة</label><input type="text" placeholder="ربح كامل للموكل"></div>
+        <div class="form-group"><label>الحالة</label><select><option>جارية</option><option>مُنجزة</option><option>مُغلقة</option></select></div>
+      </div>
+      <div class="form-group"><label>تفاصيل القضية</label><textarea placeholder="وصف تفصيلي للقضية والنتيجة..."></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('caseModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('caseModal');showToast('تم حفظ القضية','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Modal -->
+<div class="modal-overlay" id="blogModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-pen-fancy"></i> مقال جديد</h3><button class="modal-close" onclick="closeModal('blogModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>عنوان المقال</label><input type="text" placeholder="10 نصائح قانونية..."></div>
+        <div class="form-group"><label>التصنيف</label><select><option>نصائح</option><option>أسرة</option><option>تجاري</option><option>جنائي</option><option>عقاري</option><option>عام</option></select></div>
+        <div class="form-group"><label>الكاتب</label><select><option>م. أحمد الحسيني</option><option>أ. سارة المحمدي</option><option>م. علي الكاظمي</option></select></div>
+        <div class="form-group"><label>مدة القراءة</label><input type="text" placeholder="5 دقائق"></div>
+      </div>
+      <div class="form-group"><label>الملخص</label><textarea placeholder="ملخص المقال..."></textarea></div>
+      <div class="form-group"><label>المحتوى الكامل</label><textarea placeholder="محتوى المقال الكامل..." style="min-height:200px"></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('blogModal')">إلغاء</button>
+      <button class="btn btn-warning"><i class="fas fa-eye"></i> معاينة</button>
+      <button class="btn btn-primary" onclick="closeModal('blogModal');showToast('تم نشر المقال','success')"><i class="fas fa-paper-plane"></i> نشر</button>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Modal -->
+<div class="modal-overlay" id="faqModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-question-circle"></i> سؤال شائع جديد</h3><button class="modal-close" onclick="closeModal('faqModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-group"><label>التصنيف</label><select><option>عام</option><option>إجراءات</option><option>أسعار</option><option>تواصل</option></select></div>
+      <div class="form-group"><label>السؤال</label><input type="text" placeholder="ما هي مجالات تخصصكم؟"></div>
+      <div class="form-group"><label>الإجابة</label><textarea placeholder="الإجابة التفصيلية..." style="min-height:150px"></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('faqModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('faqModal');showToast('تم إضافة السؤال','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Law Modal -->
+<div class="modal-overlay" id="lawModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-book"></i> إضافة قانون جديد</h3><button class="modal-close" onclick="closeModal('lawModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>التصنيف</label><select><option value="constitutional">دستوري</option><option value="civil">مدني</option><option value="criminal">جنائي</option><option value="family">أسرة</option><option value="commercial">تجاري</option><option value="labor">عمل</option><option value="property">عقاري</option><option value="procedural">إجراءات</option><option value="administrative">إداري</option></select></div>
+        <div class="form-group"><label>رقم القانون</label><input type="text" placeholder="رقم 40/1951"></div>
+        <div class="form-group"><label>العنوان (عربي)</label><input type="text" placeholder="القانون المدني العراقي"></div>
+        <div class="form-group"><label>العنوان (إنجليزي)</label><input type="text" placeholder="Iraqi Civil Code"></div>
+      </div>
+      <div class="form-group"><label>المواد (كل سطر مادة)</label><textarea placeholder="المادة 1: نص المادة..." style="min-height:200px"></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('lawModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('lawModal');showToast('تم إضافة القانون','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonial Modal -->
+<div class="modal-overlay" id="testimonialModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-star"></i> إضافة رأي عميل</h3><button class="modal-close" onclick="closeModal('testimonialModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>اسم العميل</label><input type="text" placeholder="أحمد محمد"></div>
+        <div class="form-group"><label>التقييم</label><select><option value="5">⭐⭐⭐⭐⭐ (5)</option><option value="4">⭐⭐⭐⭐ (4)</option><option value="3">⭐⭐⭐ (3)</option></select></div>
+      </div>
+      <div class="form-group"><label>رأي العميل</label><textarea placeholder="خدمة ممتازة واحترافية عالية..."></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('testimonialModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('testimonialModal');showToast('تم إضافة الرأي','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-calendar-plus"></i> حجز جديد</h3><button class="modal-close" onclick="closeModal('bookingModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>اسم العميل</label><input type="text" placeholder="الاسم الكامل"></div>
+        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="email@example.com"></div>
+        <div class="form-group"><label>رقم الهاتف</label><input type="tel" placeholder="07XXXXXXXXX"></div>
+        <div class="form-group"><label>نوع القضية</label><select><option>عقاري</option><option>تجاري</option><option>أسرة</option><option>جنائي</option><option>عمل</option><option>مدني</option><option>أخرى</option></select></div>
+        <div class="form-group"><label>التاريخ المفضل</label><input type="date"></div>
+        <div class="form-group"><label>المحامي المسؤول</label><select><option>أي محامٍ متاح</option><option>م. أحمد الحسيني</option><option>أ. سارة المحمدي</option><option>م. علي الكاظمي</option></select></div>
+      </div>
+      <div class="form-group"><label>وصف القضية</label><textarea placeholder="وصف مختصر للقضية..."></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('bookingModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('bookingModal');showToast('تم إضافة الحجز','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Career Modal -->
+<div class="modal-overlay" id="careerModal">
+  <div class="modal">
+    <div class="modal-head"><h3><i class="fas fa-user-graduate"></i> إضافة وظيفة</h3><button class="modal-close" onclick="closeModal('careerModal')"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>المسمى الوظيفي</label><input type="text" placeholder="محامٍ متخصص"></div>
+        <div class="form-group"><label>الموقع</label><input type="text" placeholder="بغداد - الكرادة"></div>
+        <div class="form-group"><label>الخبرة المطلوبة</label><input type="text" placeholder="3+ سنوات"></div>
+        <div class="form-group"><label>نوع الدوام</label><select><option>دوام كامل</option><option>دوام جزئي</option><option>عن بعد</option></select></div>
+      </div>
+      <div class="form-group"><label>الوصف والمتطلبات</label><textarea placeholder="وصف الوظيفة والمتطلبات..." style="min-height:150px"></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('careerModal')">إلغاء</button>
+      <button class="btn btn-primary" onclick="closeModal('careerModal');showToast('تم إضافة الوظيفة','success')"><i class="fas fa-save"></i> حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+/* ===== ADMIN PANEL SCRIPT ===== */
+(function(){
+'use strict';
+
+/* --- Auth --- */
+const ADMIN_KEY = 'me_admin_auth';
+const DEFAULT_CREDS = { user: 'admin', pass: 'admin2026' };
+
+function getCredentials() {
+  try {
+    const stored = localStorage.getItem('me_admin_creds');
+    return stored ? JSON.parse(stored) : DEFAULT_CREDS;
+  } catch { return DEFAULT_CREDS; }
+}
+
+function isLoggedIn() {
+  return sessionStorage.getItem(ADMIN_KEY) === 'true';
+}
+
+function doLogin(user, pass) {
+  const creds = getCredentials();
+  return user === creds.user && pass === creds.pass;
+}
+
+const loginGate = document.getElementById('loginGate');
+const adminLayout = document.getElementById('adminLayout');
+const loginForm = document.getElementById('loginForm');
+const loginError = document.getElementById('loginError');
+
+if (isLoggedIn()) {
+  loginGate.classList.add('hidden');
+  adminLayout.style.display = 'flex';
+}
+
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const u = document.getElementById('loginUser').value.trim();
+  const p = document.getElementById('loginPass').value;
+  if (doLogin(u, p)) {
+    sessionStorage.setItem(ADMIN_KEY, 'true');
+    loginGate.classList.add('hidden');
+    adminLayout.style.display = 'flex';
+    loginError.style.display = 'none';
+    showToast('تم تسجيل الدخول بنجاح', 'success');
+  } else {
+    loginError.style.display = 'block';
+    document.getElementById('loginPass').value = '';
+  }
+});
+
+document.getElementById('logoutBtn').addEventListener('click', function() {
+  sessionStorage.removeItem(ADMIN_KEY);
+  adminLayout.style.display = 'none';
+  loginGate.classList.remove('hidden');
+  document.getElementById('loginUser').value = '';
+  document.getElementById('loginPass').value = '';
+  showToast('تم تسجيل الخروج', 'info');
+});
+
+/* --- Sidebar Navigation --- */
+const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
+const sections = document.querySelectorAll('.admin-section');
+const pageTitle = document.getElementById('pageTitle');
+
+const sectionTitles = {
+  dashboard: 'الرئيسية', analytics: 'الإحصائيات', lawyers: 'المحامون',
+  services: 'الخدمات', cases: 'القضايا', blog: 'المدونة',
+  faq: 'الأسئلة الشائعة', laws: 'مكتبة القوانين', testimonials: 'آراء العملاء',
+  bookings: 'الحجوزات', careers: 'الوظائف', subscriptions: 'الاشتراكات والأسعار',
+  messages: 'الرسائل', pages: 'الصفحات', languages: 'اللغات',
+  ai: 'المساعد الذكي', appearance: 'المظهر', settings: 'الإعدادات'
+};
+
+window.switchSection = function(name) {
+  navItems.forEach(n => n.classList.remove('active'));
+  sections.forEach(s => s.classList.remove('active'));
+  const target = document.getElementById('sec-' + name);
+  if (target) {
+    target.classList.add('active');
+    pageTitle.textContent = sectionTitles[name] || name;
+    const navItem = document.querySelector(`.nav-item[data-section="${name}"]`);
+    if (navItem) navItem.classList.add('active');
+    // Close sidebar on mobile
+    document.getElementById('sidebar').classList.remove('open');
+  }
+};
+
+navItems.forEach(item => {
+  item.addEventListener('click', function() {
+    const sec = this.dataset.section;
+    if (sec) switchSection(sec);
+  });
+});
+
+/* --- Sidebar Toggle (Mobile) --- */
+document.getElementById('toggleSidebar').addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+
+/* --- Theme --- */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+  localStorage.setItem('admin_theme', theme);
+}
+
+themeToggle.addEventListener('click', function() {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+const savedTheme = localStorage.getItem('admin_theme') || 'dark';
+applyTheme(savedTheme);
+
+/* --- Modals --- */
+window.openModal = function(id) {
+  document.getElementById(id).classList.add('show');
+};
+window.closeModal = function(id) {
+  document.getElementById(id).classList.remove('show');
+};
+
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('show');
+  });
+});
+
+/* --- Toast --- */
+window.showToast = function(msg, type) {
+  type = type || 'info';
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+  toast.innerHTML = '<i class="fas ' + (icons[type] || icons.info) + '"></i> ' + msg;
+  container.appendChild(toast);
+  setTimeout(function() { toast.style.opacity = '0'; toast.style.transform = 'translateY(-10px)'; setTimeout(function() { toast.remove(); }, 300); }, 3000);
+};
+
+/* --- Table Filter --- */
+window.filterTable = function(tbodyId, query) {
+  const tbody = document.getElementById(tbodyId);
+  if (!tbody) return;
+  const rows = tbody.querySelectorAll('tr');
+  const q = query.toLowerCase();
+  rows.forEach(function(row) {
+    const text = row.textContent.toLowerCase();
+    row.style.display = text.includes(q) ? '' : 'none';
+  });
+};
+
+/* --- Charts --- */
+function renderChart(containerId, data) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = '';
+  const max = Math.max.apply(null, data.map(function(d) { return d.value; }));
+  data.forEach(function(d) {
+    const bar = document.createElement('div');
+    bar.className = 'chart-bar';
+    bar.style.height = Math.max((d.value / max) * 180, 20) + 'px';
+    bar.innerHTML = '<span class="bar-value">' + d.value + '</span><span class="bar-label">' + d.label + '</span>';
+    container.appendChild(bar);
+  });
+}
+
+renderChart('casesChart', [
+  { label: 'أكتوبر', value: 35 }, { label: 'نوفمبر', value: 42 },
+  { label: 'ديسمبر', value: 38 }, { label: 'يناير', value: 48 },
+  { label: 'فبراير', value: 55 }, { label: 'مارس', value: 62 }
+]);
+
+renderChart('visitsChart', [
+  { label: 'أكتوبر', value: 8200 }, { label: 'نوفمبر', value: 9100 },
+  { label: 'ديسمبر', value: 8800 }, { label: 'يناير', value: 10500 },
+  { label: 'فبراير', value: 11200 }, { label: 'مارس', value: 12450 }
+]);
+
+/* --- Language Stats --- */
+const langStatsEl = document.getElementById('langStats');
+if (langStatsEl) {
+  const langs = [
+    { name: 'العربية', pct: 62 }, { name: 'English', pct: 18 },
+    { name: 'کوردی', pct: 8 }, { name: 'Türkçe', pct: 4 },
+    { name: 'فارسی', pct: 3 }, { name: 'أخرى', pct: 5 }
+  ];
+  langStatsEl.innerHTML = langs.map(function(l) {
+    return '<div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem">' +
+      '<span style="flex:0 0 70px;font-size:.82rem">' + l.name + '</span>' +
+      '<div style="flex:1;background:var(--bg-card);border-radius:6px;height:8px;overflow:hidden">' +
+      '<div style="width:' + l.pct + '%;height:100%;background:linear-gradient(90deg,var(--p),var(--accent));border-radius:6px"></div></div>' +
+      '<span style="font-size:.78rem;color:var(--text-muted);flex:0 0 35px;text-align:start">' + l.pct + '%</span></div>';
+  }).join('');
+}
+
+/* --- Device Stats --- */
+const deviceStatsEl = document.getElementById('deviceStats');
+if (deviceStatsEl) {
+  var devices = [
+    { name: 'هاتف محمول', icon: 'fa-mobile-alt', pct: 68 },
+    { name: 'حاسوب', icon: 'fa-desktop', pct: 24 },
+    { name: 'تابلت', icon: 'fa-tablet-alt', pct: 8 }
+  ];
+  deviceStatsEl.innerHTML = devices.map(function(d) {
+    return '<div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem">' +
+      '<div style="width:40px;height:40px;border-radius:var(--r-xs);background:rgba(37,99,235,.1);display:flex;align-items:center;justify-content:center"><i class="fas ' + d.icon + '" style="color:var(--p-light)"></i></div>' +
+      '<div style="flex:1"><span style="font-size:.84rem;display:block">' + d.name + '</span>' +
+      '<div style="background:var(--bg-card);border-radius:6px;height:6px;margin-top:.3rem;overflow:hidden"><div style="width:' + d.pct + '%;height:100%;background:var(--p);border-radius:6px"></div></div></div>' +
+      '<span style="font-size:.82rem;font-weight:700">' + d.pct + '%</span></div>';
+  }).join('');
+}
+
+/* --- Radius Slider --- */
+var radiusSlider = document.getElementById('radiusSlider');
+var radiusValue = document.getElementById('radiusValue');
+if (radiusSlider) {
+  radiusSlider.addEventListener('input', function() {
+    radiusValue.textContent = this.value + 'px';
+  });
+}
+
+/* --- Actions --- */
+window.savePricing = function() {
+  const data = {
+    basic: { price: document.getElementById('priceBasic').value, priceYearly: document.getElementById('priceBasicY').value },
+    pro: { price: document.getElementById('pricePro').value, priceYearly: document.getElementById('priceProY').value },
+    enterprise: { price: document.getElementById('priceEnt').value, priceYearly: document.getElementById('priceEntY').value }
+  };
+  localStorage.setItem('me_pricing', JSON.stringify(data));
+  showToast('تم حفظ الأسعار بنجاح', 'success');
+};
+
+window.saveAppearance = function() {
+  const data = {
+    primary: document.getElementById('colorPrimary').value,
+    accent: document.getElementById('colorAccent').value,
+    success: document.getElementById('colorSuccess').value,
+    danger: document.getElementById('colorDanger').value,
+    radius: document.getElementById('radiusSlider').value
+  };
+  localStorage.setItem('me_appearance', JSON.stringify(data));
+  showToast('تم حفظ إعدادات المظهر', 'success');
+};
+
+window.resetAppearance = function() {
+  document.getElementById('colorPrimary').value = '#2563eb';
+  document.getElementById('colorAccent').value = '#06b6d4';
+  document.getElementById('colorSuccess').value = '#10b981';
+  document.getElementById('colorDanger').value = '#ef4444';
+  document.getElementById('radiusSlider').value = 20;
+  document.getElementById('radiusValue').textContent = '20px';
+  localStorage.removeItem('me_appearance');
+  showToast('تم إعادة تعيين المظهر', 'info');
+};
+
+window.saveSettings = function() {
+  showToast('تم حفظ الإعدادات العامة', 'success');
+};
+
+window.changePassword = function() {
+  var oldP = document.getElementById('settPassOld').value;
+  var newP = document.getElementById('settPassNew').value;
+  var creds = getCredentials();
+  if (!oldP || !newP) { showToast('أدخل كلمة المرور القديمة والجديدة', 'error'); return; }
+  if (oldP !== creds.pass) { showToast('كلمة المرور الحالية غير صحيحة', 'error'); return; }
+  if (newP.length < 6) { showToast('كلمة المرور الجديدة يجب أن تكون 6 أحرف على الأقل', 'error'); return; }
+  creds.pass = newP;
+  localStorage.setItem('me_admin_creds', JSON.stringify(creds));
+  document.getElementById('settPassOld').value = '';
+  document.getElementById('settPassNew').value = '';
+  showToast('تم تغيير كلمة المرور بنجاح', 'success');
+};
+
+window.clearCacheAction = function() {
+  if ('caches' in window) {
+    caches.keys().then(function(names) {
+      names.forEach(function(name) { caches.delete(name); });
+      showToast('تم مسح جميع بيانات الكاش', 'success');
+    });
+  } else {
+    showToast('المتصفح لا يدعم إدارة الكاش', 'error');
+  }
+};
+
+window.exportData = function() {
+  var data = {};
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (key.startsWith('me_')) data[key] = localStorage.getItem(key);
+  }
+  var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'middleeast-law-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('تم تصدير البيانات', 'success');
+};
+
+window.resetAllData = function() {
+  var keys = [];
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (key.startsWith('me_')) keys.push(key);
+  }
+  keys.forEach(function(k) { localStorage.removeItem(k); });
+  showToast('تم إعادة تعيين جميع البيانات', 'info');
+};
+
+/* --- Load saved pricing if exists --- */
+try {
+  var savedPricing = JSON.parse(localStorage.getItem('me_pricing'));
+  if (savedPricing) {
+    if (savedPricing.basic) { document.getElementById('priceBasic').value = savedPricing.basic.price || ''; document.getElementById('priceBasicY').value = savedPricing.basic.priceYearly || ''; }
+    if (savedPricing.pro) { document.getElementById('pricePro').value = savedPricing.pro.price || ''; document.getElementById('priceProY').value = savedPricing.pro.priceYearly || ''; }
+    if (savedPricing.enterprise) { document.getElementById('priceEnt').value = savedPricing.enterprise.price || ''; document.getElementById('priceEntY').value = savedPricing.enterprise.priceYearly || ''; }
+  }
+} catch(e) {}
+
+/* ===== CONTENT MANAGEMENT FUNCTIONS ===== */
+
+// Save Contact Info
+window.saveContactContent = function() {
+  var data = {
+    phone: document.getElementById('contentPhone').value,
+    email: document.getElementById('contentEmail').value,
+    address: document.getElementById('contentAddress').value,
+    hours: document.getElementById('contentHours').value,
+    whatsapp: document.getElementById('contentWhatsapp').value
+  };
+  localStorage.setItem('me_content_contact', JSON.stringify(data));
+  showToast('تم حفظ معلومات التواصل بنجاح', 'success');
+};
+
+// Save Hero Stats
+window.saveHeroContent = function() {
+  var data = {
+    cases: document.getElementById('contentCases').value,
+    successRate: document.getElementById('contentSuccess').value,
+    years: document.getElementById('contentYears').value,
+    clients: document.getElementById('contentClients').value
+  };
+  localStorage.setItem('me_content_hero', JSON.stringify(data));
+  showToast('تم حفظ الإحصائيات بنجاح', 'success');
+};
+
+// Add Team Member
+window.addTeamMember = function() {
+  var container = document.getElementById('teamEditorContainer');
+  var item = document.createElement('div');
+  item.className = 'team-editor-item';
+  item.innerHTML = '<div class="form-grid">'
+    + '<div class="form-group"><label>الاسم</label><input type="text" class="team-name" value=""></div>'
+    + '<div class="form-group"><label>المنصب</label><input type="text" class="team-role" value=""></div>'
+    + '<div class="form-group" style="grid-column:1/-1"><label>الوصف</label><textarea class="team-desc" rows="2"></textarea></div>'
+    + '</div>'
+    + '<button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTeamMember(this)"><i class="fas fa-trash"></i> حذف</button>'
+    + '<hr style="border-color:var(--glass-border);margin:1rem 0">';
+  container.appendChild(item);
+  showToast('تم إضافة عضو جديد', 'info');
+};
+
+// Remove Team Member
+window.removeTeamMember = function(btn) {
+  var item = btn.closest('.team-editor-item');
+  if (item) item.remove();
+  showToast('تم حذف العضو', 'info');
+};
+
+// Save Team Content
+window.saveTeamContent = function() {
+  var items = document.querySelectorAll('.team-editor-item');
+  var data = [];
+  items.forEach(function(item) {
+    var name = item.querySelector('.team-name');
+    var role = item.querySelector('.team-role');
+    var desc = item.querySelector('.team-desc');
+    if (name && name.value.trim()) {
+      data.push({
+        name: name.value.trim(),
+        role: role ? role.value.trim() : '',
+        desc: desc ? desc.value.trim() : ''
+      });
+    }
+  });
+  localStorage.setItem('me_content_team', JSON.stringify(data));
+  showToast('تم حفظ فريق العمل (' + data.length + ' أعضاء)', 'success');
+};
+
+// Add Testimonial
+window.addTestimonial = function() {
+  var container = document.getElementById('testiEditorContainer');
+  var item = document.createElement('div');
+  item.className = 'testi-editor-item';
+  item.innerHTML = '<div class="form-grid">'
+    + '<div class="form-group"><label>اسم العميل</label><input type="text" class="testi-name" value=""></div>'
+    + '<div class="form-group"><label>المنصب/المكان</label><input type="text" class="testi-role" value=""></div>'
+    + '<div class="form-group" style="grid-column:1/-1"><label>نص الرأي</label><textarea class="testi-text" rows="2"></textarea></div>'
+    + '</div>'
+    + '<button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTestimonial(this)"><i class="fas fa-trash"></i> حذف</button>'
+    + '<hr style="border-color:var(--glass-border);margin:1rem 0">';
+  container.appendChild(item);
+  showToast('تم إضافة رأي جديد', 'info');
+};
+
+// Remove Testimonial
+window.removeTestimonial = function(btn) {
+  var item = btn.closest('.testi-editor-item');
+  if (item) item.remove();
+  showToast('تم حذف الرأي', 'info');
+};
+
+// Save Testimonials Content
+window.saveTestiContent = function() {
+  var items = document.querySelectorAll('.testi-editor-item');
+  var data = [];
+  items.forEach(function(item) {
+    var name = item.querySelector('.testi-name');
+    var role = item.querySelector('.testi-role');
+    var text = item.querySelector('.testi-text');
+    if (name && name.value.trim()) {
+      data.push({
+        name: name.value.trim(),
+        role: role ? role.value.trim() : '',
+        text: text ? text.value.trim() : ''
+      });
+    }
+  });
+  localStorage.setItem('me_content_testimonials', JSON.stringify(data));
+  showToast('تم حفظ آراء العملاء (' + data.length + ' رأي)', 'success');
+};
+
+/* --- Load saved content if exists --- */
+try {
+  var savedContact = JSON.parse(localStorage.getItem('me_content_contact'));
+  if (savedContact) {
+    if (savedContact.phone) document.getElementById('contentPhone').value = savedContact.phone;
+    if (savedContact.email) document.getElementById('contentEmail').value = savedContact.email;
+    if (savedContact.address) document.getElementById('contentAddress').value = savedContact.address;
+    if (savedContact.hours) document.getElementById('contentHours').value = savedContact.hours;
+    if (savedContact.whatsapp) document.getElementById('contentWhatsapp').value = savedContact.whatsapp;
+  }
+} catch(e) {}
+
+try {
+  var savedHero = JSON.parse(localStorage.getItem('me_content_hero'));
+  if (savedHero) {
+    if (savedHero.cases) document.getElementById('contentCases').value = savedHero.cases;
+    if (savedHero.successRate) document.getElementById('contentSuccess').value = savedHero.successRate;
+    if (savedHero.years) document.getElementById('contentYears').value = savedHero.years;
+    if (savedHero.clients) document.getElementById('contentClients').value = savedHero.clients;
+  }
+} catch(e) {}
+
+try {
+  var savedTeam = JSON.parse(localStorage.getItem('me_content_team'));
+  if (savedTeam && savedTeam.length > 0) {
+    var teamContainer = document.getElementById('teamEditorContainer');
+    if (teamContainer) {
+      teamContainer.innerHTML = '';
+      savedTeam.forEach(function(member) {
+        var item = document.createElement('div');
+        item.className = 'team-editor-item';
+        item.innerHTML = '<div class="form-grid">'
+          + '<div class="form-group"><label>الاسم</label><input type="text" class="team-name" value="' + (member.name || '').replace(/"/g, '&quot;') + '"></div>'
+          + '<div class="form-group"><label>المنصب</label><input type="text" class="team-role" value="' + (member.role || '').replace(/"/g, '&quot;') + '"></div>'
+          + '<div class="form-group" style="grid-column:1/-1"><label>الوصف</label><textarea class="team-desc" rows="2">' + (member.desc || '') + '</textarea></div>'
+          + '</div>'
+          + '<button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTeamMember(this)"><i class="fas fa-trash"></i> حذف</button>'
+          + '<hr style="border-color:var(--glass-border);margin:1rem 0">';
+        teamContainer.appendChild(item);
+      });
+    }
+  }
+} catch(e) {}
+
+try {
+  var savedTesti = JSON.parse(localStorage.getItem('me_content_testimonials'));
+  if (savedTesti && savedTesti.length > 0) {
+    var testiContainer = document.getElementById('testiEditorContainer');
+    if (testiContainer) {
+      testiContainer.innerHTML = '';
+      savedTesti.forEach(function(t) {
+        var item = document.createElement('div');
+        item.className = 'testi-editor-item';
+        item.innerHTML = '<div class="form-grid">'
+          + '<div class="form-group"><label>اسم العميل</label><input type="text" class="testi-name" value="' + (t.name || '').replace(/"/g, '&quot;') + '"></div>'
+          + '<div class="form-group"><label>المنصب/المكان</label><input type="text" class="testi-role" value="' + (t.role || '').replace(/"/g, '&quot;') + '"></div>'
+          + '<div class="form-group" style="grid-column:1/-1"><label>نص الرأي</label><textarea class="testi-text" rows="2">' + (t.text || '') + '</textarea></div>'
+          + '</div>'
+          + '<button class="btn btn-danger" style="margin-top:.5rem" onclick="removeTestimonial(this)"><i class="fas fa-trash"></i> حذف</button>'
+          + '<hr style="border-color:var(--glass-border);margin:1rem 0">';
+        testiContainer.appendChild(item);
+      });
+    }
+  }
+} catch(e) {}
+
+})();
+</script>
+</body>
+</html>

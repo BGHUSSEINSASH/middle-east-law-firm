@@ -1,0 +1,21 @@
+﻿{
+  "name": "شركة الشرق الأوسط للمحاماة والاستشارات القانونية",
+  "short_name": "الشرق الأوسط للمحاماة",
+  "description": "تطبيق شركة الشرق الأوسط للمحاماة - مساعد قانوني ذكي وقاعدة بيانات القوانين العراقية",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a1628",
+  "theme_color": "#2563eb",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["legal", "business", "education"],
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

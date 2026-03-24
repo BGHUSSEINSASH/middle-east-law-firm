@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "brand": "Middle East",
+    "brandSub": "Law & Consultancy",
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "laws": "Iraqi Laws",
+    "assistant": "Legal Assistant",
+    "team": "Our Team",
+    "app": "App",
+    "contact": "Contact Us",
+    "cta": "Free Consultation",
+    "pricing": "Packages"
+  },
+  "hero": {
+    "badge": "#1 Law Firm in Iraq",
+    "titleLine1": "Justice Starts",
+    "titleLine2": "Here",
+    "title": "Justice Starts Here",
+    "subtitle": "Over 15 years of expertise in Iraqi law - Providing the best legal solutions with an AI assistant that answers all your questions",
+    "askAI": "Ask Legal Assistant",
+    "consult": "Free Consultation",
+    "getApp": "Download App"
+  },
+  "stats": {
+    "cases": "Successful Cases",
+    "success": "Success Rate",
+    "years": "Years Experience",
+    "clients": "Satisfied Clients"
+  },
+  "about": {
+    "tag": "About Us",
+    "title": "Middle East Law Firm",
+    "p1": "Founded in 2009 in the heart of Baghdad, Middle East Law Firm has become one of Iraq's leading legal firms.",
+    "p2": "We combine deep expertise in Iraqi law with modern technology, including our AI legal assistant that provides instant answers to any legal question.",
+    "f1": "Team of top Iraqi lawyers",
+    "f2": "AI legal assistant available 24/7",
+    "f3": "Comprehensive Iraqi laws database",
+    "f4": "Smart app for Android and iOS",
+    "cta": "Discover Our Services",
+    "cardYears": "Years of Legal Experience",
+    "cardCases": "Cases Won",
+    "cardClients": "Clients Trust Us",
+    "cardAI": "AI Legal Assistant"
+  },
+  "services": {
+    "tag": "Our Legal Services",
+    "title": "Comprehensive Legal Solutions",
+    "subtitle": "We offer a wide range of specialized legal services",
+    "s1": {
+      "title": "Real Estate Cases",
+      "desc": "Resolving property disputes, registration, and contract review with extensive expertise."
+    },
+    "s2": {
+      "title": "Commercial Cases",
+      "desc": "Company formation, commercial contracts, and partner dispute resolution."
+    },
+    "s3": {
+      "title": "Family Law",
+      "desc": "Divorce, custody, alimony, and inheritance cases with complete confidentiality."
+    },
+    "s4": {
+      "title": "Criminal Cases",
+      "desc": "Criminal defense at all levels of litigation."
+    },
+    "s5": {
+      "title": "Civil Cases",
+      "desc": "Civil litigation at all stages before Iraqi courts."
+    },
+    "s6": {
+      "title": "Legal Consultations",
+      "desc": "Specialized legal consultations for individuals and companies in all fields."
+    },
+    "ask": "Ask about this law"
+  },
+  "laws": {
+    "tag": "Legal Library",
+    "title": "Comprehensive Iraqi Legal Library",
+    "subtitle": "The largest Iraqi digital legal library — Browse 50+ laws and 350+ articles across 10 legal categories via the AI assistant",
+    "statsLaws": "Iraqi Law",
+    "statsArticles": "Legal Article",
+    "statsCategories": "Legal Category",
+    "statsAssistant": "AI Legal Assistant",
+    "civil": "Civil Law",
+    "criminal": "Criminal Law",
+    "family": "Personal Status",
+    "commercial": "Commercial Law",
+    "labor": "Labor Law",
+    "constitutional": "Constitution",
+    "property": "Real Estate Law",
+    "administrative": "Administrative Law",
+    "financial": "Financial Law",
+    "procedural": "Legal Procedures",
+    "ctaTitle": "Ask the AI Legal Assistant",
+    "ctaDesc": "Type your question or click on any category above — the AI assistant will display all related laws with full details",
+    "ctaBtn": "Go to Legal Assistant"
+  },
+  "ai": {
+    "tag": "AI Legal Assistant",
+    "title": "Your Legal Assistant Works Around the Clock",
+    "subtitle": "Ask any question about Iraqi laws in any language - The AI assistant is ready to answer",
+    "f1": {
+      "title": "Voice Assistant",
+      "desc": "Speak and get instant answers in your preferred language"
+    },
+    "f2": {
+      "title": "Multilingual",
+      "desc": "Supports Arabic, English, Kurdish, Turkish, Persian and French"
+    },
+    "f3": {
+      "title": "Comprehensive Database",
+      "desc": "Covers all Iraqi laws and regulations"
+    },
+    "f4": {
+      "title": "Available 24/7",
+      "desc": "Get legal help anytime"
+    },
+    "chatName": "Legal Assistant",
+    "online": "Online Now",
+    "welcome": "Hello! I'm the Middle East Law Firm's Legal Assistant. I can help you with any question about Iraqi laws. Type your question or use voice! 🎯",
+    "inputPlaceholder": "Type your legal question here...",
+    "listening": "Listening...",
+    "floatLabel": "Legal Assistant"
+  },
+  "team": {
+    "tag": "Our Distinguished Team",
+    "title": "Elite Expert Lawyers",
+    "subtitle": "A team of the most skilled lawyers with extensive experience in various branches of law",
+    "m1": {
+      "name": "Ahmed Al-Husseini",
+      "role": "Founder & General Manager",
+      "desc": "Over 15 years of experience in commercial and real estate cases. Member of the Iraqi Bar Association."
+    },
+    "m2": {
+      "name": "Sara Al-Mohammadi",
+      "role": "Family Law Specialist",
+      "desc": "Specialized in personal status cases with 10 years of experience."
+    },
+    "m3": {
+      "name": "Ali Al-Kadhimi",
+      "role": "Criminal Law Expert",
+      "desc": "Extensive experience in criminal defense and complex cases. High success rate in courts."
+    }
+  },
+  "testi": {
+    "tag": "Client Reviews",
+    "title": "What Our Clients Say",
+    "t1": {
+      "text": "Excellent experience with Middle East Law Firm. The AI legal assistant and the distinguished team were incredibly helpful.",
+      "name": "Ahmed Mohammed",
+      "role": "Businessman - Baghdad"
+    },
+    "t2": {
+      "text": "The voice assistant is an amazing feature! I was able to get quick answers about my legal rights anytime.",
+      "name": "Fatima Al-Ali",
+      "role": "Engineer - Erbil"
+    },
+    "t3": {
+      "text": "The best law firm I've dealt with. The app is easy to use and the team is very professional.",
+      "name": "Karim Hassan",
+      "role": "Merchant - Basra"
+    }
+  },
+  "app": {
+    "tag": "Smart App",
+    "title": "Download Middle East Law App",
+    "subtitle": "Get all legal services in your pocket",
+    "f1": "AI legal assistant with voice and text",
+    "f2": "Instant search in Iraqi laws",
+    "f3": "Book appointments with lawyers",
+    "f4": "Notifications about latest legal updates",
+    "f5": "Track your case confidentially",
+    "f6": "Multi-language support",
+    "install": "Install App",
+    "installNow": "Install Now Free",
+    "googlePlay": "Download from Google Play",
+    "appStore": "Download from App Store",
+    "notifTitle": "Did you know you can install this website as an app?",
+    "notifDesc": "Press the Install App button or add it to your home screen from your browser for a full app experience!",
+    "installBtn": "Install",
+    "mockHeader": "Middle East Law Firm",
+    "mockBot1": "Hello! How can I help you? 👋",
+    "mockUser1": "What are my rights in divorce?",
+    "mockBot2": "According to Iraqi Personal Status Law No. 188...",
+    "mockUser2": "Thank you very much!",
+    "mockInput": "Type your legal question...",
+    "mockNavHome": "Home",
+    "mockNavLaws": "Laws",
+    "mockNavAssistant": "Assistant",
+    "mockNavAppts": "Appointments",
+    "mockNavAccount": "My Account",
+    "stat1": "Downloads",
+    "stat2": "Rating",
+    "stat3": "Laws",
+    "stat4": "Support"
+  },
+  "faq": {
+    "tag": "FAQ",
+    "title": "Frequently Asked Questions",
+    "q1": "What is the cost of the first consultation?",
+    "a1": "The first consultation is completely free. We make sure to fully understand your case before determining any costs.",
+    "q2": "Is the AI legal assistant free?",
+    "a2": "Yes! The AI legal assistant is free for all website and app visitors.",
+    "q3": "Can I use the voice assistant?",
+    "a3": "Absolutely! The legal assistant supports voice input in Arabic, English, Kurdish, and other languages.",
+    "q4": "How do I download the app?",
+    "a4": "You can install the app directly from this website or download it from Google Play or App Store.",
+    "q5": "Is the legal information on the site up to date?",
+    "a5": "Yes, we continuously update the database to ensure accuracy and compliance with the latest legal amendments."
+  },
+  "contact": {
+    "tag": "Contact Us",
+    "title": "Get a Free Consultation",
+    "subtitle": "We're here to help - Contact us now and get your first consultation for free",
+    "address": "Address",
+    "addressVal": "Baghdad - Al-Karada - Street 42",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Working Hours",
+    "hoursVal": "Saturday - Thursday: 9 AM - 5 PM",
+    "nameLabel": "Full Name",
+    "namePH": "Enter your full name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email",
+    "serviceLabel": "Service Type",
+    "selectService": "Select Service",
+    "opt1": "Real Estate Cases",
+    "opt2": "Commercial Cases",
+    "opt3": "Family Law",
+    "opt4": "Criminal Cases",
+    "opt5": "Civil Cases",
+    "opt6": "Legal Consultation",
+    "msgLabel": "Your Message",
+    "msgPH": "Write details about your case or inquiry",
+    "submit": "Submit Request"
+  },
+  "pricing": {
+    "tag": "Subscription Packages",
+    "title": "Choose the Right Package for You",
+    "subtitle": "Comprehensive consultation packages for individuals and companies - online and offline consultations",
+    "currency": "IQD",
+    "period": "/ monthly",
+    "subscribe": "Subscribe Now",
+    "popular": "Most Popular",
+    "basic": {
+      "badge": "Basic",
+      "desc": "For individuals who need simple legal consultations",
+      "f1": "3 monthly consultations via website",
+      "f2": "Access to AI Legal Assistant",
+      "f3": "Full access to Iraqi laws database",
+      "f4": "Email support",
+      "f5": "Phone consultations",
+      "f6": "Office visits"
+    },
+    "pro": {
+      "badge": "Professional",
+      "desc": "For individuals and small businesses - comprehensive consultations",
+      "f1": "10 monthly consultations (website + phone)",
+      "f2": "Advanced Legal Assistant",
+      "f3": "Contract and document review",
+      "f4": "Direct phone consultations",
+      "f5": "Priority response and follow-up",
+      "f6": "Legal representation in courts"
+    },
+    "enterprise": {
+      "badge": "Enterprise",
+      "desc": "For companies and institutions - complete legal protection",
+      "f1": "Unlimited consultations",
+      "f2": "Dedicated lawyer for your company",
+      "f3": "Review all contracts and agreements",
+      "f4": "Legal representation in courts",
+      "f5": "Monthly office visits",
+      "f6": "Periodic legal reports"
+    },
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 20%",
+    "trust1": "100% Secure Payment",
+    "trust2": "7-Day Refund Guarantee",
+    "trust3": "24/7 Support",
+    "trust4": "Your Data is Protected",
+    "periodYearly": "/ Yearly"
+  },
+  "payment": {
+    "title": "Choose Payment Method",
+    "selectedPlan": "Selected Package:",
+    "zainCash": "Zain Cash",
+    "rafidain": "Rafidain Mastercard",
+    "ahli": "Al-Ahli Iraqi Bank",
+    "bankTransfer": "Bank Transfer",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email",
+    "confirm": "Confirm Subscription"
+  },
+  "footer": {
+    "desc": "Middle East Law Firm & Legal Consultancy - Your trusted legal partner in Iraq since 2009.",
+    "quickLinks": "Quick Links",
+    "services": "Our Services",
+    "contact": "Contact Us",
+    "downloadApp": "Download App:",
+    "copy": "© 2024 Middle East Law Firm. All Rights Reserved."
+  },
+  "page": {
+    "title": "Middle East Law Firm & Legal Consultancy"
+  },
+  "meta": {
+    "description": "Middle East Law Firm - Over 15 years of expertise in Iraqi law and legal consultancy",
+    "keywords": "law firm, Iraqi law, legal consultancy, Baghdad lawyer"
+  },
+  "loader": {
+    "title": "Middle East Law Firm"
+  }
+}

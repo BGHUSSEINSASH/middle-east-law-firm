@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "brand": "Orta Doğu",
+    "brandSub": "Hukuk ve Danışmanlık",
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "laws": "Irak Kanunları",
+    "assistant": "Hukuk Asistanı",
+    "team": "Ekibimiz",
+    "app": "Uygulama",
+    "contact": "İletişim",
+    "cta": "Ücretsiz Danışma",
+    "pricing": "Paketler"
+  },
+  "hero": {
+    "badge": "Irak'ın 1 Numaralı Hukuk Bürosu",
+    "titleLine1": "Adalet Burada",
+    "titleLine2": "Başlıyor",
+    "title": "Adalet Burada Başlıyor",
+    "subtitle": "Irak hukukunda 15 yılı aşkın deneyim - Tüm sorularınıza cevap veren akıllı asistanımızla en iyi hukuki çözümleri sunuyoruz",
+    "askAI": "Hukuk Asistanına Sor",
+    "consult": "Ücretsiz Danışma",
+    "getApp": "Uygulamayı İndir"
+  },
+  "stats": {
+    "cases": "Başarılı Dava",
+    "success": "Başarı Oranı",
+    "years": "Yıl Deneyim",
+    "clients": "Memnun Müşteri"
+  },
+  "about": {
+    "tag": "Biz Kimiz",
+    "title": "Orta Doğu Hukuk Bürosu",
+    "p1": "Orta Doğu Hukuk ve Danışmanlık Şirketi, 2009 yılında Bağdat'ın kalbinde kurulmuş olup Irak'ın önde gelen hukuk firmalarından biridir.",
+    "p2": "Irak hukukundaki derin deneyimimizi modern teknolojilerle birleştiriyoruz; akıllı hukuk asistanımız her türlü hukuki sorunuza anında cevap verir.",
+    "f1": "En yetenekli Irak avukatlarından oluşan ekip",
+    "f2": "7/24 çalışan akıllı hukuk asistanı",
+    "f3": "Kapsamlı Irak kanun veritabanı",
+    "f4": "Android ve iOS için akıllı uygulama",
+    "cta": "Hizmetlerimizi Keşfet",
+    "cardYears": "Yıllık hukuki deneyim",
+    "cardCases": "Kazanılan dava",
+    "cardClients": "Bize güvenen müşteri",
+    "cardAI": "Akıllı hukuk asistanı"
+  },
+  "services": {
+    "tag": "Hukuki Hizmetlerimiz",
+    "title": "Kapsamlı Hukuki Çözümler",
+    "subtitle": "Geniş bir uzman hukuki hizmet yelpazesi sunuyoruz",
+    "s1": {
+      "title": "Gayrimenkul Davaları",
+      "desc": "Gayrimenkul uyuşmazlıkları, mülk tescili ve sözleşme incelemesinde geniş deneyim."
+    },
+    "s2": {
+      "title": "Ticari Davalar",
+      "desc": "Şirket kuruluşu, ticari sözleşmeler ve ortaklar arası uyuşmazlık çözümü."
+    },
+    "s3": {
+      "title": "Aile Hukuku",
+      "desc": "Boşanma, velayet, nafaka ve miras davaları tam gizlilikle."
+    },
+    "s4": {
+      "title": "Ceza Davaları",
+      "desc": "Tüm yargılama aşamalarında ceza davalarında savunma."
+    },
+    "s5": {
+      "title": "Medeni Davalar",
+      "desc": "Irak mahkemelerinde tüm aşamalarda medeni dava takibi."
+    },
+    "s6": {
+      "title": "Hukuki Danışmanlık",
+      "desc": "Bireyler ve şirketler için tüm alanlarda uzman hukuki danışmanlık."
+    },
+    "ask": "Bu kanun hakkında sor"
+  },
+  "laws": {
+    "tag": "Hukuk Kütüphanesi",
+    "title": "Kapsamlı Irak Hukuk Kütüphanesi",
+    "subtitle": "Irak'ın en büyük dijital hukuk kütüphanesi — Yapay zeka asistanı ile 10 kategoride 50+ kanun ve 350+ maddeyi keşfedin",
+    "statsLaws": "Irak Kanunu",
+    "statsArticles": "Hukuki Madde",
+    "statsCategories": "Hukuk Kategorisi",
+    "statsAssistant": "Akıllı Hukuk Asistanı",
+    "civil": "Medeni Hukuk",
+    "criminal": "Ceza Hukuku",
+    "family": "Kişisel Durumlar",
+    "commercial": "Ticaret Hukuku",
+    "labor": "İş Hukuku",
+    "constitutional": "Anayasa",
+    "property": "Gayrimenkul Hukuku",
+    "administrative": "İdari Hukuk",
+    "financial": "Mali Hukuk",
+    "procedural": "Hukuki İşlemler",
+    "ctaTitle": "Akıllı Hukuk Asistanına Sorun",
+    "ctaDesc": "Sorunuzu yazın veya yukarıdaki herhangi bir kategoriye tıklayın — yapay zeka asistanı tüm ilgili kanunları detaylı olarak gösterecektir",
+    "ctaBtn": "Hukuk Asistanına Git"
+  },
+  "ai": {
+    "tag": "Akıllı Hukuk Asistanı",
+    "title": "Hukuk Asistanınız 7/24 Hizmetinizde",
+    "subtitle": "Irak kanunları hakkında herhangi bir dilde soru sorun - Akıllı asistan cevap vermeye hazır",
+    "f1": {
+      "title": "Sesli Asistan",
+      "desc": "Sesinizle konuşun ve anında cevap alın"
+    },
+    "f2": {
+      "title": "Çok Dilli",
+      "desc": "Arapça, İngilizce, Kürtçe, Türkçe ve daha fazlasını destekler"
+    },
+    "f3": {
+      "title": "Kapsamlı Veritabanı",
+      "desc": "Tüm Irak kanunlarını ve yürürlükteki mevzuatı kapsar"
+    },
+    "f4": {
+      "title": "7/24 Erişilebilir",
+      "desc": "Her an hukuki yardım alın"
+    },
+    "chatName": "Hukuk Asistanı",
+    "online": "Şimdi çevrimiçi",
+    "welcome": "Merhaba! Ben Orta Doğu'nun hukuk asistanıyım. Irak kanunları hakkında herhangi bir sorunuz olabilir. Sorunuzu yazın veya sesinizle konuşun! 🎯",
+    "inputPlaceholder": "Hukuki sorunuzu buraya yazın...",
+    "listening": "Dinleniyor...",
+    "floatLabel": "Hukuk Asistanı"
+  },
+  "team": {
+    "tag": "Seçkin Ekibimiz",
+    "title": "Uzman Avukat Kadromuz",
+    "subtitle": "Hukukun çeşitli dallarında geniş deneyime sahip en yetenekli avukatlardan oluşan ekip",
+    "m1": {
+      "name": "Av. Ahmed El-Huseyni",
+      "role": "Kurucu ve Genel Müdür",
+      "desc": "Ticari ve gayrimenkul davalarında 15 yılı aşkın deneyim. Irak Barolar Birliği üyesi."
+    },
+    "m2": {
+      "name": "Av. Sara El-Muhammedi",
+      "role": "Aile Hukuku Uzmanı",
+      "desc": "10 yıllık deneyimle kişisel durum davalarında uzman. İnsancıl yaklaşımıyla tanınır."
+    },
+    "m3": {
+      "name": "Av. Ali El-Kazımi",
+      "role": "Ceza Hukuku Uzmanı",
+      "desc": "Ceza savunması ve karmaşık davalarda geniş deneyim. Mahkemelerde yüksek başarı oranı."
+    }
+  },
+  "testi": {
+    "tag": "Müşteri Görüşleri",
+    "title": "Müşterilerimiz Ne Diyor",
+    "t1": {
+      "text": "Orta Doğu ile mükemmel bir deneyim. Akıllı hukuk asistanından ve seçkin ekipten çok faydalandım.",
+      "name": "Ahmed Muhammed",
+      "role": "İş adamı - Bağdat"
+    },
+    "t2": {
+      "text": "Sesli asistan harika bir özellik! Hukuki haklarımla ilgili her an hızlı cevaplar alabildi.",
+      "name": "Fatma Ali",
+      "role": "Mühendis - Erbil"
+    },
+    "t3": {
+      "text": "Çalıştığım en iyi hukuk firması. Uygulama kullanımı kolay ve ekip çok profesyonel.",
+      "name": "Kerim Hasan",
+      "role": "Tüccar - Basra"
+    }
+  },
+  "app": {
+    "tag": "Akıllı Uygulama",
+    "title": "Orta Doğu Hukuk Uygulamasını İndirin",
+    "subtitle": "Tüm hukuki hizmetleri cebinizde taşıyın",
+    "f1": "Sesli ve metin tabanlı akıllı hukuk asistanı",
+    "f2": "Irak kanunlarında anında arama",
+    "f3": "Avukatlarla randevu alma",
+    "f4": "Son hukuki güncellemeler bildirimleri",
+    "f5": "Davanızı gizlilikle takip edin",
+    "f6": "Çok dilli destek",
+    "install": "Uygulamayı Yükle",
+    "installNow": "Şimdi Ücretsiz Yükle",
+    "googlePlay": "Google Play'den İndir",
+    "appStore": "App Store'dan İndir",
+    "notifTitle": "Bu siteyi uygulama olarak yükleyebileceğinizi biliyor musunuz?",
+    "notifDesc": "Uygulamayı yükle düğmesine basın veya tarayıcınızdan ana ekrana ekleyin!",
+    "installBtn": "Yükle",
+    "mockHeader": "Orta Doğu Hukuk",
+    "mockBot1": "Merhaba! Size nasıl yardımcı olabilirim? 👋",
+    "mockUser1": "Boşanmada haklarım neler?",
+    "mockBot2": "Irak Kişisel Durum Kanunu 188'e göre...",
+    "mockUser2": "Çok teşekkürler!",
+    "mockInput": "Hukuki sorunuzu yazın...",
+    "mockNavHome": "Ana Sayfa",
+    "mockNavLaws": "Kanunlar",
+    "mockNavAssistant": "Asistan",
+    "mockNavAppts": "Randevular",
+    "mockNavAccount": "Hesabım",
+    "stat1": "İndirme",
+    "stat2": "Değerlendirme",
+    "stat3": "Kanun",
+    "stat4": "Destek"
+  },
+  "faq": {
+    "tag": "Sık Sorulan Sorular",
+    "title": "Sık Sorulan Sorular",
+    "q1": "İlk danışmanın maliyeti nedir?",
+    "a1": "İlk danışma tamamen ücretsizdir. Herhangi bir ücret belirlemeden önce davanızı tam olarak anlamaya özen gösteriyoruz.",
+    "q2": "Akıllı hukuk asistanı ücretsiz mi?",
+    "a2": "Evet! Akıllı hukuk asistanı tüm site ve uygulama ziyaretçileri için ücretsiz olarak sunulmaktadır.",
+    "q3": "Sesli asistanı kullanabilir miyim?",
+    "a3": "Elbette! Hukuk asistanı Arapça, İngilizce, Kürtçe ve diğer dillerde sesli girdiyi destekler.",
+    "q4": "Uygulamayı nasıl indirebilirim?",
+    "a4": "Uygulamayı doğrudan bu siteden yükleyebilir veya Google Play ya da App Store'dan indirebilirsiniz.",
+    "q5": "Sitedeki hukuki bilgiler güncel mi?",
+    "a5": "Evet, bilgilerin doğruluğunu ve en son yasal değişikliklerle uyumluluğunu sağlamak için veritabanımızı sürekli güncelliyoruz."
+  },
+  "contact": {
+    "tag": "İletişim",
+    "title": "Ücretsiz Danışma Alın",
+    "subtitle": "Size yardımcı olmak için buradayız - Şimdi bize ulaşın ve ilk danışmanızı ücretsiz alın",
+    "address": "Adres",
+    "addressVal": "Bağdat - Karrada - 42. Cadde",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "hours": "Çalışma Saatleri",
+    "hoursVal": "Cumartesi - Perşembe: 9:00 - 17:00",
+    "nameLabel": "Tam Ad",
+    "namePH": "Tam adınızı girin",
+    "phoneLabel": "Telefon Numarası",
+    "emailLabel": "E-posta",
+    "serviceLabel": "Hizmet Türü",
+    "selectService": "Hizmeti Seçin",
+    "opt1": "Gayrimenkul Davaları",
+    "opt2": "Ticari Davalar",
+    "opt3": "Aile Hukuku",
+    "opt4": "Ceza Davaları",
+    "opt5": "Medeni Davalar",
+    "opt6": "Hukuki Danışmanlık",
+    "msgLabel": "Mesajınız",
+    "msgPH": "Davanızın veya sorunuzun ayrıntılarını yazın",
+    "submit": "Talebi Gönder"
+  },
+  "pricing": {
+    "tag": "Abonelik Paketleri",
+    "title": "Size Uygun Paketi Seçin",
+    "subtitle": "Bireyler ve şirketler için kapsamlı danışmanlık paketleri",
+    "currency": "IQD",
+    "period": "/ aylık",
+    "subscribe": "Şimdi Abone Ol",
+    "popular": "En Popüler",
+    "basic": {
+      "badge": "Temel",
+      "desc": "Basit hukuki danışmanlığa ihtiyacı olan bireyler için",
+      "f1": "Aylık 3 web sitesi danışmanlığı",
+      "f2": "Yapay zeka hukuk asistanına erişim",
+      "f3": "Irak kanunları veritabanına tam erişim",
+      "f4": "E-posta desteği",
+      "f5": "Telefon danışmanlığı",
+      "f6": "Ofis ziyaretleri"
+    },
+    "pro": {
+      "badge": "Profesyonel",
+      "desc": "Bireyler ve küçük işletmeler için kapsamlı danışmanlık",
+      "f1": "Aylık 10 danışmanlık (web + telefon)",
+      "f2": "Gelişmiş Hukuk Asistanı",
+      "f3": "Sözleşme ve belge incelemesi",
+      "f4": "Doğrudan telefon danışmanlığı",
+      "f5": "Öncelikli yanıt ve takip",
+      "f6": "Mahkemelerde hukuki temsil"
+    },
+    "enterprise": {
+      "badge": "Kurumsal",
+      "desc": "Şirketler ve kurumlar için tam hukuki koruma",
+      "f1": "Sınırsız danışmanlık",
+      "f2": "Şirkete özel avukat",
+      "f3": "Tüm sözleşme ve anlaşmaların incelenmesi",
+      "f4": "Mahkemelerde hukuki temsil",
+      "f5": "Aylık ofis ziyaretleri",
+      "f6": "Dönemsel hukuki raporlar"
+    },
+    "monthly": "Aylık",
+    "yearly": "Yıllık",
+    "save": "%20 Tasarruf",
+    "trust1": "%100 Güvenli Ödeme",
+    "trust2": "7 Gün İade Garantisi",
+    "trust3": "7/24 Destek",
+    "trust4": "Verileriniz Korunuyor",
+    "periodYearly": "/ Yıllık"
+  },
+  "payment": {
+    "title": "Ödeme Yöntemini Seçin",
+    "selectedPlan": "Seçilen Paket:",
+    "zainCash": "Zain Cash",
+    "rafidain": "Rafidain Mastercard",
+    "ahli": "Al-Ahli Irak Bankası",
+    "bankTransfer": "Banka Havalesi",
+    "nameLabel": "Ad Soyad",
+    "phoneLabel": "Telefon Numarası",
+    "emailLabel": "E-posta",
+    "confirm": "Aboneliği Onayla"
+  },
+  "footer": {
+    "desc": "Orta Doğu Hukuk ve Danışmanlık Şirketi - 2009'dan beri Irak'taki güvenilir hukuk ortağınız.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "services": "Hizmetlerimiz",
+    "contact": "İletişim",
+    "downloadApp": "Uygulamayı İndir:",
+    "copy": "© 2024 Orta Doğu Hukuk Bürosu. Tüm hakları saklıdır."
+  },
+  "page": {
+    "title": "Orta Doğu Hukuk ve Danışmanlık"
+  },
+  "meta": {
+    "description": "Orta Doğu Hukuk Bürosu - Irak hukuku ve hukuki danışmanlıkta 15 yılı aşkın deneyim",
+    "keywords": "hukuk bürosu, Irak hukuku, hukuki danışmanlık, Bağdat avukat"
+  },
+  "loader": {
+    "title": "Orta Doğu Hukuk Bürosu"
+  }
+}

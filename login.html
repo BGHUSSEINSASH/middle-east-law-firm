@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="تسجيل الدخول - لوحة التحكم | شركة الشرق الأوسط للمحاماة">
+  <meta name="robots" content="noindex, nofollow">
+  <title>تسجيل الدخول - شركة الشرق الأوسط للمحاماة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <style>
+    /* Auth page specific styles */
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--nav-h) + 2rem) 1.5rem 3rem;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r3);
+      padding: 2.8rem;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--sh-lg), 0 0 60px var(--p-glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--p), var(--accent), var(--p-light));
+    }
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+    }
+    .auth-logo-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--p-dark), var(--p));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: #fff;
+      box-shadow: var(--sh-p);
+      flex-shrink: 0;
+    }
+    .auth-logo-txt .al-a { display: block; font-weight: 700; color: var(--txI); font-size: .95rem; }
+    .auth-logo-txt .al-b { display: block; font-size: .74rem; color: var(--tx2); }
+    .auth-title { font-size: 1.7rem; font-weight: 800; color: var(--txI); margin: 0 0 .4rem; }
+    .auth-sub   { color: var(--tx2); font-size: .9rem; margin: 0 0 2rem; }
+    .auth-field { margin-bottom: 1.3rem; }
+    .auth-field label {
+      display: block;
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--tx2);
+      margin-bottom: .45rem;
+    }
+    .auth-field .af-wrap {
+      position: relative;
+    }
+    .auth-field .af-wrap > i:first-child {
+      position: absolute;
+      right: 1rem; top: 50%;
+      transform: translateY(-50%);
+      color: var(--tx3);
+      font-size: .9rem;
+      pointer-events: none;
+    }
+    html[dir="ltr"] .auth-field .af-wrap > i:first-child { right: auto; left: 1rem; }
+    .auth-field input {
+      width: 100%;
+      background: var(--s3);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: .75rem 2.6rem .75rem 1rem;
+      color: var(--txI);
+      font-family: var(--font);
+      font-size: .92rem;
+      transition: border-color var(--t1), box-shadow var(--t1);
+      box-sizing: border-box;
+    }
+    html[dir="ltr"] .auth-field input { padding: .75rem 1rem .75rem 2.6rem; }
+    .auth-field input:focus {
+      outline: none;
+      border-color: var(--p-light);
+      box-shadow: 0 0 0 3px var(--p-glow);
+    }
+    .auth-field input::placeholder { color: var(--tx3); }
+    .toggle-pw {
+      position: absolute;
+      left: .9rem; top: 50%;
+      transform: translateY(-50%);
+      background: none; border: none;
+      color: var(--tx3); cursor: pointer;
+      padding: .2rem; font-size: .9rem;
+      transition: color var(--t1);
+    }
+    html[dir="ltr"] .toggle-pw { left: auto; right: .9rem; }
+    .toggle-pw:hover { color: var(--accent); }
+    .auth-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .auth-checkbox {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .83rem; color: var(--tx2); cursor: pointer;
+    }
+    .auth-checkbox input { width: auto; padding: 0; }
+    .auth-forgot { font-size: .83rem; color: var(--accent); text-decoration: none; }
+    .auth-forgot:hover { text-decoration: underline; }
+    .auth-submit {
+      width: 100%;
+      padding: .88rem 1.5rem;
+      background: linear-gradient(135deg, var(--p), var(--p-light));
+      border: none;
+      border-radius: var(--r4);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: box-shadow var(--t2), transform var(--t1);
+      box-shadow: var(--sh-p);
+    }
+    .auth-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--p-glow); }
+    .auth-submit:active { transform: none; }
+    .auth-back {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: .85rem;
+      color: var(--tx2);
+    }
+    .auth-back a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .auth-back a:hover { text-decoration: underline; }
+    .auth-divider {
+      text-align: center;
+      margin: 1.5rem 0;
+      position: relative;
+      color: var(--tx3);
+      font-size: .8rem;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 35%;
+      height: 1px;
+      background: var(--border);
+    }
+    .auth-divider::before { right: 0; }
+    .auth-divider::after  { left: 0; }
+    html[dir="ltr"] .auth-divider::before { left: 0; right: auto; }
+    html[dir="ltr"] .auth-divider::after  { right: 0; left: auto; }
+    .auth-error {
+      background: rgba(239,68,68,.1);
+      border: 1px solid rgba(239,68,68,.3);
+      border-radius: var(--r1);
+      padding: .7rem 1rem;
+      color: var(--danger);
+      font-size: .84rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .auth-success {
+      text-align: center;
+      padding: 2rem 0;
+      display: none;
+    }
+    .auth-success i { font-size: 3rem; color: var(--success); margin-bottom: 1rem; display: block; }
+    .auth-success h3 { color: var(--txI); margin-bottom: .5rem; }
+    .auth-success p  { color: var(--tx2); font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-emblem"><img src="logo.svg" alt="logo" style="width:64px;height:64px;border-radius:12px"></div>
+      <div class="loader-bar-wrap"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <p class="loader-label">شركة الشرق الأوسط للمحاماة</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND DECOR -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-emblem"><img src="logo.svg" alt="logo" style="width:38px;height:38px;border-radius:8px"></div>
+        <div class="logo-txt">
+          <span class="lt-main">الشرق الأوسط</span>
+          <span class="lt-sub">للمحاماة والاستشارات القانونية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"          class="nl" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="about.html"          class="nl" data-i18n="nav.about">عن الشركة</a></li>
+        <li><a href="index.html#services" class="nl" data-i18n="nav.services">الخدمات</a></li>
+        <li><a href="faq.html"            class="nl" data-i18n="nav.faq">الأسئلة</a></li>
+        <li><a href="index.html#contact"  class="nl" data-i18n="nav.contact">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-controls">
+        <select class="lang-select" data-language-selector aria-label="اختر اللغة">
+          <option value="ar">🇮🇶 AR</option>
+          <option value="en">🇺🇸 EN</option>
+          <option value="ku">KU</option>
+          <option value="tr">🇹🇷 TR</option>
+          <option value="fa">🇮🇷 FA</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="ru">🇷🇺 RU</option>
+          <option value="zh">🇨🇳 ZH</option>
+        </select>
+        <button class="theme-toggle-btn" id="themeBtn" aria-label="تبديل المظهر">
+          <i class="fas fa-moon" id="themeIco"></i>
+        </button>
+        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mm-inner">
+      <button class="mm-close" id="mmClose"><i class="fas fa-times"></i></button>
+      <ul class="mm-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">عن الشركة</a></li>
+        <li><a href="index.html#services">الخدمات</a></li>
+        <li><a href="faq.html">الأسئلة</a></li>
+        <li><a href="index.html#contact">تواصل معنا</a></li>
+      </ul>
+      <a href="tel:+9647705515535" class="mm-phone"><i class="fas fa-phone-alt"></i> +964 770 551 5535</a>
+    </div>
+  </div>
+
+  <!-- AUTH CONTENT -->
+  <div class="auth-page">
+    <div class="auth-card">
+
+      <a href="index.html" class="auth-logo">
+        <div class="auth-logo-icon"><img src="logo.svg" alt="logo" style="width:48px;height:48px;border-radius:10px"></div>
+        <div class="auth-logo-txt">
+          <span class="al-a">شركة الشرق الأوسط</span>
+          <span class="al-b">للمحاماة والاستشارات القانونية</span>
+        </div>
+      </a>
+
+      <h2 class="auth-title">تسجيل الدخول</h2>
+      <p class="auth-sub">ادخل بيانات حسابك للوصول إلى لوحة التحكم</p>
+
+      <div class="auth-error" id="authError" role="alert">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span id="authErrorMsg">بيانات الدخول غير صحيحة. يرجى المحاولة مرة أخرى.</span>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="auth-field">
+          <label for="loginEmail">البريد الإلكتروني *</label>
+          <div class="af-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="loginEmail" name="email" required autocomplete="email"
+                   placeholder="your@email.com">
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="loginPassword">كلمة المرور *</label>
+          <div class="af-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="loginPassword" name="password" required autocomplete="current-password"
+                   placeholder="••••••••">
+            <button type="button" class="toggle-pw" id="togglePw" aria-label="إظهار/إخفاء كلمة المرور">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-options">
+          <label class="auth-checkbox">
+            <input type="checkbox" id="rememberMe" name="remember">
+            <span>تذكرني</span>
+          </label>
+          <a href="#" class="auth-forgot">نسيت كلمة المرور؟</a>
+        </div>
+
+        <button type="submit" class="auth-submit" id="loginSubmit">
+          <i class="fas fa-sign-in-alt"></i>
+          تسجيل الدخول
+        </button>
+      </form>
+
+      <div class="auth-success" id="loginSuccess">
+        <i class="fas fa-check-circle"></i>
+        <h3>تم تسجيل الدخول بنجاح!</h3>
+        <p>جاري تحويلك إلى لوحة التحكم...</p>
+      </div>
+
+      <p class="auth-back">
+        <a href="index.html"><i class="fas fa-arrow-right"></i> العودة إلى الموقع الرئيسي</a>
+      </p>
+      <p class="auth-back" style="margin-top:.5rem">
+        <a href="admin.html"><i class="fas fa-cogs"></i> لوحة تحكم المدير</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backTop" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- TOAST -->
+  <div class="toast-box" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="laws-data.js?v=25" defer></script>
+  <script src="laws-data-2.js?v=25" defer></script>
+  <script src="laws-data-3.js?v=25" defer></script>
+  <script src="laws-data-4.js?v=25" defer></script>
+  <script src="laws-data-5.js?v=25" defer></script>
+  <script src="laws-data-6.js?v=25" defer></script>
+  <script src="laws-data-7.js?v=25" defer></script>
+  <script src="laws-data-8.js?v=25" defer></script>
+  <script src="laws-data-9.js?v=25" defer></script>
+  <script src="laws-data-10.js?v=25" defer></script>
+  <script src="ai-engine.js?v=25" defer></script>
+  <script src="language-system.js?v=25" defer></script>
+  <script src="admin-bridge.js?v=25" defer></script>
+  <script src="script.js?v=25" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle password visibility
+      const togglePw  = document.getElementById('togglePw');
+      const pwInput   = document.getElementById('loginPassword');
+      if (togglePw && pwInput) {
+        togglePw.addEventListener('click', () => {
+          const isPass = pwInput.type === 'password';
+          pwInput.type = isPass ? 'text' : 'password';
+          togglePw.querySelector('i').className = isPass ? 'fas fa-eye-slash' : 'fas fa-eye';
+        });
+      }
+
+      // Login form
+      const form    = document.getElementById('loginForm');
+      const errBox  = document.getElementById('authError');
+      const success = document.getElementById('loginSuccess');
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        const btn = document.getElementById('loginSubmit');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحقق...';
+
+        await new Promise(r => setTimeout(r, 1200));
+
+        // Demo: show success
+        form.style.display    = 'none';
+        if (errBox)  errBox.style.display   = 'none';
+        if (success) success.style.display  = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

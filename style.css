@@ -187,6 +187,11 @@ ul,ol{list-style:none}
 .hero__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:40px;font-size:0.82rem;font-weight:600;margin-bottom:28px;animation:fadeInDown 0.7s var(--ease);backdrop-filter:blur(4px)}
 .hero__title{font-family:var(--font-heading);font-size:clamp(2.4rem,5.5vw,4rem);color:#fff;font-weight:900;line-height:1.2;margin-bottom:20px;animation:fadeInUp 0.8s var(--ease);letter-spacing:-0.5px}
 .hero__title-gradient{color:rgba(255,255,255,0.85);display:block;font-weight:700}
+.hero__rotating-wrap{display:block;position:relative;height:1.25em;overflow:hidden;margin-top:4px}
+.hero__rotating{display:block;position:relative;height:100%}
+.hero__rotating-word{position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(40px);transition:opacity 0.5s var(--ease),transform 0.5s var(--ease);color:rgba(255,255,255,0.88);font-weight:700;font-size:clamp(1.2rem,3vw,2rem);white-space:nowrap}
+.hero__rotating-word.active{opacity:1;transform:translateY(0)}
+.hero__rotating-word.exit-up{opacity:0;transform:translateY(-40px)}
 .hero__sub{color:rgba(255,255,255,0.7);font-size:1rem;line-height:1.85;margin-bottom:36px;max-width:600px;margin-left:auto;margin-right:auto;animation:fadeInUp 0.9s var(--ease)}
 .hero__btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;animation:fadeInUp 1s var(--ease)}
 .hero .btn--gold{background:rgba(255,255,255,0.95);color:var(--blue);border-color:transparent;box-shadow:0 4px 16px rgba(0,0,0,0.12)}

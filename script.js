@@ -3926,6 +3926,24 @@ function handleInstall(){
 if(installPWA) installPWA.addEventListener('click', (e) => { e.preventDefault(); handleInstall(); });
 if(installAppBtn) installAppBtn.addEventListener('click', handleInstall);
 
+/* ===== HERO ROTATING TEXT ===== */
+try {
+  const rotatingEl = document.getElementById('heroRotating');
+  if (rotatingEl) {
+    const words = rotatingEl.querySelectorAll('.hero__rotating-word');
+    if (words.length > 1) {
+      let current = 0;
+      setInterval(() => {
+        words[current].classList.remove('active');
+        words[current].classList.add('exit-up');
+        setTimeout(() => { words[current].classList.remove('exit-up'); }, 500);
+        current = (current + 1) % words.length;
+        words[current].classList.add('active');
+      }, 3000);
+    }
+  }
+} catch(e) {}
+
 /* ===== SERVICE WORKER ===== */
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('service-worker.js').then(reg => {

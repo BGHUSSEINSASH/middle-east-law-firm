@@ -13,13 +13,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=35">
+<link rel="stylesheet" href="style.css?v=36">
 <noscript><style>.reveal-up,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}.loader{display:none!important}</style></noscript>
 </head>
 <body>
 <script>
 // Force clear old service worker caches
-if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n!=='me-law-v35')caches.delete(n)})});}
+if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n!=='me-law-v36')caches.delete(n)})});}
 </script>
 
 <!-- ===== LOADER ===== -->
@@ -49,6 +49,7 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
       <a href="#assistant" class="nav__link" data-i18n="nav.assistant">المساعد القانوني</a>
       <a href="#team" class="nav__link" data-i18n="nav.team">فريقنا</a>
       <a href="#pricing" class="nav__link" data-i18n="nav.pricing">الباقات</a>
+      <a href="#monitor" class="nav__link" data-i18n="nav.monitor">المراقبة</a>
       <a href="#app" class="nav__link" data-i18n="nav.app">التطبيق</a>
       <a href="#contact" class="nav__link" data-i18n="nav.contact">تواصل معنا</a>
     </nav>
@@ -429,6 +430,137 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
           <a href="#"><i class="fas fa-envelope"></i></a>
           <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLACK MONITOR ===== -->
+<section id="monitor" class="section section--monitor">
+  <div class="container">
+    <div class="section__head reveal-up">
+      <span class="section__tag"><i class="fas fa-signal"></i> مراقبة الخدمات</span>
+      <h2 class="section__title" data-i18n="monitor.title">حالة الخدمات — Slack Monitor</h2>
+      <p class="section__sub" data-i18n="monitor.sub">نراقب جميع خدماتنا على مدار الساعة لضمان أعلى مستوى من الأداء والاستمرارية</p>
+    </div>
+
+    <div class="monitor-stats reveal-up">
+      <div class="monitor-stat">
+        <div class="monitor-stat__icon"><i class="fas fa-clock"></i></div>
+        <div class="monitor-stat__num" data-count="99">0</div>
+        <div class="monitor-stat__label">% وقت التشغيل</div>
+      </div>
+      <div class="monitor-stat">
+        <div class="monitor-stat__icon"><i class="fas fa-bolt"></i></div>
+        <div class="monitor-stat__num" data-count="42">0</div>
+        <div class="monitor-stat__label">ms زمن الاستجابة</div>
+      </div>
+      <div class="monitor-stat">
+        <div class="monitor-stat__icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="monitor-stat__num" data-count="100">0</div>
+        <div class="monitor-stat__label">% أمان البيانات</div>
+      </div>
+      <div class="monitor-stat">
+        <div class="monitor-stat__icon"><i class="fas fa-server"></i></div>
+        <div class="monitor-stat__num" data-count="12">0</div>
+        <div class="monitor-stat__label">خادم نشط</div>
+      </div>
+    </div>
+
+    <div class="monitor-grid reveal-up">
+      <div class="monitor-card">
+        <div class="monitor-card__header">
+          <div class="monitor-card__title">
+            <i class="fas fa-robot"></i>
+            <span>المساعد القانوني الذكي</span>
+          </div>
+          <div class="monitor-status monitor-status--up"><span class="monitor-dot"></span> يعمل</div>
+        </div>
+        <div class="uptime-bar">
+          <div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div>
+        </div>
+        <div class="monitor-card__meta"><span>وقت التشغيل: 99.99%</span><span>زمن الاستجابة: 38ms</span></div>
+      </div>
+
+      <div class="monitor-card">
+        <div class="monitor-card__header">
+          <div class="monitor-card__title">
+            <i class="fas fa-scale-balanced"></i>
+            <span>مكتبة القوانين العراقية</span>
+          </div>
+          <div class="monitor-status monitor-status--up"><span class="monitor-dot"></span> يعمل</div>
+        </div>
+        <div class="uptime-bar">
+          <div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div>
+        </div>
+        <div class="monitor-card__meta"><span>وقت التشغيل: 100%</span><span>زمن الاستجابة: 24ms</span></div>
+      </div>
+
+      <div class="monitor-card">
+        <div class="monitor-card__header">
+          <div class="monitor-card__title">
+            <i class="fas fa-comments"></i>
+            <span>نظام الدردشة المباشرة</span>
+          </div>
+          <div class="monitor-status monitor-status--up"><span class="monitor-dot"></span> يعمل</div>
+        </div>
+        <div class="uptime-bar">
+          <div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--warn"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div>
+        </div>
+        <div class="monitor-card__meta"><span>وقت التشغيل: 99.97%</span><span>زمن الاستجابة: 52ms</span></div>
+      </div>
+
+      <div class="monitor-card">
+        <div class="monitor-card__header">
+          <div class="monitor-card__title">
+            <i class="fas fa-credit-card"></i>
+            <span>نظام الدفع الإلكتروني</span>
+          </div>
+          <div class="monitor-status monitor-status--up"><span class="monitor-dot"></span> يعمل</div>
+        </div>
+        <div class="uptime-bar">
+          <div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div>
+        </div>
+        <div class="monitor-card__meta"><span>وقت التشغيل: 100%</span><span>زمن الاستجابة: 31ms</span></div>
+      </div>
+
+      <div class="monitor-card">
+        <div class="monitor-card__header">
+          <div class="monitor-card__title">
+            <i class="fas fa-globe"></i>
+            <span>نظام الترجمة المتعددة</span>
+          </div>
+          <div class="monitor-status monitor-status--up"><span class="monitor-dot"></span> يعمل</div>
+        </div>
+        <div class="uptime-bar">
+          <div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div>
+        </div>
+        <div class="monitor-card__meta"><span>وقت التشغيل: 100%</span><span>زمن الاستجابة: 18ms</span></div>
+      </div>
+
+      <div class="monitor-card">
+        <div class="monitor-card__header">
+          <div class="monitor-card__title">
+            <i class="fas fa-bell"></i>
+            <span>نظام الإشعارات</span>
+          </div>
+          <div class="monitor-status monitor-status--up"><span class="monitor-dot"></span> يعمل</div>
+        </div>
+        <div class="uptime-bar">
+          <div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div><div class="uptime-segment uptime--up"></div>
+        </div>
+        <div class="monitor-card__meta"><span>وقت التشغيل: 99.95%</span><span>زمن الاستجابة: 45ms</span></div>
+      </div>
+    </div>
+
+    <div class="monitor-footer reveal-up">
+      <div class="monitor-updated">
+        <i class="fas fa-sync-alt"></i>
+        <span>آخر تحديث: منذ لحظات</span>
+      </div>
+      <div class="monitor-overall">
+        <span class="monitor-dot monitor-dot--lg"></span>
+        <strong>جميع الأنظمة تعمل بشكل طبيعي</strong>
       </div>
     </div>
   </div>
@@ -911,21 +1043,22 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
 <!-- ===== TOAST ===== -->
 <div class="toast-container" id="toastContainer"></div>
 
-<script src="laws-data.js?v=35"></script>
-<script src="laws-data-2.js?v=35"></script>
-<script src="laws-data-3.js?v=35"></script>
-<script src="laws-data-4.js?v=35"></script>
-<script src="laws-data-5.js?v=35"></script>
-<script src="laws-data-6.js?v=35"></script>
-<script src="laws-data-7.js?v=35"></script>
-<script src="laws-data-8.js?v=35"></script>
-<script src="laws-data-9.js?v=35"></script>
-<script src="laws-data-10.js?v=35"></script>
-<script src="ai-engine.js?v=35"></script>
-<script src="script.js?v=35"></script>
-<script src="lang-data.js?v=35"></script>
-<script src="language-system.js?v=35"></script>
-<script src="admin-bridge.js?v=35"></script>
+<script src="laws-data.js?v=36"></script>
+<script src="laws-data-2.js?v=36"></script>
+<script src="laws-data-3.js?v=36"></script>
+<script src="laws-data-4.js?v=36"></script>
+<script src="laws-data-5.js?v=36"></script>
+<script src="laws-data-6.js?v=36"></script>
+<script src="laws-data-7.js?v=36"></script>
+<script src="laws-data-8.js?v=36"></script>
+<script src="laws-data-9.js?v=36"></script>
+<script src="laws-data-10.js?v=36"></script>
+<script src="ai-engine.js?v=36"></script>
+<script src="script.js?v=36"></script>
+<script src="lang-data.js?v=36"></script>
+<script src="language-system.js?v=36"></script>
+<script src="admin-bridge.js?v=36"></script>
+<script src="motion-graphics.js?v=36"></script>
 </body>
 </html>
 

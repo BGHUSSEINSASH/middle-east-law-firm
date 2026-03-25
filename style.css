@@ -777,3 +777,125 @@ ul,ol{list-style:none}
   .reveal-up,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}
   body{background:#fff;color:#000}
 }
+
+/* ================================================
+   v36 — MOTION GRAPHICS + SLACK MONITOR STYLES
+   ================================================ */
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--gradient-brand);z-index:9999;transition:width 0.1s linear;pointer-events:none;border-radius:0 2px 2px 0}
+
+/* ===== MAGNETIC CURSOR ===== */
+.mg-cursor{position:fixed;width:36px;height:36px;border:1.5px solid var(--blue-mid);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width 0.3s var(--ease),height 0.3s var(--ease),border-color 0.3s var(--ease),background 0.3s var(--ease);mix-blend-mode:exclusion}
+.mg-cursor--hover{width:56px;height:56px;border-color:var(--blue-bright);background:rgba(25,118,210,0.06)}
+.mg-cursor-dot{position:fixed;width:5px;height:5px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+.mg-cursor-dot--hover{transform:translate(-50%,-50%) scale(0)}
+@media(max-width:1024px){.mg-cursor,.mg-cursor-dot{display:none!important}}
+
+/* ===== STAGGER ANIMATIONS ===== */
+.stagger-item{opacity:0;transform:translateY(24px);transition:opacity 0.5s var(--ease),transform 0.5s var(--ease);transition-delay:calc(var(--stagger,0) * 0.08s)}
+.stagger-visible{opacity:1;transform:translateY(0)}
+
+/* ===== PARALLAX FLOATING SHAPES ===== */
+.mg-shapes{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.mg-shape{position:absolute;opacity:0.04;animation:mgFloat linear infinite}
+.mg-shape--circle{width:120px;height:120px;border-radius:50%;background:var(--blue-mid)}
+.mg-shape--ring{width:80px;height:80px;border-radius:50%;border:2px solid var(--blue-mid)}
+.mg-shape--square{width:60px;height:60px;border-radius:8px;background:var(--blue);transform:rotate(45deg)}
+@keyframes mgFloat{0%{transform:translateY(0) rotate(0)}25%{transform:translateY(-20px) rotate(8deg)}50%{transform:translateY(-8px) rotate(-4deg)}75%{transform:translateY(-16px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
+
+/* ===== TEXT REVEAL ===== */
+.mg-text-reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease)}
+.mg-text-revealed{opacity:1;transform:translateY(0)}
+
+/* ===== GRADIENT BORDER ANIMATION ===== */
+.mg-gradient-border{position:relative}
+.mg-gradient-border::after{content:'';position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(135deg,var(--blue),var(--blue-bright),var(--blue-mid),var(--blue));background-size:300% 300%;z-index:-1;animation:gradientShift 4s ease infinite;opacity:0.3}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* ===== SECTION VISIBLE ===== */
+.section--visible .section__tag{animation:tagSlideIn 0.5s var(--ease) forwards}
+@keyframes tagSlideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== ENHANCED HERO PARTICLES ===== */
+.hero{overflow:hidden}
+.hero__content{will-change:transform,opacity}
+
+/* ===== SLACK MONITOR SECTION ===== */
+.section--monitor{background:var(--bg);border-top:1px solid var(--border-light)}
+
+.monitor-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+.monitor-stat{padding:24px 18px;text-align:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);transition:all var(--transition);position:relative;overflow:hidden}
+.monitor-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transition:transform 0.3s var(--ease)}
+.monitor-stat:hover::before{transform:scaleX(1)}
+.monitor-stat:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-3px)}
+.monitor-stat__icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--blue-wash);color:var(--blue-mid);font-size:1rem;margin:0 auto 10px;transition:all var(--transition)}
+.monitor-stat:hover .monitor-stat__icon{background:var(--blue);color:#fff}
+.monitor-stat__num{font-size:2rem;font-weight:900;color:var(--blue);line-height:1.1;display:block}
+.monitor-stat__label{font-size:0.75rem;color:var(--text-muted);margin-top:4px}
+
+.monitor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
+.monitor-card{padding:20px 22px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);transition:all var(--transition);position:relative}
+.monitor-card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
+.monitor-card__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.monitor-card__title{display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:600;color:var(--gray-800)}
+.monitor-card__title i{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);background:var(--blue-wash);color:var(--blue-mid);font-size:0.82rem}
+.monitor-status{display:flex;align-items:center;gap:6px;font-size:0.76rem;font-weight:600;padding:4px 12px;border-radius:4px}
+.monitor-status--up{background:rgba(16,185,129,0.08);color:var(--success)}
+.monitor-status--warn{background:rgba(245,158,11,0.08);color:var(--warning)}
+.monitor-status--down{background:rgba(239,68,68,0.08);color:var(--danger)}
+.monitor-dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block;animation:monitorBlink 2s infinite}
+.monitor-dot--lg{width:9px;height:9px;background:var(--success);animation:monitorBlink 2s infinite}
+@keyframes monitorBlink{0%,100%{opacity:1}50%{opacity:0.4}}
+.monitor-pulse{animation:monitorPulseAnim 0.6s var(--ease)}
+@keyframes monitorPulseAnim{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+.uptime-bar{display:flex;gap:2px;height:24px;border-radius:3px;overflow:hidden}
+.uptime-segment{flex:1;border-radius:2px;transition:all 0.3s var(--ease);transform:scaleY(0);transform-origin:bottom}
+.uptime-segment.uptime-animate{transform:scaleY(1)}
+.uptime--up{background:var(--success)}
+.uptime--warn{background:var(--warning)}
+.uptime--down{background:var(--danger)}
+.monitor-card__meta{display:flex;justify-content:space-between;margin-top:12px;font-size:0.73rem;color:var(--text-muted)}
+.monitor-footer{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-xs)}
+.monitor-updated{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-muted)}
+.monitor-updated i{color:var(--blue-mid);animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.monitor-overall{display:flex;align-items:center;gap:8px;font-size:0.86rem;color:var(--success);font-weight:600}
+
+/* ===== DARK MODE — MONITOR ===== */
+[data-theme="dark"] .monitor-stat,[data-theme="dark"] .monitor-card,[data-theme="dark"] .monitor-footer{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .monitor-card__title{color:#fff}
+[data-theme="dark"] .monitor-stat__num{color:var(--blue-bright)}
+
+/* ===== RESPONSIVE — MONITOR ===== */
+@media(max-width:1023px){.monitor-stats{grid-template-columns:repeat(2,1fr)}.monitor-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.monitor-stats{grid-template-columns:1fr 1fr;gap:10px}.monitor-footer{flex-direction:column;gap:12px;text-align:center}}
+
+/* ===== ENHANCED CARD HOVER GLOW ===== */
+.service-card:hover,.about__card:hover,.team-card:hover,.monitor-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.06),0 0 0 1px rgba(25,118,210,0.06)}
+.pricing-card--featured{box-shadow:0 4px 16px rgba(21,101,192,0.1),0 0 0 1px rgba(25,118,210,0.08)}
+.pricing-card--featured:hover{box-shadow:0 8px 32px rgba(21,101,192,0.15),0 0 0 1px rgba(25,118,210,0.12)}
+
+/* ===== SMOOTH LINE UNDER ACTIVE NAV ===== */
+.nav__link::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%) scaleX(0);width:100%;height:2px;background:var(--blue);border-radius:2px;transition:transform 0.3s var(--ease)}
+.nav__link:hover::after{transform:translateX(-50%) scaleX(0.5)}
+.nav__link.active::after{transform:translateX(-50%) scaleX(0.6)}
+
+/* ===== BUTTON SHINE EFFECT ===== */
+.btn--primary::after,.btn--gold::after{content:'';position:absolute;top:0;left:-100%;width:80%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:left 0.5s var(--ease)}
+.btn--primary:hover::after,.btn--gold:hover::after{left:120%}
+.hero .btn--gold::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent)}
+
+/* ===== ENHANCED FAQ ANIMATION ===== */
+.faq-item{transition:all 0.3s var(--ease);border-left:3px solid transparent}
+[dir="rtl"] .faq-item{border-left:none;border-right:3px solid transparent}
+.faq-item.active{border-left-color:var(--blue)}
+[dir="rtl"] .faq-item.active{border-right-color:var(--blue);border-left-color:transparent}
+
+/* ===== FOOTER LINK HOVER ARROW ===== */
+.footer-col a{position:relative}
+.footer-col a::before{content:'\f104';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:-12px;opacity:0;transition:all 0.2s var(--ease);font-size:0.65rem;color:var(--blue-light)}
+[dir="ltr"] .footer-col a::before{content:'\f105';right:auto;left:-12px}
+.footer-col a:hover::before{opacity:1;right:-6px}
+[dir="ltr"] .footer-col a:hover::before{right:auto;left:-6px}

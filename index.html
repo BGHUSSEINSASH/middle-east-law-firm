@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -13,13 +13,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=36">
+<link rel="stylesheet" href="style.css?v=37">
 <noscript><style>.reveal-up,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}.loader{display:none!important}</style></noscript>
 </head>
 <body>
 <script>
 // Force clear old service worker caches
-if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n!=='me-law-v36')caches.delete(n)})});}
+if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n!=='me-law-v37')caches.delete(n)})});}
 </script>
 
 <!-- ===== LOADER ===== -->
@@ -33,45 +33,72 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
 
 <!-- ===== HEADER ===== -->
 <header id="header" class="header">
-  <div class="container header__inner">
-    <a href="#" class="logo">
-      <img src="logo.svg" alt="شركة الشرق الأوسط للمحاماة" class="logo__img">
-      <div class="logo__text">
-        <strong data-i18n="nav.brand">الشرق الأوسط</strong>
-        <small data-i18n="nav.brandSub">للمحاماة والاستشارات</small>
+  <!-- Top Bar -->
+  <div class="header-topbar">
+    <div class="container header-topbar__inner">
+      <div class="topbar__info">
+        <a href="tel:+9647705515535" class="topbar__item"><i class="fas fa-phone-alt"></i> <span>+964 770 551 5535</span></a>
+        <a href="mailto:info@melaw.iq" class="topbar__item"><i class="fas fa-envelope"></i> <span>info@melaw.iq</span></a>
+        <span class="topbar__item topbar__item--time"><i class="fas fa-clock"></i> <span data-i18n="topbar.hours">الأحد - الخميس: 9 ص - 5 م</span></span>
       </div>
-    </a>
-    <nav class="nav" id="nav">
-      <a href="#hero" class="nav__link active" data-i18n="nav.home">الرئيسية</a>
-      <a href="#about" class="nav__link" data-i18n="nav.about">من نحن</a>
-      <a href="#services" class="nav__link" data-i18n="nav.services">خدماتنا</a>
-      <a href="#laws" class="nav__link" data-i18n="nav.laws">القوانين العراقية</a>
-      <a href="#assistant" class="nav__link" data-i18n="nav.assistant">المساعد القانوني</a>
-      <a href="#team" class="nav__link" data-i18n="nav.team">فريقنا</a>
-      <a href="#pricing" class="nav__link" data-i18n="nav.pricing">الباقات</a>
-      <a href="#monitor" class="nav__link" data-i18n="nav.monitor">المراقبة</a>
-      <a href="#app" class="nav__link" data-i18n="nav.app">التطبيق</a>
-      <a href="#contact" class="nav__link" data-i18n="nav.contact">تواصل معنا</a>
-    </nav>
-    <div class="header__actions">
-      <div class="lang-switcher">
-        <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i> <span id="currentLang">AR</span></button>
-        <div class="lang-dropdown" id="langDropdown">
-          <button data-lang="ar">العربية</button>
-          <button data-lang="en">English</button>
-          <button data-lang="ku">کوردی</button>
-          <button data-lang="tr">Türkçe</button>
-          <button data-lang="fa">فارسی</button>
-          <button data-lang="fr">Français</button>
-          <button data-lang="de">Deutsch</button>
-          <button data-lang="es">Español</button>
-          <button data-lang="ru">Русский</button>
-          <button data-lang="zh">中文</button>
+      <div class="topbar__actions">
+        <div class="topbar__social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/9647705515535" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
         </div>
+        <div class="topbar__sep"></div>
+        <div class="lang-switcher">
+          <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i> <span id="currentLang">AR</span> <i class="fas fa-chevron-down" style="font-size:0.55rem;opacity:0.5"></i></button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button data-lang="ar">العربية</button>
+            <button data-lang="en">English</button>
+            <button data-lang="ku">کوردی</button>
+            <button data-lang="tr">Türkçe</button>
+            <button data-lang="fa">فارسی</button>
+            <button data-lang="fr">Français</button>
+            <button data-lang="de">Deutsch</button>
+            <button data-lang="es">Español</button>
+            <button data-lang="ru">Русский</button>
+            <button data-lang="zh">中文</button>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
       </div>
-      <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
-      <a href="#contact" class="btn btn--primary btn--sm header-cta" data-i18n="nav.cta">استشارة مجانية</a>
-      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <!-- Main Nav -->
+  <div class="header-main">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <div class="logo__icon-wrap">
+          <img src="logo.svg" alt="شركة الشرق الأوسط للمحاماة" class="logo__img">
+        </div>
+        <div class="logo__text">
+          <strong data-i18n="nav.brand">شركة الشرق الأوسط</strong>
+          <small data-i18n="nav.brandSub">للمحاماة والاستشارات القانونية</small>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#hero" class="nav__link active" data-i18n="nav.home">الرئيسية</a>
+        <a href="#about" class="nav__link" data-i18n="nav.about">من نحن</a>
+        <a href="#services" class="nav__link" data-i18n="nav.services">خدماتنا</a>
+        <a href="#laws" class="nav__link" data-i18n="nav.laws">القوانين العراقية</a>
+        <a href="#assistant" class="nav__link" data-i18n="nav.assistant">المساعد القانوني</a>
+        <a href="#team" class="nav__link" data-i18n="nav.team">فريقنا</a>
+        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">الباقات</a>
+        <a href="#monitor" class="nav__link" data-i18n="nav.monitor">المراقبة</a>
+        <a href="#app" class="nav__link" data-i18n="nav.app">التطبيق</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">تواصل معنا</a>
+      </nav>
+      <div class="header__actions">
+        <a href="#contact" class="btn btn--primary btn--sm header-cta">
+          <i class="fas fa-headset"></i>
+          <span data-i18n="nav.cta">استشارة مجانية</span>
+        </a>
+        <button class="burger" id="burger"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </div>
 </header>
@@ -1043,22 +1070,22 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
 <!-- ===== TOAST ===== -->
 <div class="toast-container" id="toastContainer"></div>
 
-<script src="laws-data.js?v=36"></script>
-<script src="laws-data-2.js?v=36"></script>
-<script src="laws-data-3.js?v=36"></script>
-<script src="laws-data-4.js?v=36"></script>
-<script src="laws-data-5.js?v=36"></script>
-<script src="laws-data-6.js?v=36"></script>
-<script src="laws-data-7.js?v=36"></script>
-<script src="laws-data-8.js?v=36"></script>
-<script src="laws-data-9.js?v=36"></script>
-<script src="laws-data-10.js?v=36"></script>
-<script src="ai-engine.js?v=36"></script>
-<script src="script.js?v=36"></script>
-<script src="lang-data.js?v=36"></script>
-<script src="language-system.js?v=36"></script>
-<script src="admin-bridge.js?v=36"></script>
-<script src="motion-graphics.js?v=36"></script>
+<script src="laws-data.js?v=37"></script>
+<script src="laws-data-2.js?v=37"></script>
+<script src="laws-data-3.js?v=37"></script>
+<script src="laws-data-4.js?v=37"></script>
+<script src="laws-data-5.js?v=37"></script>
+<script src="laws-data-6.js?v=37"></script>
+<script src="laws-data-7.js?v=37"></script>
+<script src="laws-data-8.js?v=37"></script>
+<script src="laws-data-9.js?v=37"></script>
+<script src="laws-data-10.js?v=37"></script>
+<script src="ai-engine.js?v=37"></script>
+<script src="script.js?v=37"></script>
+<script src="lang-data.js?v=37"></script>
+<script src="language-system.js?v=37"></script>
+<script src="admin-bridge.js?v=37"></script>
+<script src="motion-graphics.js?v=37"></script>
 </body>
 </html>
 

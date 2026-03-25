@@ -1,4 +1,4 @@
-﻿/* ===== MIDDLE EAST LAW FIRM - MAIN SCRIPT ===== */
+/* ===== MIDDLE EAST LAW FIRM - MAIN SCRIPT ===== */
 (function(){
 'use strict';
 

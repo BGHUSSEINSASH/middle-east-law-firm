@@ -1,4 +1,4 @@
-﻿window.LANG_DATA = {
+window.LANG_DATA = {
   'ar': {
   "nav": {
     "brand": "الشرق الأوسط",

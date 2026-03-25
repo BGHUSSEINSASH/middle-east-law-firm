@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -33,42 +33,6 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
 
 <!-- ===== HEADER ===== -->
 <header id="header" class="header">
-  <!-- Top Bar -->
-  <div class="header-topbar">
-    <div class="container header-topbar__inner">
-      <div class="topbar__info">
-        <a href="tel:+9647705515535" class="topbar__item"><i class="fas fa-phone-alt"></i> <span>+964 770 551 5535</span></a>
-        <a href="mailto:info@melaw.iq" class="topbar__item"><i class="fas fa-envelope"></i> <span>info@melaw.iq</span></a>
-        <span class="topbar__item topbar__item--time"><i class="fas fa-clock"></i> <span data-i18n="topbar.hours">الأحد - الخميس: 9 ص - 5 م</span></span>
-      </div>
-      <div class="topbar__actions">
-        <div class="topbar__social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/9647705515535" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <div class="topbar__sep"></div>
-        <div class="lang-switcher">
-          <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i> <span id="currentLang">AR</span> <i class="fas fa-chevron-down" style="font-size:0.55rem;opacity:0.5"></i></button>
-          <div class="lang-dropdown" id="langDropdown">
-            <button data-lang="ar">العربية</button>
-            <button data-lang="en">English</button>
-            <button data-lang="ku">کوردی</button>
-            <button data-lang="tr">Türkçe</button>
-            <button data-lang="fa">فارسی</button>
-            <button data-lang="fr">Français</button>
-            <button data-lang="de">Deutsch</button>
-            <button data-lang="es">Español</button>
-            <button data-lang="ru">Русский</button>
-            <button data-lang="zh">中文</button>
-          </div>
-        </div>
-        <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
-      </div>
-    </div>
-  </div>
-  <!-- Main Nav -->
   <div class="header-main">
     <div class="container header__inner">
       <a href="#" class="logo">
@@ -93,6 +57,22 @@ if('caches' in window){caches.keys().then(function(k){k.forEach(function(n){if(n
         <a href="#contact" class="nav__link" data-i18n="nav.contact">تواصل معنا</a>
       </nav>
       <div class="header__actions">
+        <div class="lang-switcher">
+          <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i> <span id="currentLang">AR</span> <i class="fas fa-chevron-down" style="font-size:0.55rem;opacity:0.5"></i></button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button data-lang="ar">العربية</button>
+            <button data-lang="en">English</button>
+            <button data-lang="ku">کوردی</button>
+            <button data-lang="tr">Türkçe</button>
+            <button data-lang="fa">فارسی</button>
+            <button data-lang="fr">Français</button>
+            <button data-lang="de">Deutsch</button>
+            <button data-lang="es">Español</button>
+            <button data-lang="ru">Русский</button>
+            <button data-lang="zh">中文</button>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
         <a href="#contact" class="btn btn--primary btn--sm header-cta">
           <i class="fas fa-headset"></i>
           <span data-i18n="nav.cta">استشارة مجانية</span>

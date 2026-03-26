@@ -11,7 +11,8 @@
     "app": "App",
     "contact": "Contact Us",
     "cta": "Free Consultation",
-    "pricing": "Packages"
+    "pricing": "Packages",
+    "monitor": "Monitor"
   },
   "hero": {
     "badge": "#1 Law Firm in Iraq",
@@ -311,5 +312,28 @@
   },
   "loader": {
     "title": "Middle East Law Firm"
+  },
+  "monitor": {
+    "tag": "System Monitoring",
+    "title": "Live System Status",
+    "subtitle": "Real-time monitoring of all our digital services",
+    "statUptime": "% Uptime",
+    "statResponse": "ms Response Time",
+    "statSecurity": "% Data Security",
+    "statServers": "Active Servers",
+    "svc1": "AI Legal Assistant",
+    "svc2": "Iraqi Laws Library",
+    "svc3": "Live Chat System",
+    "svc4": "Electronic Payment System",
+    "svc5": "Multi-language Translation",
+    "svc6": "Notification System",
+    "svc7": "Slack Monitor",
+    "statusUp": "Operational",
+    "statusWarn": "Slow",
+    "statusDown": "Down",
+    "uptime": "Uptime",
+    "responseTime": "Response Time",
+    "lastUpdate": "Last update: moments ago",
+    "allSystemsOk": "All systems are operating normally"
   }
 }

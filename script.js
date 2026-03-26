@@ -2301,9 +2301,13 @@ updateThemeIcon();
 if(themeBtn) themeBtn.addEventListener('click', () => {
   const isLight = document.documentElement.getAttribute('data-theme') === 'light';
   const newTheme = isLight ? 'dark' : 'light';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateThemeIcon();
+  themeBtn.style.transform = 'rotate(360deg) scale(0.8)';
+  setTimeout(() => {
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon();
+    themeBtn.style.transform = '';
+  }, 200);
 });
 
 function updateThemeIcon(){

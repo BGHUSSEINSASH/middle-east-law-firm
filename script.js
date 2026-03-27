@@ -2259,11 +2259,25 @@ const nav = document.getElementById('nav');
 const navLinks = document.querySelectorAll('.nav__link');
 const backTop = document.getElementById('backTop');
 
+/* cached sections for active-nav — avoid re-querying DOM on scroll */
+let _navSections = null;
+function getNavSections(){
+  if(!_navSections) _navSections = [].slice.call(document.querySelectorAll('section[id]'));
+  return _navSections;
+}
+
+/* RAF-throttled scroll handler */
+let _navScrollTick = false;
 window.addEventListener('scroll', () => {
-  if(header) header.classList.toggle('scrolled', window.scrollY > 50);
-  if(backTop) backTop.classList.toggle('show', window.scrollY > 400);
-  updateActiveNav();
-});
+  if(_navScrollTick) return;
+  _navScrollTick = true;
+  requestAnimationFrame(() => {
+    if(header) header.classList.toggle('scrolled', window.scrollY > 50);
+    if(backTop) backTop.classList.toggle('show', window.scrollY > 400);
+    updateActiveNav();
+    _navScrollTick = false;
+  });
+}, {passive:true});
 
 if(burger) burger.addEventListener('click', () => {
   burger.classList.toggle('active');
@@ -2280,11 +2294,12 @@ navLinks.forEach(link => {
 if(backTop) backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
 function updateActiveNav(){
-  const sections = document.querySelectorAll('section[id]');
+  const sections = getNavSections();
   let current = '';
-  sections.forEach(s => {
-    if(window.scrollY >= s.offsetTop - 200) current = s.id;
-  });
+  const sy = window.scrollY;
+  for(let i = 0; i < sections.length; i++){
+    if(sy >= sections[i].offsetTop - 200) current = sections[i].id;
+  }
   navLinks.forEach(l => {
     l.classList.toggle('active', l.getAttribute('href') === '#'+current);
   });
@@ -2331,7 +2346,7 @@ if(langBtn && langDropdown) {
 }
 } catch(e){ console.error('Lang switcher error:', e); }
 
-/* ===== HERO CANVAS PARTICLES ===== */
+/* ===== HERO CANVAS PARTICLES — optimized: IntersectionObserver gated ===== */
 try {
 const canvas = document.getElementById('heroCanvas');
 if(canvas){
@@ -2369,16 +2384,25 @@ if(canvas){
 
   for(let i=0;i<60;i++) particles.push(new Particle());
 
+  const CONNECT2 = 120*120;
+  let _heroCanvasVisible = true;
+  const _heroObs = new IntersectionObserver(entries => {
+    _heroCanvasVisible = entries[0].isIntersecting;
+    if(_heroCanvasVisible) animateParticles();
+  }, {threshold:0});
+  _heroObs.observe(canvas.parentElement);
+
   function animateParticles(){
+    if(!_heroCanvasVisible || document.hidden) return;
     ctx.clearRect(0,0,canvas.width,canvas.height);
     particles.forEach(p=>{p.update();p.draw()});
-    // Draw lines between close particles
     for(let i=0;i<particles.length;i++){
       for(let j=i+1;j<particles.length;j++){
         const dx=particles[i].x-particles[j].x;
         const dy=particles[i].y-particles[j].y;
-        const dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){
+        const d2=dx*dx+dy*dy;
+        if(d2<CONNECT2){
+          const dist=Math.sqrt(d2);
           ctx.beginPath();
           ctx.moveTo(particles[i].x,particles[i].y);
           ctx.lineTo(particles[j].x,particles[j].y);
@@ -2391,6 +2415,10 @@ if(canvas){
     requestAnimationFrame(animateParticles);
   }
   animateParticles();
+
+  document.addEventListener('visibilitychange', () => {
+    if(!document.hidden && _heroCanvasVisible) animateParticles();
+  });
 }
 } catch(e){ console.error('Canvas error:', e); }
 

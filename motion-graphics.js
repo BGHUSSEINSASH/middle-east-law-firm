@@ -1,17 +1,39 @@
 /* ================================================
-   v43 — COMPLETE MOTION GRAPHICS ENGINE
-   Professional animated-video-like experience
-   22 animation systems — law firm website
+   v44 — OPTIMIZED MOTION GRAPHICS ENGINE
+   22 animation systems — consolidated scroll, RAF-gated
    ================================================ */
 (function(){
 'use strict';
 
 /* ===== UTILITIES ===== */
 var raf = requestAnimationFrame;
+var caf = cancelAnimationFrame;
 var $ = function(s,c){ return (c||document).querySelector(s); };
 var $$ = function(s,c){ return [].slice.call((c||document).querySelectorAll(s)); };
 var lerp = function(a,b,t){ return a + (b - a) * t; };
-var isMobile = function(){ return window.innerWidth <= 1024; };
+var _mobile;
+var isMobile = function(){ if(_mobile === undefined) _mobile = window.innerWidth <= 1024; return _mobile; };
+window.addEventListener('resize', function(){ _mobile = undefined; }, {passive:true});
+
+/* ===== UNIFIED SCROLL BUS — replaces 4 separate listeners ===== */
+var scrollBus = [];
+var _scrollTick = false;
+function registerScroll(fn){ scrollBus.push(fn); }
+window.addEventListener('scroll', function(){
+  if(_scrollTick) return;
+  _scrollTick = true;
+  raf(function(){
+    var scrollY = window.scrollY;
+    for(var i = 0; i < scrollBus.length; i++) scrollBus[i](scrollY);
+    _scrollTick = false;
+  });
+}, {passive:true});
+
+/* ===== TAB VISIBILITY — pause heavy loops when tab hidden ===== */
+var tabVisible = true;
+document.addEventListener('visibilitychange', function(){
+  tabVisible = !document.hidden;
+});
 
 /* ================================================================
    1. SCROLL PROGRESS BAR — top of viewport
@@ -21,14 +43,13 @@ function initScrollProgress(){
   bar.className = 'scroll-progress';
   document.body.appendChild(bar);
   var lastV = 0;
-  window.addEventListener('scroll', function(){
+  registerScroll(function(scrollY){
     var h = document.documentElement.scrollHeight - window.innerHeight;
-    if(h > 0) bar.style.width = ((window.scrollY / h) * 100) + '%';
-    /* thicken bar on fast scroll */
-    var v = Math.abs(window.scrollY - lastV);
+    if(h > 0) bar.style.width = ((scrollY / h) * 100) + '%';
+    var v = Math.abs(scrollY - lastV);
     bar.style.height = Math.min(3 + v * 0.04, 6) + 'px';
-    lastV = window.scrollY;
-  }, {passive:true});
+    lastV = scrollY;
+  });
 }
 
 /* ================================================================
@@ -44,24 +65,34 @@ function initCursor(){
   document.body.appendChild(cursor);
   document.body.appendChild(dot);
 
-  /* trail particles */
-  var TRAIL = 8, trail = [];
+  /* trail particles — reduced from 8 to 5 */
+  var TRAIL = 5, trail = [];
   for(var i = 0; i < TRAIL; i++){
     var t = document.createElement('div');
     t.className = 'mg-cursor-trail';
     t.style.opacity = String((1 - i/TRAIL) * 0.25);
-    t.style.width = t.style.height = (4 - i * 0.35) + 'px';
+    t.style.width = t.style.height = (4 - i * 0.5) + 'px';
     document.body.appendChild(t);
     trail.push({el:t, x:0, y:0});
   }
 
-  var mx = 0, my = 0, cx = 0, cy = 0;
+  var mx = 0, my = 0, cx = 0, cy = 0, cursorActive = false, cursorRaf = 0;
   document.addEventListener('mousemove', function(e){
     mx = e.clientX; my = e.clientY;
     dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    if(!cursorActive){ cursorActive = true; cursorLoop(); }
   });
 
-  (function loop(){
+  /* stop cursor loop after 2s idle */
+  var idleTimer;
+  function resetIdle(){
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(function(){ cursorActive = false; }, 2000);
+  }
+  document.addEventListener('mousemove', resetIdle);
+
+  function cursorLoop(){
+    if(!cursorActive || !tabVisible){ return; }
     cx = lerp(cx, mx, 0.12);
     cy = lerp(cy, my, 0.12);
     cursor.style.left = cx + 'px';
@@ -73,14 +104,19 @@ function initCursor(){
       trail[i].el.style.left = trail[i].x + 'px';
       trail[i].el.style.top  = trail[i].y + 'px';
     }
-    raf(loop);
-  })();
+    cursorRaf = raf(cursorLoop);
+  }
 
-  /* hover targets */
-  var targets = $$('a, button, .btn, .glass, .service-card, .about__card, .team-card, .testi-card, .pricing-card, .faq-item, .contact-info__card, .library-cat, .monitor-card');
-  targets.forEach(function(el){
-    el.addEventListener('mouseenter', function(){ cursor.classList.add('mg-cursor--hover'); dot.classList.add('mg-cursor-dot--hover'); });
-    el.addEventListener('mouseleave', function(){ cursor.classList.remove('mg-cursor--hover'); dot.classList.remove('mg-cursor-dot--hover'); });
+  /* hover targets — delegated instead of per-element */
+  document.addEventListener('mouseover', function(e){
+    if(e.target.closest('a, button, .btn, .glass, .service-card, .about__card, .team-card, .testi-card, .pricing-card, .faq-item, .contact-info__card, .library-cat, .monitor-card')){
+      cursor.classList.add('mg-cursor--hover'); dot.classList.add('mg-cursor-dot--hover');
+    }
+  });
+  document.addEventListener('mouseout', function(e){
+    if(e.target.closest('a, button, .btn, .glass, .service-card, .about__card, .team-card, .testi-card, .pricing-card, .faq-item, .contact-info__card, .library-cat, .monitor-card')){
+      cursor.classList.remove('mg-cursor--hover'); dot.classList.remove('mg-cursor-dot--hover');
+    }
   });
 
   /* magnetic pull on CTA buttons */
@@ -137,16 +173,17 @@ function initParallaxShapes(){
     sec.appendChild(container);
   });
 
-  /* parallax on scroll (desktop) */
+  /* parallax on scroll (desktop) — cached DOM refs */
   if(!isMobile()){
-    window.addEventListener('scroll', function(){
-      var scrollY = window.scrollY;
-      $$('.mg-shape').forEach(function(shape){
-        var speed = parseFloat(shape.style.getPropertyValue('--pspeed')) || 0.02;
-        var rect = shape.parentElement.getBoundingClientRect();
-        shape.style.transform = 'translateY(' + (rect.top * speed) + 'px) rotate(' + (scrollY * speed * 2) + 'deg)';
-      });
-    }, {passive:true});
+    var shapes = $$('.mg-shape');
+    var shapeSpeeds = shapes.map(function(s){ return parseFloat(s.style.getPropertyValue('--pspeed')) || 0.02; });
+    var shapeParents = shapes.map(function(s){ return s.parentElement; });
+    registerScroll(function(scrollY){
+      for(var i = 0; i < shapes.length; i++){
+        var rect = shapeParents[i].getBoundingClientRect();
+        shapes[i].style.transform = 'translateY(' + (rect.top * shapeSpeeds[i]) + 'px) rotate(' + (scrollY * shapeSpeeds[i] * 2) + 'deg)';
+      }
+    });
   }
 }
 
@@ -234,17 +271,18 @@ function initHeroParallax(){
   var particles = $('.hero__particles');
   var canvas = $('.hero__canvas');
   if(!hero || !content) return;
+  var wh = window.innerHeight;
+  window.addEventListener('resize', function(){ wh = window.innerHeight; }, {passive:true});
 
-  /* scroll parallax */
-  window.addEventListener('scroll', function(){
-    var scrollY = window.scrollY;
-    if(scrollY > window.innerHeight) return;
-    var ratio = scrollY / window.innerHeight;
+  /* scroll parallax — unified bus */
+  registerScroll(function(scrollY){
+    if(scrollY > wh) return;
+    var ratio = scrollY / wh;
     content.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
     content.style.opacity = String(1 - ratio * 1.2);
     if(particles) particles.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
     if(canvas) canvas.style.transform = 'translateY(' + (scrollY * 0.1) + 'px)';
-  }, {passive:true});
+  });
 
   /* mouse parallax (desktop) */
   if(!isMobile()){
@@ -387,9 +425,9 @@ function initFloatingIcons(){
 function initScrollIndicator(){
   var ind = $('.hero__scroll');
   if(!ind) return;
-  window.addEventListener('scroll', function(){
-    ind.classList.toggle('mg-scroll-hidden', window.scrollY > 100);
-  }, {passive:true});
+  registerScroll(function(scrollY){
+    ind.classList.toggle('mg-scroll-hidden', scrollY > 100);
+  });
 }
 
 /* ================================================================
@@ -498,8 +536,8 @@ function initBackgroundMesh(){
   resize();
   window.addEventListener('resize', resize);
 
-  /* floating dots connected by lines */
-  var DOTS = isMobile() ? 30 : 55;
+  /* floating dots connected by lines — optimized: fewer dots, squared distance */
+  var DOTS = isMobile() ? 20 : 38;
   var dots = [];
   var w, h;
   function initDots(){
@@ -531,10 +569,13 @@ function initBackgroundMesh(){
     });
   }
 
+  var CONNECT_DIST2 = 120 * 120;   /* squared for faster comparison */
+  var MOUSE_DIST2 = 160 * 160;
+  var CONNECT_DIST = 120;
+  var MOUSE_DIST = 160;
+
   function draw(){
     ctx.clearRect(0, 0, w, h);
-    var CONNECT_DIST = 120;
-    var MOUSE_DIST = 160;
 
     for(var i = 0; i < dots.length; i++){
       var d = dots[i];
@@ -543,10 +584,11 @@ function initBackgroundMesh(){
       if(d.x < 0 || d.x > w) d.vx *= -1;
       if(d.y < 0 || d.y > h) d.vy *= -1;
 
-      /* mouse repulsion */
+      /* mouse repulsion — squared distance */
       var dx = d.x - mouseX, dy = d.y - mouseY;
-      var dist = Math.sqrt(dx*dx + dy*dy);
-      if(dist < MOUSE_DIST && dist > 0){
+      var dist2 = dx*dx + dy*dy;
+      if(dist2 < MOUSE_DIST2 && dist2 > 0){
+        var dist = Math.sqrt(dist2);
         d.x += (dx / dist) * 1.5;
         d.y += (dy / dist) * 1.5;
       }
@@ -557,12 +599,13 @@ function initBackgroundMesh(){
       ctx.fillStyle = 'rgba(255,255,255,0.25)';
       ctx.fill();
 
-      /* connect to nearby dots */
+      /* connect to nearby dots — skip sqrt when beyond threshold */
       for(var j = i+1; j < dots.length; j++){
         var d2 = dots[j];
         var ddx = d.x - d2.x, ddy = d.y - d2.y;
-        var dd = Math.sqrt(ddx*ddx + ddy*ddy);
-        if(dd < CONNECT_DIST){
+        var dd2 = ddx*ddx + ddy*ddy;
+        if(dd2 < CONNECT_DIST2){
+          var dd = Math.sqrt(dd2);
           ctx.beginPath();
           ctx.moveTo(d.x, d.y);
           ctx.lineTo(d2.x, d2.y);
@@ -573,29 +616,37 @@ function initBackgroundMesh(){
       }
 
       /* connect to mouse */
-      if(dist < MOUSE_DIST){
+      if(dist2 < MOUSE_DIST2){
+        var distM = Math.sqrt(dist2);
         ctx.beginPath();
         ctx.moveTo(d.x, d.y);
         ctx.lineTo(mouseX, mouseY);
-        ctx.strokeStyle = 'rgba(66,165,245,' + (0.15 * (1 - dist/MOUSE_DIST)) + ')';
+        ctx.strokeStyle = 'rgba(66,165,245,' + (0.15 * (1 - distM/MOUSE_DIST)) + ')';
         ctx.lineWidth = 0.8;
         ctx.stroke();
       }
     }
-    raf(draw);
   }
 
-  /* only animate when hero is visible */
+  /* only animate when hero is visible AND tab is active */
   var heroVisible = true;
+  var meshRaf = 0;
   var heroObs = new IntersectionObserver(function(entries){
     heroVisible = entries[0].isIntersecting;
+    if(heroVisible && tabVisible) meshLoop();
   }, {threshold:0});
   heroObs.observe(canvas.parentElement);
 
-  (function loop(){
-    if(heroVisible) draw();
-    raf(loop);
-  })();
+  document.addEventListener('visibilitychange', function(){
+    if(!document.hidden && heroVisible) meshLoop();
+  });
+
+  function meshLoop(){
+    if(!heroVisible || !tabVisible){ return; }
+    draw();
+    meshRaf = raf(meshLoop);
+  }
+  meshLoop();
 }
 
 /* ================================================================

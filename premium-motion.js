@@ -1,7 +1,8 @@
 /* ================================================
-   v45 — PREMIUM CINEMATIC ANIMATION ENGINE
-   Advanced motion graphics systems
-   Text splits, wipes, blobs, SVG draw, scroll-linked
+   v45 - PREMIUM CINEMATIC ANIMATION ENGINE
+   Non-destructive visual enhancements only
+   Blobs, SVG draw, glow, shine, elastic, gradient,
+   pulse, reveal lines, data bars, section progress
    ================================================ */
 (function(){
 'use strict';
@@ -13,92 +14,12 @@ var isMobile = function(){ return window.innerWidth <= 768; };
 var isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ================================================================
-   1. SPLIT TEXT REVEAL — word + character staggered animation
-   ================================================================ */
-function initSplitText(){
-  var targets = $$('.section__title, .hero__title > span:first-child');
-  targets.forEach(function(el){
-    if(el.closest('.hero') && el.classList.contains('hero__rotating-wrap')) return;
-    if(el.dataset.mgSplit) return;
-    el.dataset.mgSplit = '1';
-
-    var text = el.textContent.trim();
-    if(!text) return;
-    var words = text.split(/\s+/);
-    var html = '';
-    var charIndex = 0;
-
-    words.forEach(function(word, wi){
-      html += '<span class="mg-split-word">';
-      for(var i = 0; i < word.length; i++){
-        var delay = (charIndex * 0.03) + 's';
-        html += '<span class="mg-split-char" style="transition-delay:' + delay + '">' + word[i] + '</span>';
-        charIndex++;
-      }
-      html += '</span>';
-      if(wi < words.length - 1) html += '<span class="mg-split-space"> </span>';
-    });
-
-    el.innerHTML = html;
-    el.classList.add('mg-split-target');
-  });
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('mg-split-revealed');
-        obs.unobserve(e.target);
-      }
-    });
-  }, {threshold:0.2, rootMargin:'0px 0px -40px 0px'});
-
-  $$('.mg-split-target').forEach(function(el){ obs.observe(el); });
-}
-
-/* ================================================================
-   2. SECTION WIPE REVEALS — cinematic clip-path transitions
-   ================================================================ */
-function initWipeReveals(){
-  var wipeTypes = ['mg-wipe', 'mg-wipe--up', 'mg-wipe--center'];
-  var grids = $$('.services-grid, .about__visual, .team-grid, .testi-grid, .pricing-grid');
-
-  grids.forEach(function(grid, gi){
-    var wipeClass = wipeTypes[gi % wipeTypes.length];
-    var items = grid.children;
-    for(var i = 0; i < items.length; i++){
-      if(!items[i].classList.contains('mg-wipe')){
-        items[i].classList.add('mg-wipe');
-        if(wipeClass !== 'mg-wipe') items[i].classList.add(wipeClass.replace('mg-wipe--','mg-wipe--'));
-      }
-    }
-  });
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        /* stagger wipes within same parent */
-        var parent = e.target.parentElement;
-        var siblings = parent ? [].slice.call(parent.querySelectorAll('.mg-wipe:not(.mg-wipe--visible)')) : [];
-        var index = siblings.indexOf(e.target);
-        setTimeout(function(){
-          e.target.classList.add('mg-wipe--visible');
-        }, Math.max(0, index) * 120);
-        obs.unobserve(e.target);
-      }
-    });
-  }, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
-
-  $$('.mg-wipe').forEach(function(el){ obs.observe(el); });
-}
-
-/* ================================================================
-   3. MORPHING BLOBS — organic animated backgrounds
+   1. MORPHING BLOBS - organic animated backgrounds
    ================================================================ */
 function initBlobs(){
   var sections = $$('.section');
   var blobSections = [];
   for(var i = 0; i < sections.length; i++){
-    /* only add to alt sections and hero */
     if(sections[i].classList.contains('section--alt') || sections[i].classList.contains('hero')){
       blobSections.push(sections[i]);
     }
@@ -129,10 +50,9 @@ function initBlobs(){
 }
 
 /* ================================================================
-   4. SVG DRAW ANIMATION — service card icon draw effect
+   2. SVG DRAW ANIMATION - service card icon draw effect
    ================================================================ */
 function initSVGDraw(){
-  /* inject SVG icons into service cards for draw animation */
   var svgDefs = {
     building: 'M3 21V7l9-4 9 4v14H3zm4-10h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z',
     briefcase: 'M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5z',
@@ -143,6 +63,7 @@ function initSVGDraw(){
   };
 
   $$('.service-card__icon').forEach(function(iconWrap){
+    if(iconWrap.querySelector('.mg-svg-draw')) return;
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 24 24');
     svg.setAttribute('width', '24');
@@ -156,12 +77,10 @@ function initSVGDraw(){
     path.setAttribute('d', d);
     path.classList.add('mg-svg-draw');
 
-    /* calculate path length */
     svg.appendChild(path);
     iconWrap.style.position = 'relative';
     iconWrap.appendChild(svg);
 
-    /* set path length after DOM insertion */
     raf(function(){
       try {
         var len = path.getTotalLength();
@@ -172,7 +91,6 @@ function initSVGDraw(){
     });
   });
 
-  /* trigger draw on scroll */
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -187,150 +105,41 @@ function initSVGDraw(){
 }
 
 /* ================================================================
-   5. CINEMATIC HERO ENTRANCE — scale + blur + fade
-   ================================================================ */
-function initCinemaEntrance(){
-  var hero = $('.hero');
-  if(!hero) return;
-  var badge = $('.hero__badge');
-  var title = $('.hero__title');
-  var sub = $('.hero__sub');
-  var btns = $('.hero__btns');
-  var stats = $('.hero__stats');
-
-  var items = [badge, title, sub, btns, stats].filter(Boolean);
-  items.forEach(function(el, i){
-    el.classList.add('mg-cinema-enter');
-    el.style.transitionDelay = (0.2 + i * 0.15) + 's';
-  });
-
-  /* trigger after page load */
-  function trigger(){
-    items.forEach(function(el){ el.classList.add('mg-cinema-visible'); });
-  }
-
-  var loader = $('.page-loader');
-  if(loader){
-    var check = setInterval(function(){
-      if(loader.style.display === 'none' || getComputedStyle(loader).opacity === '0'){
-        clearInterval(check);
-        raf(trigger);
-      }
-    }, 100);
-    setTimeout(trigger, 3500);
-  } else {
-    setTimeout(trigger, 300);
-  }
-}
-
-/* ================================================================
-   6. SCROLL VELOCITY EFFECTS — dynamic blur/skew on scroll
-   ================================================================ */
-function initScrollVelocity(){
-  if(isMobile() || isReduced) return;
-  var heroTitle = $('.hero__title');
-  if(!heroTitle) return;
-
-  var lastScroll = 0;
-  var velocity = 0;
-  var smoothVelocity = 0;
-
-  function onScroll(){
-    velocity = Math.abs(window.scrollY - lastScroll);
-    lastScroll = window.scrollY;
-  }
-
-  window.addEventListener('scroll', onScroll, {passive:true});
-
-  var running = true;
-  function loop(){
-    if(!running) return;
-    smoothVelocity += (velocity - smoothVelocity) * 0.1;
-    velocity *= 0.92;
-
-    var blur = Math.min(smoothVelocity * 0.06, 2.5);
-    var skew = Math.min(smoothVelocity * 0.03, 1.5);
-
-    if(blur > 0.1){
-      heroTitle.style.filter = 'blur(' + blur + 'px)';
-      heroTitle.style.transform = 'skewY(' + (window.scrollY > lastScroll ? -skew : skew) + 'deg)';
-    } else {
-      heroTitle.style.filter = '';
-      heroTitle.style.transform = '';
-    }
-
-    raf(loop);
-  }
-
-  /* only run when hero visible */
-  var heroObs = new IntersectionObserver(function(entries){
-    running = entries[0].isIntersecting;
-    if(running) loop();
-  }, {threshold:0});
-  var hero = $('.hero');
-  if(hero) heroObs.observe(hero);
-}
-
-/* ================================================================
-   7. SCALE ENTRANCE FOR CARDS — smoother than stagger
-   ================================================================ */
-function initScaleEntrance(){
-  $$('.about__card, .contact-info__card, .library-cat').forEach(function(el){
-    el.classList.add('mg-scale-in');
-  });
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var siblings = e.target.parentElement
-          ? [].slice.call(e.target.parentElement.querySelectorAll('.mg-scale-in'))
-          : [e.target];
-        var idx = siblings.indexOf(e.target);
-        setTimeout(function(){
-          e.target.classList.add('mg-scale-visible');
-        }, idx * 100);
-        obs.unobserve(e.target);
-      }
-    });
-  }, {threshold:0.15});
-
-  $$('.mg-scale-in').forEach(function(el){ obs.observe(el); });
-}
-
-/* ================================================================
-   8. GLOW RING ON PREMIUM CARDS
+   3. GLOW RING ON PREMIUM CARDS
    ================================================================ */
 function initGlowRings(){
   $$('.pricing-card--featured, .service-card, .monitor-card').forEach(function(el){
-    el.classList.add('mg-glow-ring');
+    if(!el.classList.contains('mg-glow-ring')) el.classList.add('mg-glow-ring');
   });
 }
 
 /* ================================================================
-   9. SHINE SWEEP ON CARDS
+   4. SHINE SWEEP ON CARDS
    ================================================================ */
 function initShineSweep(){
   if(isMobile()) return;
   $$('.team-card, .testi-card, .about__card').forEach(function(el){
-    el.classList.add('mg-shine-sweep');
+    if(!el.classList.contains('mg-shine-sweep')) el.classList.add('mg-shine-sweep');
   });
 }
 
 /* ================================================================
-   10. ELASTIC BUTTON PRESS
+   5. ELASTIC BUTTON PRESS
    ================================================================ */
 function initElasticButtons(){
   $$('.btn').forEach(function(btn){
-    btn.classList.add('mg-elastic');
+    if(!btn.classList.contains('mg-elastic')) btn.classList.add('mg-elastic');
   });
 }
 
 /* ================================================================
-   11. REVEAL LINE — animated underline for section heads
+   6. REVEAL LINE - animated underline for section heads
    ================================================================ */
 function initRevealLines(){
   $$('.section__title').forEach(function(el){
-    if(!el.closest('.hero')) el.classList.add('mg-reveal-line');
+    if(!el.closest('.hero') && !el.classList.contains('mg-reveal-line')){
+      el.classList.add('mg-reveal-line');
+    }
   });
 
   var obs = new IntersectionObserver(function(entries){
@@ -338,7 +147,7 @@ function initRevealLines(){
       if(e.isIntersecting){
         setTimeout(function(){
           e.target.classList.add('mg-reveal-line--visible');
-        }, 400); /* delay to start after text reveal */
+        }, 400);
         obs.unobserve(e.target);
       }
     });
@@ -348,74 +157,31 @@ function initRevealLines(){
 }
 
 /* ================================================================
-   12. FADE BLUR ENTRANCE — for text descriptions
-   ================================================================ */
-function initFadeBlur(){
-  $$('.section__sub, .about__content p, .service-card p').forEach(function(el){
-    el.classList.add('mg-fade-blur');
-  });
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var parent = e.target.parentElement;
-        var siblings = parent ? [].slice.call(parent.querySelectorAll('.mg-fade-blur:not(.mg-fade-blur-visible)')) : [];
-        var idx = siblings.indexOf(e.target);
-        setTimeout(function(){
-          e.target.classList.add('mg-fade-blur-visible');
-        }, Math.max(0, idx) * 80);
-        obs.unobserve(e.target);
-      }
-    });
-  }, {threshold:0.15, rootMargin:'0px 0px -30px 0px'});
-
-  $$('.mg-fade-blur').forEach(function(el){ obs.observe(el); });
-}
-
-/* ================================================================
-   13. GRADIENT TEXT — animated gradient on hero title
+   7. GRADIENT TEXT - animated gradient on hero title
    ================================================================ */
 function initGradientText(){
   var heroTitle = $('.hero__title > span:first-child');
-  if(heroTitle) heroTitle.classList.add('mg-gradient-text');
+  if(heroTitle && !heroTitle.classList.contains('mg-gradient-text')){
+    heroTitle.classList.add('mg-gradient-text');
+  }
 }
 
 /* ================================================================
-   14. PULSE RING — on status indicators
+   8. PULSE RING - on status indicators
    ================================================================ */
 function initPulseRings(){
   $$('.monitor-dot--lg, .chat-avatar__pulse').forEach(function(el){
-    el.classList.add('mg-pulse-ring');
+    if(!el.classList.contains('mg-pulse-ring')) el.classList.add('mg-pulse-ring');
   });
 }
 
 /* ================================================================
-   15. SLIDE FROM SIDES — alternating entrance
-   ================================================================ */
-function initSlideFromSides(){
-  $$('.about-feat').forEach(function(el, i){
-    el.classList.add(i % 2 === 0 ? 'mg-slide-left' : 'mg-slide-right');
-    el.style.transitionDelay = (i * 0.1) + 's';
-  });
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('mg-slide-visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, {threshold:0.2});
-
-  $$('.mg-slide-left, .mg-slide-right').forEach(function(el){ obs.observe(el); });
-}
-
-/* ================================================================
-   16. SECTION PROGRESS LINE — per section scroll progress
+   9. SECTION PROGRESS LINE - per section scroll progress
    ================================================================ */
 function initSectionProgress(){
   $$('.section').forEach(function(sec){
     if(sec.classList.contains('hero')) return;
+    if(sec.querySelector('.mg-section-line')) return;
     var line = document.createElement('div');
     line.className = 'mg-section-line';
     sec.style.position = 'relative';
@@ -425,7 +191,6 @@ function initSectionProgress(){
   var lines = $$('.mg-section-line');
   var lineSections = lines.map(function(l){ return l.parentElement; });
 
-  var lastScroll = 0;
   var ticking = false;
 
   function updateLines(){
@@ -453,60 +218,7 @@ function initSectionProgress(){
 }
 
 /* ================================================================
-   17. HORIZONTAL SCROLL SECTION — laws library categories
-   ================================================================ */
-function initHorizontalScroll(){
-  var track = $('.library-categories');
-  if(!track || isMobile()) return;
-
-  var container = track.parentElement;
-  if(!container) return;
-
-  /* check if there are enough items to warrant horizontal scroll */
-  var items = track.children;
-  if(items.length < 5) return;
-
-  track.classList.add('mg-hscroll__track');
-  container.classList.add('mg-hscroll');
-  container.style.height = (items.length * 80) + 'px';
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting) return;
-      var rect = container.getBoundingClientRect();
-      var progress = -rect.top / (rect.height - window.innerHeight);
-      progress = Math.max(0, Math.min(1, progress));
-      var maxScroll = track.scrollWidth - container.offsetWidth;
-      track.style.transform = 'translateX(' + (-progress * maxScroll) + 'px)';
-    });
-  }, {threshold:Array.from({length:20}, function(_,i){ return i/20; })});
-
-  /* use scroll position for horizontal movement */
-  window.addEventListener('scroll', function(){
-    var rect = container.getBoundingClientRect();
-    if(rect.top > window.innerHeight || rect.bottom < 0) return;
-    var progress = -rect.top / (rect.height - window.innerHeight);
-    progress = Math.max(0, Math.min(1, progress));
-    var maxScroll = track.scrollWidth - container.offsetWidth;
-    track.style.transform = 'translateX(' + (-progress * maxScroll) + 'px)';
-  }, {passive:true});
-}
-
-/* ================================================================
-   18. 3D PERSPECTIVE SPACE — for pricing cards
-   ================================================================ */
-function init3DPerspective(){
-  if(isMobile()) return;
-  var pricingGrid = $('.pricing-grid');
-  if(pricingGrid) pricingGrid.classList.add('mg-3d-space');
-
-  $$('.pricing-card').forEach(function(card){
-    card.classList.add('mg-3d-card');
-  });
-}
-
-/* ================================================================
-   19. ANIMATED DATA BARS — monitor uptime visualization
+   10. ANIMATED DATA BARS - monitor uptime visualization
    ================================================================ */
 function initDataBars(){
   $$('.monitor-stat').forEach(function(stat){
@@ -539,10 +251,9 @@ function initDataBars(){
 }
 
 /* ================================================================
-   20. SMOOTH SCROLL SNAP HINT — subtle indicator
+   11. SMOOTH SCROLL
    ================================================================ */
 function initScrollSnap(){
-  /* add smooth scroll behavior globally */
   document.documentElement.style.scrollBehavior = 'smooth';
 }
 
@@ -550,9 +261,8 @@ function initScrollSnap(){
    INIT ALL PREMIUM SYSTEMS
    ================================================================ */
 function initPremiumMotion(){
-  if(isReduced) return; /* respect prefers-reduced-motion */
+  if(isReduced) return;
 
-  initCinemaEntrance();
   initGradientText();
   initElasticButtons();
   initGlowRings();
@@ -560,26 +270,13 @@ function initPremiumMotion(){
   initPulseRings();
   initScrollSnap();
 
-  /* delay heavier systems slightly for faster initial paint */
   setTimeout(function(){
-    initSplitText();
-    initWipeReveals();
     initBlobs();
     initSVGDraw();
-    initScaleEntrance();
     initRevealLines();
-    initFadeBlur();
-    initSlideFromSides();
     initSectionProgress();
     initDataBars();
-    init3DPerspective();
   }, 200);
-
-  /* delay non-critical after first paint */
-  setTimeout(function(){
-    initScrollVelocity();
-    initHorizontalScroll();
-  }, 800);
 }
 
 if(document.readyState === 'loading'){

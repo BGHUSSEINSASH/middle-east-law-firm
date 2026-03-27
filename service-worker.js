@@ -1,4 +1,4 @@
-const CACHE_NAME = 'me-law-v45';
+const CACHE_NAME = 'me-law-v46';
 const ASSETS = [
   './',
   './index.html',

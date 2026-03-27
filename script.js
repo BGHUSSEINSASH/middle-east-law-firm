@@ -3334,7 +3334,8 @@ function updateChatSuggestions(){
   if(!chatSuggestions) return;
   const lang = getChatLang();
   const suggestions = CHAT_SUGGESTIONS_ML[lang] || CHAT_SUGGESTIONS_ML['en'];
-  chatSuggestions.innerHTML = suggestions.map(s =>
+  const visible = suggestions.slice(0, 5);
+  chatSuggestions.innerHTML = visible.map(s =>
     '<button class="chat-suggestion" data-q="'+s.q+'">'+s.label+'</button>'
   ).join('');
   chatSuggestions.querySelectorAll('.chat-suggestion').forEach(btn => {

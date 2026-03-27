@@ -1,74 +1,237 @@
 /* ================================================
-   v45 - PREMIUM MOTION GRAPHICS CSS
-   Non-destructive visual enhancements
+   v47 - PREMIUM MOTION GRAPHICS + 3D ILLUSTRATIONS CSS
+   Cinematic visual enhancements - Non-destructive
+   RULE: Never set opacity:0 on existing elements
    ================================================ */
 
-/* ===== 1. SCROLL-LINKED PROGRESS LINE PER SECTION ===== */
+/* ===== EXISTING v46 - SECTION PROGRESS LINE ===== */
 .mg-section-line{position:absolute;top:0;left:0;height:2px;width:0;background:var(--gradient-brand);z-index:2;transition:none;pointer-events:none}
 [dir="rtl"] .mg-section-line{left:auto;right:0}
 
-/* ===== 2. SVG DRAW ANIMATION ===== */
+/* ===== SVG DRAW ANIMATION ===== */
 .mg-svg-draw{stroke-dasharray:var(--path-length,300);stroke-dashoffset:var(--path-length,300);transition:stroke-dashoffset 1.2s cubic-bezier(0.65,0,0.35,1);fill:none;stroke:var(--blue-mid);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .mg-svg-drawn{stroke-dashoffset:0}
 
-/* ===== 3. ANIMATED GRADIENT TEXT ===== */
+/* ===== ANIMATED GRADIENT TEXT ===== */
 .mg-gradient-text{background:linear-gradient(135deg,var(--blue),var(--blue-bright),#42a5f5,var(--blue));background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:mgGradientText 6s ease infinite}
 @keyframes mgGradientText{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-/* ===== 4. ELASTIC BUTTON PRESS ===== */
+/* ===== ELASTIC BUTTON ===== */
 .mg-elastic{transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
 .mg-elastic:active{transform:scale(0.93)}
 
-/* ===== 5. ANIMATED COUNTER BARS (data viz) ===== */
-.mg-bar{height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;position:relative}
+/* ===== COUNTER BARS ===== */
+.mg-bar{height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;position:relative;margin-top:8px}
 .mg-bar__fill{height:100%;background:var(--gradient-brand);border-radius:3px;width:0;transition:width 1.8s cubic-bezier(0.16,1,0.3,1)}
 .mg-bar--animated .mg-bar__fill{width:var(--bar-pct,0%)}
 
-/* ===== 6. MORPHING BLOB BACKGROUND ===== */
+/* ===== MORPHING BLOB ===== */
 .mg-blob{position:absolute;width:300px;height:300px;border-radius:50%;filter:blur(60px);opacity:0.06;animation:mgBlobMorph 12s ease-in-out infinite alternate;pointer-events:none;z-index:0}
 .mg-blob--blue{background:var(--blue)}
 .mg-blob--accent{background:var(--blue-bright)}
 .mg-blob--2{animation-delay:-4s;animation-duration:15s}
 .mg-blob--3{animation-delay:-8s;animation-duration:18s}
 @keyframes mgBlobMorph{
-  0%{border-radius:50% 50% 50% 50% / 50% 50% 50% 50%;transform:translate(0,0) scale(1)}
-  25%{border-radius:60% 40% 55% 45% / 45% 55% 40% 60%;transform:translate(20px,-15px) scale(1.05)}
-  50%{border-radius:40% 60% 45% 55% / 55% 45% 60% 40%;transform:translate(-15px,20px) scale(0.95)}
-  75%{border-radius:55% 45% 40% 60% / 40% 60% 55% 45%;transform:translate(10px,10px) scale(1.02)}
-  100%{border-radius:50% 50% 50% 50% / 50% 50% 50% 50%;transform:translate(0,0) scale(1)}
+  0%{border-radius:50% 50% 50% 50%/50% 50% 50% 50%;transform:translate(0,0) scale(1)}
+  25%{border-radius:60% 40% 55% 45%/45% 55% 40% 60%;transform:translate(20px,-15px) scale(1.05)}
+  50%{border-radius:40% 60% 45% 55%/55% 45% 60% 40%;transform:translate(-15px,20px) scale(0.95)}
+  75%{border-radius:55% 45% 40% 60%/40% 60% 55% 45%;transform:translate(10px,10px) scale(1.02)}
+  100%{border-radius:50% 50% 50% 50%/50% 50% 50% 50%;transform:translate(0,0) scale(1)}
 }
 
-/* ===== 7. HOVER GLOW RING ===== */
+/* ===== GLOW RING ===== */
 .mg-glow-ring{position:relative}
 .mg-glow-ring::after{content:'';position:absolute;inset:-4px;border-radius:inherit;border:2px solid transparent;transition:border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);pointer-events:none}
 .mg-glow-ring:hover::after{border-color:rgba(25,118,210,0.15);box-shadow:0 0 20px rgba(25,118,210,0.08)}
 
-/* ===== 8. HOVER CARD SHINE SWEEP ===== */
+/* ===== SHINE SWEEP ===== */
 .mg-shine-sweep{position:relative;overflow:hidden}
 .mg-shine-sweep::before{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);transform:skewX(-25deg);transition:left 0.6s var(--ease);pointer-events:none;z-index:1}
 .mg-shine-sweep:hover::before{left:125%}
 
-/* ===== 9. PULSE RING (status indicators) ===== */
+/* ===== PULSE RING ===== */
 .mg-pulse-ring{position:relative}
 .mg-pulse-ring::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--blue);opacity:0;animation:mgPulseRing 2s ease-out infinite}
 @keyframes mgPulseRing{0%{transform:scale(0.8);opacity:0.6}100%{transform:scale(1.4);opacity:0}}
 
-/* ===== 10. SMOOTH REVEAL LINE ===== */
+/* ===== REVEAL LINE ===== */
 .mg-reveal-line{position:relative}
 .mg-reveal-line::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--gradient-brand);transform:scaleX(0);transform-origin:left;transition:transform 0.8s cubic-bezier(0.65,0,0.35,1)}
 [dir="rtl"] .mg-reveal-line::after{transform-origin:right}
 .mg-reveal-line--visible::after{transform:scaleX(1)}
+
+/* ================================================
+   NEW v47 — MOTION GRAPHICS PER SECTION
+   ================================================ */
+
+/* ===== PARTICLE FIELD — floating dots per section ===== */
+.mg-particle-field{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.mg-particle{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--blue);opacity:0.08;animation:mgParticleFloat 18s linear infinite}
+.mg-particle:nth-child(2n){background:var(--blue-bright);animation-duration:22s;animation-delay:-5s;width:3px;height:3px}
+.mg-particle:nth-child(3n){animation-duration:25s;animation-delay:-10s;width:5px;height:5px;opacity:0.05}
+@keyframes mgParticleFloat{
+  0%{transform:translate(0,0) rotate(0deg)}
+  25%{transform:translate(30px,-60px) rotate(90deg)}
+  50%{transform:translate(-20px,-120px) rotate(180deg)}
+  75%{transform:translate(50px,-60px) rotate(270deg)}
+  100%{transform:translate(0,0) rotate(360deg)}
+}
+
+/* ===== ANIMATED BORDER GRADIENT — cards ===== */
+.mg-border-anim{position:relative;z-index:0}
+.mg-border-anim::before{content:'';position:absolute;inset:-1px;padding:1px;border-radius:inherit;background:linear-gradient(var(--mg-angle,0deg),transparent 40%,var(--blue) 50%,transparent 60%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;animation:mgBorderSpin 4s linear infinite}
+@keyframes mgBorderSpin{to{--mg-angle:360deg}}
+@property --mg-angle{syntax:'<angle>';inherits:false;initial-value:0deg}
+
+/* ===== FLOATING GEOMETRIC DECORATIONS ===== */
+.mg-geo{position:absolute;pointer-events:none;z-index:0;opacity:0.07}
+.mg-geo--circle{width:80px;height:80px;border:2px solid var(--blue);border-radius:50%;animation:mgGeoFloat 16s ease-in-out infinite alternate}
+.mg-geo--diamond{width:40px;height:40px;border:2px solid var(--blue-bright);transform:rotate(45deg);animation:mgGeoFloat 20s ease-in-out infinite alternate-reverse}
+.mg-geo--triangle{width:0;height:0;border-left:25px solid transparent;border-right:25px solid transparent;border-bottom:45px solid var(--blue);opacity:0.04;animation:mgGeoFloat 18s ease-in-out infinite alternate}
+.mg-geo--dots{width:60px;height:60px;background-image:radial-gradient(circle,var(--blue) 1.5px,transparent 1.5px);background-size:12px 12px;animation:mgGeoFloat 22s ease-in-out infinite alternate-reverse}
+.mg-geo--ring{width:120px;height:120px;border:3px solid transparent;border-top-color:var(--blue);border-bottom-color:var(--blue-bright);border-radius:50%;animation:mgGeoSpin 12s linear infinite}
+.mg-geo--wave{width:100px;height:30px;overflow:hidden}
+.mg-geo--wave::before{content:'';display:block;width:200%;height:100%;background:repeating-linear-gradient(90deg,transparent,transparent 10px,var(--blue) 10px,var(--blue) 11px);animation:mgWaveMove 3s linear infinite}
+@keyframes mgGeoFloat{
+  0%{transform:translateY(0) rotate(0deg)}
+  100%{transform:translateY(-30px) rotate(15deg)}
+}
+@keyframes mgGeoSpin{to{transform:rotate(360deg)}}
+@keyframes mgWaveMove{to{transform:translateX(-50%)}}
+
+/* ===== SECTION ACCENT LINES ===== */
+.mg-accent-line{position:absolute;pointer-events:none;z-index:0}
+.mg-accent-line--h{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0.15}
+.mg-accent-line--v{width:1px;height:80px;background:linear-gradient(180deg,transparent,var(--blue),transparent);opacity:0.15}
+.mg-accent-line--glow{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--blue),var(--blue-bright),var(--blue),transparent);opacity:0.2;animation:mgAccentPulse 3s ease-in-out infinite alternate}
+@keyframes mgAccentPulse{0%{opacity:0.1;width:200px}100%{opacity:0.25;width:260px}}
+
+/* ===== CARD TILT ENHANCEMENT ===== */
+.mg-tilt-glow{position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(25,118,210,0.08) 0%,transparent 60%);opacity:0;transition:opacity 0.3s ease}
+.mg-tilt-glow--active{opacity:1}
+
+/* ===== ANIMATED CORNER BRACKETS ===== */
+.mg-corners{position:relative}
+.mg-corners::before,.mg-corners::after{content:'';position:absolute;width:20px;height:20px;pointer-events:none;opacity:0.15;transition:opacity 0.3s ease}
+.mg-corners::before{top:-2px;left:-2px;border-top:2px solid var(--blue);border-left:2px solid var(--blue)}
+.mg-corners::after{bottom:-2px;right:-2px;border-bottom:2px solid var(--blue-bright);border-right:2px solid var(--blue-bright)}
+[dir="rtl"] .mg-corners::before{left:auto;right:-2px;border-left:none;border-right:2px solid var(--blue)}
+[dir="rtl"] .mg-corners::after{right:auto;left:-2px;border-right:none;border-left:2px solid var(--blue-bright)}
+.mg-corners:hover::before,.mg-corners:hover::after{opacity:0.4}
+
+/* ===== TYPING INDICATOR DOTS ===== */
+.mg-typing{display:inline-flex;gap:4px;padding:4px 8px}
+.mg-typing__dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:mgTypingBounce 1.4s ease-in-out infinite}
+.mg-typing__dot:nth-child(2){animation-delay:0.2s}
+.mg-typing__dot:nth-child(3){animation-delay:0.4s}
+@keyframes mgTypingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}}
+
+/* ================================================
+   3D SVG ILLUSTRATIONS PER SECTION
+   ================================================ */
+.mg-illust{position:absolute;pointer-events:none;z-index:0}
+.mg-illust svg{width:100%;height:100%}
+.mg-illust--float{animation:mgIllustFloat 8s ease-in-out infinite alternate}
+.mg-illust--spin{animation:mgIllustSpin 20s linear infinite}
+.mg-illust--pulse{animation:mgIllustPulse 4s ease-in-out infinite}
+.mg-illust--swing{animation:mgIllustSwing 6s ease-in-out infinite alternate}
+@keyframes mgIllustFloat{
+  0%{transform:translateY(0) rotateX(0) rotateY(0)}
+  50%{transform:translateY(-15px) rotateX(5deg) rotateY(-5deg)}
+  100%{transform:translateY(5px) rotateX(-3deg) rotateY(3deg)}
+}
+@keyframes mgIllustSpin{to{transform:rotateY(360deg)}}
+@keyframes mgIllustPulse{
+  0%,100%{transform:scale(1);opacity:0.12}
+  50%{transform:scale(1.08);opacity:0.18}
+}
+@keyframes mgIllustSwing{
+  0%{transform:rotate(-8deg) translateY(0)}
+  100%{transform:rotate(8deg) translateY(-10px)}
+}
+
+/* 3D perspective container */
+.mg-3d-scene{perspective:800px;position:absolute;pointer-events:none;z-index:0}
+.mg-3d-obj{transform-style:preserve-3d;animation:mg3dRotate 15s ease-in-out infinite alternate}
+@keyframes mg3dRotate{
+  0%{transform:rotateX(0) rotateY(0) rotateZ(0)}
+  25%{transform:rotateX(10deg) rotateY(15deg) rotateZ(5deg)}
+  50%{transform:rotateX(-5deg) rotateY(-10deg) rotateZ(-3deg)}
+  75%{transform:rotateX(8deg) rotateY(-5deg) rotateZ(2deg)}
+  100%{transform:rotateX(0) rotateY(0) rotateZ(0)}
+}
+
+/* ===== HERO 3D FLOATING SCALES ===== */
+.mg-3d-scales{width:200px;height:200px}
+.mg-3d-scales svg{filter:drop-shadow(0 8px 24px rgba(21,101,192,0.15))}
+
+/* ===== SERVICES 3D GAVEL ===== */
+.mg-3d-gavel{width:150px;height:150px}
+.mg-3d-gavel svg{filter:drop-shadow(0 4px 16px rgba(21,101,192,0.12))}
+
+/* ===== ABOUT 3D SHIELD ===== */
+.mg-3d-shield{width:160px;height:160px}
+.mg-3d-shield svg{filter:drop-shadow(0 6px 20px rgba(21,101,192,0.12))}
+
+/* ===== LAWS 3D BOOK ===== */
+.mg-3d-book{width:140px;height:140px}
+.mg-3d-book svg{filter:drop-shadow(0 6px 18px rgba(21,101,192,0.12))}
+
+/* ===== TEAM 3D PEOPLE ===== */
+.mg-3d-people{width:130px;height:130px}
+.mg-3d-people svg{filter:drop-shadow(0 4px 14px rgba(21,101,192,0.1))}
+
+/* ===== PRICING 3D GEM ===== */
+.mg-3d-gem{width:120px;height:120px}
+.mg-3d-gem svg{filter:drop-shadow(0 4px 16px rgba(21,101,192,0.15))}
+
+/* ===== FAQ 3D QUESTION ===== */
+.mg-3d-question{width:110px;height:110px}
+.mg-3d-question svg{filter:drop-shadow(0 4px 12px rgba(21,101,192,0.1))}
+
+/* ===== CONTACT 3D ENVELOPE ===== */
+.mg-3d-envelope{width:140px;height:140px}
+.mg-3d-envelope svg{filter:drop-shadow(0 4px 16px rgba(21,101,192,0.12))}
+
+/* ===== MONITOR 3D SERVER ===== */
+.mg-3d-server{width:130px;height:130px}
+.mg-3d-server svg{filter:drop-shadow(0 4px 14px rgba(21,101,192,0.12))}
+
+/* ===== TESTI 3D STAR ===== */
+.mg-3d-star{width:100px;height:100px}
+.mg-3d-star svg{filter:drop-shadow(0 4px 12px rgba(255,193,7,0.2))}
+
+/* ===== APP 3D PHONE ===== */
+.mg-3d-phone{width:120px;height:160px}
+.mg-3d-phone svg{filter:drop-shadow(0 6px 20px rgba(21,101,192,0.15))}
+
+/* ===== ASSISTANT 3D ROBOT ===== */
+.mg-3d-robot{width:130px;height:130px}
+.mg-3d-robot svg{filter:drop-shadow(0 6px 18px rgba(21,101,192,0.15))}
+
+/* ===== ANIMATED CONNECTOR LINES between sections ===== */
+.mg-connector{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:2px;height:60px;background:linear-gradient(180deg,var(--blue),transparent);opacity:0.08;z-index:1;pointer-events:none}
+.mg-connector::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:0.3;animation:mgConnectorPulse 2s ease-in-out infinite}
+@keyframes mgConnectorPulse{0%,100%{transform:translateX(-50%) scale(1);opacity:0.3}50%{transform:translateX(-50%) scale(1.5);opacity:0.6}}
 
 /* ===== DARK MODE ===== */
 [data-theme="dark"] .mg-blob{opacity:0.03}
 [data-theme="dark"] .mg-bar{background:var(--gray-700)}
 [data-theme="dark"] .mg-glow-ring:hover::after{border-color:rgba(66,165,245,0.2);box-shadow:0 0 20px rgba(66,165,245,0.1)}
 [data-theme="dark"] .mg-shine-sweep::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.03),transparent)}
+[data-theme="dark"] .mg-particle{opacity:0.04}
+[data-theme="dark"] .mg-geo{opacity:0.04}
+[data-theme="dark"] .mg-illust svg{opacity:0.6}
+[data-theme="dark"] .mg-accent-line--glow{opacity:0.1}
+[data-theme="dark"] .mg-connector{opacity:0.04}
 
-/* ===== REDUCE MOTION (a11y) ===== */
+/* ===== REDUCE MOTION ===== */
 @media(prefers-reduced-motion:reduce){
   .mg-blob,.mg-elastic,.mg-bar__fill,.mg-gradient-text,
-  .mg-shine-sweep::before,.mg-reveal-line::after{
+  .mg-shine-sweep::before,.mg-reveal-line::after,
+  .mg-particle,.mg-geo,.mg-illust,.mg-3d-obj,
+  .mg-border-anim::before,.mg-typing__dot,
+  .mg-connector::before,.mg-accent-line--glow{
     animation:none!important;transition:none!important
   }
 }
@@ -76,4 +239,11 @@
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   .mg-blob{width:200px;height:200px;filter:blur(40px)}
+  .mg-illust,.mg-3d-scene{display:none}
+  .mg-geo{display:none}
+  .mg-particle-field .mg-particle:nth-child(n+6){display:none}
+  .mg-connector{display:none}
+}
+@media(max-width:1024px) and (min-width:769px){
+  .mg-illust,.mg-3d-scene{transform:scale(0.7);opacity:0.06}
 }

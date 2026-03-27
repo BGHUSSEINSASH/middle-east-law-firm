@@ -822,18 +822,23 @@ ul,ol{list-style:none}
 }
 
 /* ================================================
-   v36 — MOTION GRAPHICS + SLACK MONITOR STYLES
+   v43 — MOTION GRAPHICS + SLACK MONITOR STYLES
+   Complete animation engine
    ================================================ */
 
 /* ===== SCROLL PROGRESS BAR ===== */
-.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--gradient-brand);z-index:9999;transition:width 0.1s linear;pointer-events:none;border-radius:0 2px 2px 0}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--gradient-brand);z-index:9999;transition:width 0.1s linear,height 0.15s ease;pointer-events:none;border-radius:0 2px 2px 0}
 
 /* ===== MAGNETIC CURSOR ===== */
 .mg-cursor{position:fixed;width:36px;height:36px;border:1.5px solid var(--blue-mid);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width 0.3s var(--ease),height 0.3s var(--ease),border-color 0.3s var(--ease),background 0.3s var(--ease);mix-blend-mode:exclusion}
 .mg-cursor--hover{width:56px;height:56px;border-color:var(--blue-bright);background:rgba(25,118,210,0.06)}
 .mg-cursor-dot{position:fixed;width:5px;height:5px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
 .mg-cursor-dot--hover{transform:translate(-50%,-50%) scale(0)}
-@media(max-width:1024px){.mg-cursor,.mg-cursor-dot{display:none!important}}
+
+/* ===== CURSOR TRAIL ===== */
+.mg-cursor-trail{position:fixed;border-radius:50%;background:var(--blue-mid);pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:opacity 0.3s}
+
+@media(max-width:1024px){.mg-cursor,.mg-cursor-dot,.mg-cursor-trail{display:none!important}}
 
 /* ===== STAGGER ANIMATIONS ===== */
 .stagger-item{opacity:0;transform:translateY(24px);transition:opacity 0.5s var(--ease),transform 0.5s var(--ease);transition-delay:calc(var(--stagger,0) * 0.08s)}
@@ -845,6 +850,11 @@ ul,ol{list-style:none}
 .mg-shape--circle{width:120px;height:120px;border-radius:50%;background:var(--blue-mid)}
 .mg-shape--ring{width:80px;height:80px;border-radius:50%;border:2px solid var(--blue-mid)}
 .mg-shape--square{width:60px;height:60px;border-radius:8px;background:var(--blue);transform:rotate(45deg)}
+.mg-shape--dot{width:8px;height:8px;border-radius:50%;background:var(--blue-bright)}
+.mg-shape--cross{width:20px;height:20px;position:relative;opacity:0.05}
+.mg-shape--cross::before,.mg-shape--cross::after{content:'';position:absolute;background:var(--blue-mid);border-radius:2px}
+.mg-shape--cross::before{width:100%;height:2px;top:50%;transform:translateY(-50%)}
+.mg-shape--cross::after{width:2px;height:100%;left:50%;transform:translateX(-50%)}
 @keyframes mgFloat{0%{transform:translateY(0) rotate(0)}25%{transform:translateY(-20px) rotate(8deg)}50%{transform:translateY(-8px) rotate(-4deg)}75%{transform:translateY(-16px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
 
 /* ===== TEXT REVEAL ===== */
@@ -961,6 +971,10 @@ ul,ol{list-style:none}
 .hero__particle:nth-child(6){top:50%;left:20%;animation-duration:16s;animation-delay:5s;width:6px;height:6px;opacity:0.06}
 @keyframes particleFloat{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100vh) translateX(20px);opacity:0}}
 
+/* Dynamic JS-injected particles */
+.hero__particle--dynamic{animation:particleDynamic linear infinite}
+@keyframes particleDynamic{0%{transform:translateY(0) translateX(0) scale(0);opacity:0}15%{opacity:0.5;transform:scale(1)}50%{transform:translateY(-50vh) translateX(15px) scale(0.8)}85%{opacity:0.5}100%{transform:translateY(-100vh) translateX(-10px) scale(0);opacity:0}}
+
 /* Section entrance animations */
 .section__head .section__tag{opacity:0;transform:translateY(-10px);transition:opacity 0.5s var(--ease),transform 0.5s var(--ease)}
 .section__head .section__title{opacity:0;transform:translateY(15px);transition:opacity 0.5s var(--ease) 0.1s,transform 0.5s var(--ease) 0.1s}
@@ -989,3 +1003,72 @@ ul,ol{list-style:none}
 /* Dark mode — Slack Monitor */
 [data-theme="dark"] .monitor-card--slack{border-color:rgba(97,31,105,0.2)}
 [data-theme="dark"] .monitor-card--slack:hover{box-shadow:0 8px 28px rgba(97,31,105,0.15),0 0 0 1px rgba(97,31,105,0.12)}
+
+/* ===== V43 COMPLETE MOTION GRAPHICS ===== */
+
+/* ----- BUTTON RIPPLE ----- */
+.btn{position:relative;overflow:hidden}
+.mg-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.2);animation:mgRipple 0.7s ease-out forwards;pointer-events:none;z-index:1}
+@keyframes mgRipple{from{transform:scale(0);opacity:1}to{transform:scale(1);opacity:0}}
+
+/* ----- PAGE LOAD ORCHESTRATION ----- */
+.mg-loading .hero__badge,
+.mg-loading .hero__title,
+.mg-loading .hero__sub,
+.mg-loading .hero__btns,
+.mg-loading .hero__stats{opacity:0;transform:translateY(24px)}
+.mg-hero-enter{animation:mgHeroEnter 0.65s var(--ease) both}
+@keyframes mgHeroEnter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ----- CARD SHINE OVERLAY ----- */
+.mg-card-shine{position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:1;transition:background 0.2s ease}
+
+/* ----- FLOATING ICON MICRO-ANIMATION ----- */
+.mg-float-icon{animation:mgFloatIcon 4s ease-in-out infinite}
+@keyframes mgFloatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ----- SCROLL INDICATOR FADE ----- */
+.hero__scroll{transition:opacity 0.4s var(--ease),transform 0.4s var(--ease)}
+.mg-scroll-hidden{opacity:0!important;transform:translateY(12px)!important;pointer-events:none}
+
+/* ----- SECTION NAVIGATION DOTS ----- */
+.mg-section-nav{position:fixed;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:9998;opacity:0;animation:mgNavFadeIn 1s 2s forwards}
+[dir="rtl"] .mg-section-nav{right:auto;left:16px}
+.mg-section-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-300);cursor:pointer;transition:all 0.3s var(--ease)}
+.mg-section-dot:hover{background:var(--blue-mid);transform:scale(1.4)}
+.mg-section-dot.active{background:var(--blue);transform:scale(1.5);box-shadow:0 0 10px rgba(25,118,210,0.35)}
+@keyframes mgNavFadeIn{from{opacity:0;transform:translateY(-50%) translateX(10px)}to{opacity:1;transform:translateY(-50%) translateX(0)}}
+@media(max-width:1024px){.mg-section-nav{display:none}}
+
+/* ----- TESTIMONIAL GLOW ----- */
+.mg-testi-glow{box-shadow:0 0 24px rgba(25,118,210,0.1),0 0 0 1px rgba(25,118,210,0.08)!important;transform:translateY(-3px);transition:all 0.5s var(--ease)!important}
+
+/* ----- ABOUT FEATURE LINE-DRAW ICONS ----- */
+.mg-line-draw{transition:color 0.3s var(--ease),transform 0.3s var(--ease)}
+.about-feat:hover .mg-line-draw{transform:scale(1.2);color:var(--blue-bright)}
+
+/* ----- ABOUT CARD COUNTER POP ----- */
+.mg-about-counted{animation:mgCountPop 0.6s var(--bounce) forwards}
+@keyframes mgCountPop{0%{transform:scale(0.8);opacity:0.6}50%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+
+/* ----- HERO MOUSE PARALLAX (desktop) ----- */
+@media(min-width:1024px){
+  .hero__content{will-change:transform,opacity}
+  .hero__particles{will-change:transform}
+}
+
+/* ----- HERO CANVAS (animated mesh) ----- */
+.hero__canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+@media(min-width:1024px){.hero__canvas{pointer-events:auto;cursor:none}}
+
+/* ----- DARK MODE ADJUSTMENTS ----- */
+[data-theme="dark"] .mg-cursor{border-color:var(--blue-bright);mix-blend-mode:normal}
+[data-theme="dark"] .mg-cursor--hover{background:rgba(66,165,245,0.08)}
+[data-theme="dark"] .mg-cursor-trail{background:var(--blue-bright)}
+[data-theme="dark"] .mg-section-dot{background:var(--gray-600)}
+[data-theme="dark"] .mg-section-dot.active{background:var(--blue-bright);box-shadow:0 0 10px rgba(66,165,245,0.3)}
+[data-theme="dark"] .scroll-progress{background:linear-gradient(90deg,var(--blue-mid),var(--blue-bright))}
+[data-theme="dark"] .mg-testi-glow{box-shadow:0 0 24px rgba(66,165,245,0.12),0 0 0 1px rgba(66,165,245,0.1)!important}
+[data-theme="dark"] .mg-shape{opacity:0.02}
+[data-theme="dark"] .hero__particle{background:rgba(66,165,245,0.2)}
+[data-theme="dark"] .hero__particle--dynamic{background:rgba(66,165,245,0.15)}

@@ -421,6 +421,42 @@ ul,ol{list-style:none}
 @media(max-width:600px){.chat-box{height:520px}.chat-header__actions{gap:2px}.chat-action{width:30px;height:30px;font-size:0.72rem}}
 .chat-box.fullscreen .chat-fullscreen-close{display:flex}
 
+/* Chat — Message Time */
+.chat-msg__time{display:block;font-size:0.65rem;color:var(--text-light);margin-top:6px;opacity:0.7}
+.chat-msg--user .chat-msg__time{color:rgba(255,255,255,0.6)}
+
+/* Chat — Message Actions */
+.chat-msg__actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.chat-msg__actions button{background:var(--gray-50);border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:4px 10px;font-size:0.68rem;color:var(--text-muted);cursor:pointer;transition:all 0.25s var(--ease);display:inline-flex;align-items:center;gap:4px}
+.chat-msg__actions button:hover{background:var(--blue-wash);color:var(--blue);border-color:var(--blue-pale)}
+.chat-msg__actions button.liked{background:var(--blue-wash);color:var(--blue);border-color:var(--blue-pale)}
+.chat-msg__actions button.disliked{background:rgba(239,83,80,0.08);color:#ef5350;border-color:rgba(239,83,80,0.2)}
+[data-theme="dark"] .chat-msg__actions button{background:var(--gray-700);border-color:var(--border);color:var(--text-muted)}
+[data-theme="dark"] .chat-msg__actions button:hover{background:rgba(25,118,210,0.15);color:var(--blue-bright)}
+
+/* Chat — Typing Indicator */
+.chat-typing{display:inline-flex;align-items:center;gap:5px;padding:4px 0}
+.chat-typing span{width:7px;height:7px;border-radius:50%;background:var(--blue-mid);animation:chatTypingBounce 1.4s ease-in-out infinite}
+.chat-typing span:nth-child(2){animation-delay:0.2s}
+.chat-typing span:nth-child(3){animation-delay:0.4s}
+@keyframes chatTypingBounce{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-8px);opacity:1}}
+
+/* Chat — Search Highlight */
+.highlight{background:rgba(255,193,7,0.3);border-radius:2px;padding:0 2px}
+[data-theme="dark"] .highlight{background:rgba(255,193,7,0.2)}
+
+/* Chat — Font Size Control */
+.chat-box.font-sm .chat-messages{font-size:0.78rem}
+.chat-box.font-sm .chat-msg__bubble{font-size:0.78rem}
+.chat-box.font-lg .chat-messages{font-size:1rem}
+.chat-box.font-lg .chat-msg__bubble{font-size:1rem}
+.chat-box.font-xl .chat-messages{font-size:1.14rem}
+.chat-box.font-xl .chat-msg__bubble{font-size:1.14rem;line-height:1.9}
+
+/* Chat — Character Counter States */
+.chat-input__counter.warn{color:var(--warning)}
+.chat-input__counter.limit{color:var(--danger);font-weight:600}
+
 /* ===== TEAM ===== */
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:680px;margin:0 auto}
 .team-card{padding:36px 24px;text-align:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-card);transition:all var(--transition);position:relative;overflow:hidden}

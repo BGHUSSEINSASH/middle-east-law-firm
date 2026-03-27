@@ -1,9 +1,12 @@
-const CACHE_NAME = 'me-law-v44';
+const CACHE_NAME = 'me-law-v45';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
+  './animations.css',
   './script.js',
+  './motion-graphics.js',
+  './premium-motion.js',
   './laws-data.js',
   './laws-data-2.js',
   './laws-data-3.js',

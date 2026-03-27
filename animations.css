@@ -1,0 +1,155 @@
+/* ================================================
+   v45 — PREMIUM MOTION GRAPHICS CSS
+   Cinematic animated-video experience
+   ================================================ */
+
+/* ===== 1. SPLIT TEXT REVEAL — word/char animation ===== */
+.mg-split-word{display:inline-block;overflow:hidden;vertical-align:top}
+.mg-split-char{display:inline-block;opacity:0;transform:translateY(100%) rotateX(-80deg);transition:opacity 0.5s var(--ease),transform 0.5s var(--ease);transform-origin:bottom}
+.mg-split-space{display:inline-block;width:0.3em}
+.mg-split-revealed .mg-split-char{opacity:1;transform:translateY(0) rotateX(0)}
+
+/* ===== 2. SECTION WIPE REVEALS ===== */
+.mg-wipe{clip-path:inset(0 100% 0 0);transition:clip-path 0.9s cubic-bezier(0.77,0,0.175,1)}
+[dir="rtl"] .mg-wipe{clip-path:inset(0 0 0 100%)}
+.mg-wipe--visible{clip-path:inset(0 0 0 0)}
+.mg-wipe--up{clip-path:inset(100% 0 0 0)}
+.mg-wipe--up.mg-wipe--visible{clip-path:inset(0 0 0 0)}
+.mg-wipe--center{clip-path:inset(0 50% 0 50%)}
+.mg-wipe--center.mg-wipe--visible{clip-path:inset(0 0 0 0)}
+
+/* ===== 3. SCROLL-LINKED PROGRESS LINE PER SECTION ===== */
+.mg-section-line{position:absolute;top:0;left:0;height:2px;width:0;background:var(--gradient-brand);z-index:2;transition:none;pointer-events:none}
+[dir="rtl"] .mg-section-line{left:auto;right:0}
+
+/* ===== 4. SVG DRAW ANIMATION ===== */
+.mg-svg-draw{stroke-dasharray:var(--path-length,300);stroke-dashoffset:var(--path-length,300);transition:stroke-dashoffset 1.2s cubic-bezier(0.65,0,0.35,1);fill:none;stroke:var(--blue-mid);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mg-svg-drawn{stroke-dashoffset:0}
+
+/* ===== 5. CINEMATIC HERO ENTRANCE ===== */
+.mg-cinema-enter{opacity:0;transform:scale(0.92) translateY(30px);filter:blur(8px);transition:all 1s cubic-bezier(0.16,1,0.3,1)}
+.mg-cinema-visible{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}
+
+/* ===== 6. 3D CARD STACK / PERSPECTIVE ===== */
+.mg-3d-space{perspective:1200px;perspective-origin:50% 50%}
+.mg-3d-card{transform-style:preserve-3d;transform:rotateY(0) rotateX(0);transition:transform 0.5s var(--ease);backface-visibility:hidden}
+.mg-3d-card:hover{transform:rotateY(5deg) rotateX(-3deg) translateZ(20px)}
+.mg-3d-card__back{position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);border-radius:inherit}
+
+/* ===== 7. ANIMATED GRADIENT TEXT ===== */
+.mg-gradient-text{background:linear-gradient(135deg,var(--blue),var(--blue-bright),#42a5f5,var(--blue));background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:mgGradientText 6s ease infinite}
+@keyframes mgGradientText{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* ===== 8. ELASTIC BUTTON PRESS ===== */
+.mg-elastic{transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+.mg-elastic:active{transform:scale(0.93)}
+
+/* ===== 9. SCROLL VELOCITY BLUR ===== */
+.mg-velocity-blur{transition:filter 0.15s ease-out}
+
+/* ===== 10. ANIMATED COUNTER BARS (data viz) ===== */
+.mg-bar{height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;position:relative}
+.mg-bar__fill{height:100%;background:var(--gradient-brand);border-radius:3px;width:0;transition:width 1.8s cubic-bezier(0.16,1,0.3,1)}
+.mg-bar--animated .mg-bar__fill{width:var(--bar-pct,0%)}
+
+/* ===== 11. FLOATING LABEL ANIMATION ===== */
+.mg-float-label{opacity:0;transform:translateY(12px);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease)}
+.mg-float-visible{opacity:1;transform:translateY(0)}
+
+/* ===== 12. PARALLAX DEPTH LAYERS ===== */
+.mg-depth-1{--depth:0.02}
+.mg-depth-2{--depth:0.04}
+.mg-depth-3{--depth:0.06}
+.mg-depth-4{--depth:0.08}
+
+/* ===== 13. MORPHING BLOB BACKGROUND ===== */
+.mg-blob{position:absolute;width:300px;height:300px;border-radius:50%;filter:blur(60px);opacity:0.06;animation:mgBlobMorph 12s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+.mg-blob--blue{background:var(--blue)}
+.mg-blob--accent{background:var(--blue-bright)}
+.mg-blob--2{animation-delay:-4s;animation-duration:15s}
+.mg-blob--3{animation-delay:-8s;animation-duration:18s}
+@keyframes mgBlobMorph{
+  0%{border-radius:50% 50% 50% 50% / 50% 50% 50% 50%;transform:translate(0,0) scale(1)}
+  25%{border-radius:60% 40% 55% 45% / 45% 55% 40% 60%;transform:translate(20px,-15px) scale(1.05)}
+  50%{border-radius:40% 60% 45% 55% / 55% 45% 60% 40%;transform:translate(-15px,20px) scale(0.95)}
+  75%{border-radius:55% 45% 40% 60% / 40% 60% 55% 45%;transform:translate(10px,10px) scale(1.02)}
+  100%{border-radius:50% 50% 50% 50% / 50% 50% 50% 50%;transform:translate(0,0) scale(1)}
+}
+
+/* ===== 14. HOVER GLOW RING ===== */
+.mg-glow-ring{position:relative}
+.mg-glow-ring::after{content:'';position:absolute;inset:-4px;border-radius:inherit;border:2px solid transparent;transition:border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);pointer-events:none}
+.mg-glow-ring:hover::after{border-color:rgba(25,118,210,0.15);box-shadow:0 0 20px rgba(25,118,210,0.08)}
+
+/* ===== 15. SCROLL-TRIGGERED NUMBER FLIP ===== */
+.mg-num-flip{display:inline-flex;overflow:hidden;height:1.2em;line-height:1.2em}
+.mg-num-digit{display:inline-block;animation:mgNumFlip 0.6s var(--ease) forwards}
+@keyframes mgNumFlip{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* ===== 16. SMOOTH SCALE ENTRANCE ===== */
+.mg-scale-in{opacity:0;transform:scale(0.85);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease)}
+.mg-scale-visible{opacity:1;transform:scale(1)}
+
+/* ===== 17. ROTATING BORDER ===== */
+.mg-rotate-border{position:relative;overflow:hidden;z-index:0}
+.mg-rotate-border::before{content:'';position:absolute;inset:-2px;background:conic-gradient(from 0deg,var(--blue),var(--blue-bright),var(--blue-mid),var(--blue));animation:mgRotateBorder 4s linear infinite;z-index:-1;border-radius:inherit}
+.mg-rotate-border::after{content:'';position:absolute;inset:2px;background:var(--surface);border-radius:inherit;z-index:-1}
+@keyframes mgRotateBorder{to{transform:rotate(360deg)}}
+
+/* ===== 18. TYPEWRITER CURSOR BLINK ===== */
+.mg-typewriter-cursor{border-right:2px solid var(--blue);animation:mgCursorBlink 0.8s step-end infinite}
+@keyframes mgCursorBlink{0%,100%{border-color:var(--blue)}50%{border-color:transparent}}
+
+/* ===== 19. PARALLAX IMAGE FRAME ===== */
+.mg-parallax-frame{overflow:hidden;border-radius:var(--radius-lg)}
+.mg-parallax-frame img{transition:transform 0.1s linear;will-change:transform}
+
+/* ===== 20. STAGGER SLIDE FROM SIDES ===== */
+.mg-slide-left{opacity:0;transform:translateX(-40px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease)}
+.mg-slide-right{opacity:0;transform:translateX(40px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease)}
+.mg-slide-visible{opacity:1;transform:translateX(0)}
+
+/* ===== 21. HOVER CARD SHINE SWEEP ===== */
+.mg-shine-sweep{position:relative;overflow:hidden}
+.mg-shine-sweep::before{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);transform:skewX(-25deg);transition:left 0.6s var(--ease);pointer-events:none;z-index:1}
+.mg-shine-sweep:hover::before{left:125%}
+
+/* ===== 22. FADE & BLUR ENTRANCE ===== */
+.mg-fade-blur{opacity:0;filter:blur(10px);transform:translateY(15px);transition:opacity 0.7s var(--ease),filter 0.7s var(--ease),transform 0.7s var(--ease)}
+.mg-fade-blur-visible{opacity:1;filter:blur(0);transform:translateY(0)}
+
+/* ===== 23. PULSE RING (status indicators) ===== */
+.mg-pulse-ring{position:relative}
+.mg-pulse-ring::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--blue);opacity:0;animation:mgPulseRing 2s ease-out infinite}
+@keyframes mgPulseRing{0%{transform:scale(0.8);opacity:0.6}100%{transform:scale(1.4);opacity:0}}
+
+/* ===== 24. HORIZONTAL SCROLL SECTION ===== */
+.mg-hscroll{overflow:hidden;position:relative}
+.mg-hscroll__track{display:flex;gap:20px;transition:transform 0.1s linear;will-change:transform}
+
+/* ===== 25. SMOOTH REVEAL LINE ===== */
+.mg-reveal-line{position:relative}
+.mg-reveal-line::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--gradient-brand);transform:scaleX(0);transform-origin:left;transition:transform 0.8s cubic-bezier(0.65,0,0.35,1)}
+[dir="rtl"] .mg-reveal-line::after{transform-origin:right}
+.mg-reveal-line--visible::after{transform:scaleX(1)}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] .mg-blob{opacity:0.03}
+[data-theme="dark"] .mg-bar{background:var(--gray-700)}
+[data-theme="dark"] .mg-glow-ring:hover::after{border-color:rgba(66,165,245,0.2);box-shadow:0 0 20px rgba(66,165,245,0.1)}
+[data-theme="dark"] .mg-shine-sweep::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.03),transparent)}
+
+/* ===== REDUCE MOTION (a11y) ===== */
+@media(prefers-reduced-motion:reduce){
+  .mg-split-char,.mg-wipe,.mg-cinema-enter,.mg-3d-card,.mg-elastic,.mg-bar__fill,
+  .mg-float-label,.mg-blob,.mg-scale-in,.mg-fade-blur,.mg-slide-left,.mg-slide-right,
+  .mg-shine-sweep::before,.mg-reveal-line::after,.mg-gradient-text{
+    animation:none!important;transition:none!important;opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .mg-blob{width:200px;height:200px;filter:blur(40px)}
+  .mg-3d-card:hover{transform:none}
+}
